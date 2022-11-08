@@ -46,7 +46,7 @@ export default function Home() {
             Forma
             <br /> De Ganar Consciencia
             <br /> De la Percepción Corporal De <br />
-            las Emociones.
+            las Emociones
           </p>
         </span>
         <Footer></Footer>
