@@ -3,8 +3,8 @@ import React from "react";
 function Center() {
   return (
     <div className="flex flex-col items-center p-6 text-center bg-[#fafbfb]">
-      <h2 className="pb-3 font-bold">Importante</h2>
-      <p className="text-sm font-light">
+      <h2 className="pb-3 text-xl font-bold">Importante</h2>
+      <p className="text-sm font-light sm:text-lg ">
         Este programa no es una terapia psicológica. <br /> Lo que estas
         haciendo es ponerte mis anteojos y explorar
         <br /> el mundo a través de mi forma de percibir del mundo

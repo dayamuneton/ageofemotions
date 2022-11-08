@@ -14,7 +14,7 @@ function Card({ title, text }: CardProps) {
         <Image src="/CardIcon.png" alt="" fill />
       </span>
       <p className="bg-[#e4f10c] font-semibold text-2xl mb-2">{title}</p>
-      <p className="md:max-w-[10rem] max-w-[40ch] text-sm">{text}</p>
+      <p className="max-w-[25ch]">{text}</p>
     </div>
   );
 }

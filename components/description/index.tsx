@@ -9,11 +9,11 @@ function Description() {
           El conocimiento sobre la relación cuerpo y emociones es libertad,
           claridad y enfoque.
         </span>
-        <span className="bg-[#76e2f1] text-[#fe6161] p-4 text-[.8rem] font-bold mb-10">
+        <span className="bg-[#76e2f1] text-[#fe6161] p-4  font-bold mb-10">
           SIP! Lo leíste bien, todo lo relacionado con la percepción corporal de
           las emociones , tiene que ver con lograr tus metas. ​ ​
         </span>
-        <span className="flex flex-col items-center text-sm text-[#777]">
+        <span className="flex flex-col items-center text-[#777]">
           El arte te ayudará a visualizar y comprender como te percibes a ti
           mismo y descubrir porque haber excluido tu cuerpo como parte de tu
           consciencia te ha llevado confusión, sufrimiento y estancamiento en

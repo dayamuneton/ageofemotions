@@ -14,7 +14,7 @@ function About() {
         <span className="flex aspect-square relative w-[10rem] rounded-full overflow-hidden bg-[#f9d1c3] m-4">
           <Image src="/fotodaya1-1.png" alt="" fill />
         </span>
-        <p className="flex max-w-[25rem] text-sm">
+        <p className="flex max-w-[50ch] font-light text-lg">
           Durante 20 años experimenté como artista la facilidad que te brinda el
           arte para conectar las teorías de las emociones con las sensaciones,
           porque al igual que muchas personas viví el dolor al punto de estar

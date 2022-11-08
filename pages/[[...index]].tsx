@@ -33,11 +33,12 @@ export default function Home() {
         <Description></Description>
         <Form></Form>
 
-        <div className="text-bold bg-gradient-to-b from-[#bdc9d9] to-[#f2e2f6] p-8 pb-[7rem] flex flex-col items-center">
+        <div className="text-bold bg-gradient-to-b from-[#bdc9d9] to-[#f2e2f6] p-8 pb-20 flex flex-col items-center">
           <Content />
           <GiftButton />
-          <br />
-          <About></About>
+          <div className="mt-8">
+            <About></About>
+          </div>
         </div>
 
         <span className="w-full overflow-hidden ">
@@ -45,7 +46,7 @@ export default function Home() {
           <img
             src="/leopard-glassesGirl.jpg"
             alt=""
-            className="object-cover w-[100vw] h-[70vh] object-[center,40%]"
+            className="object-cover w-[100vw] aspect-[16/9] max-h-[85vh] object-[center,40%]"
           />
         </span>
         <span className="bg-[#faf8f5] flex justify-center text-3xl p-8 font-play-fair font-bold">
