@@ -4,7 +4,7 @@ import Card from "./card";
 function Content() {
   return (
     <div>
-      <h2>Lo que recibirás...</h2>
+      <h2 className="text-xl font-semibold">Lo que recibirás...</h2>
       <div className="flex flex-col items-center">
         <span className="flex items-end w-11/12 gap-2">
           <p className="text-[5rem] font-bold text-white leading-[5rem]">3</p>
