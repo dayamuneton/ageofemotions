@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inputs {
+  display: flex;
+  width: 100%;
+  /* background: #777; */
+  /* border: none; */
+  /* color: white; */
+  border-width: 1.5px;
+  border-color: black;
+  font-size: min(16px, 1rem);
+  outline: none;
+  padding: 0.5rem;
+  /* box-shadow: .1rem .1rem .1rem #454545; */
+  /* margin-bottom: .2rem; */
+}
