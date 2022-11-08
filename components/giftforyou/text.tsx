@@ -5,17 +5,17 @@ import GiftButton from "../shared/giftButton";
 function Text() {
   return (
     <div className="flex flex-col items-center gap-4 p-4 max-w-[80vw] md:max-w-[45ch]">
-      <p className="text-[#76e2f1] text-4xl font-bold">Ama & Libérate</p>
-      <span className="bg-[#8f9cb2] h-[.5rem] flex w-[70%]"> </span>
-      <p className="text-6xl font-bold text-center">
+      {/* <p className="text-[#76e2f1] text-4xl font-bold">Ama & Libérate</p> */}
+      <p className="text-6xl font-bold text-center font-play-fair">
         Un Regalo <br /> Para Ti
       </p>
+      <span className="bg-[#8f9cb2] h-[.5rem] flex w-[70%]"> </span>
       <p className="font-semibold text-center">
         ​ 3 Técnicas para comenzar a usar tu cuerpo como una herramienta para
         tener una vida emocionalmente coherente.
       </p>
       <span className="flex">
-        <p className="text-[#fe6160] text-4xl rotate-[-10deg] mr-8">
+        <p className="text-[#fe6160] text-4xl rotate-[-10deg] mr-8 font-roboto-slab font-light">
           + 1 Práctica
         </p>
         <span className="aspect-square w-[3rem] relative flex">

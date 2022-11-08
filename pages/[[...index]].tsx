@@ -23,8 +23,8 @@ export default function Home() {
           Ama Y Liberate P1
         </div>
 
-        <div className="flex justify-center bg-[#fafbfb] p-8">
-          <span className="relative flex aspect-square w-[5rem]">
+        <div className="flex justify-center bg-[#fafbfb] p-2">
+          <span className="relative flex aspect-square w-[7rem]">
             <Image src="/AmaYLiberateLogo.png" alt="" fill />
           </span>
         </div>
@@ -48,7 +48,7 @@ export default function Home() {
             className="object-cover w-[100vw] h-[70vh] object-[center,40%]"
           />
         </span>
-        <span className="bg-[#faf8f5] flex justify-center text-[1.5rem] font-semibold p-8">
+        <span className="bg-[#faf8f5] flex justify-center text-3xl p-8 font-play-fair font-bold">
           <p>
             <span className="inline-flex">
               El Arte Es La

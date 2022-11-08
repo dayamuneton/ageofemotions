@@ -7,8 +7,8 @@ function About() {
       <h2 className="mb-8 text-lg font-bold">Conoce tu host...</h2>
       <div className="flex flex-col items-center">
         <span>
-          Hola, soy <br />
-          Daya Muneton <br />
+          <p className="text-6xl font-haviland">Hola, soy</p>
+          <p className="text-4xl font-semibold font-play-fair">Daya Muneton</p>
           <p className="font-semibold">La fundadora de Ama y Libérate</p>
         </span>
         <span className="flex aspect-square relative w-[10rem] rounded-full overflow-hidden bg-[#f9d1c3] m-4">

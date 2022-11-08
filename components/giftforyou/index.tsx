@@ -6,7 +6,7 @@ import Text from "./text";
 function GiftForYou() {
   return (
     <div className="flex justify-center pt-6">
-      <div className="flex flex-col md:flex-row md:max-w-[80%] items-center">
+      <div className="flex flex-col-reverse md:flex-row md:max-w-[80%] items-center">
         <Text></Text>
         <span className="relative flex w-[95vw] md:w-[40vw] border-[#bdc9d9] border-[1.5rem] aspect-[1/1]">
           <Image

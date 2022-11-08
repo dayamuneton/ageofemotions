@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,19 +7,33 @@
 .inputs {
   display: flex;
   width: 100%;
-  /* background: #777; */
-  /* border: none; */
-  /* color: white; */
   border-width: 2px;
   border-color: black;
   font-size: min(16px, 1rem);
   outline: none;
   padding: 0.5rem;
-  /* box-shadow: .1rem .1rem .1rem #454545; */
-  /* margin-bottom: .2rem; */
 }
 .inputBox {
   display: flex;
   position: relative;
   width: 100%;
+}
+.termsAndConditionsTitles {
+  font-weight: bolder;
+}
+.termsAndConditionsText {
+  font-size: smaller;
+}
+
+.font-haviland {
+  font-family: "Mr De Haviland", cursive;
+}
+.font-play-fair {
+  font-family: "Playfair Display", serif;
+}
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+.font-roboto-slab {
+  font-family: "Roboto Slab", serif;
 }

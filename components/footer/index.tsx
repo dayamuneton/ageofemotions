@@ -1,5 +1,5 @@
 import React from "react";
-import Bottom from "./bottom";
+import FooterBottom from "./footerBottom";
 import Center from "./center";
 import Top from "./top";
 
@@ -8,7 +8,7 @@ function Footer() {
     <div>
       <Top></Top>
       <Center></Center>
-      <Bottom></Bottom>
+      <FooterBottom></FooterBottom>
     </div>
   );
 }

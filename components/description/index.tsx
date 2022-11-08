@@ -5,7 +5,7 @@ function Description() {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col items-center max-w-[min(40rem,80%)]">
-        <span className="text-[2.3rem] font-bold mb-4 leading-[2.3rem] mt-[4rem] ">
+        <span className="text-3xl mb-4  mt-[4rem] font-play-fair font-bold">
           El conocimiento sobre la relación cuerpo y emociones es libertad,
           claridad y enfoque.
         </span>
