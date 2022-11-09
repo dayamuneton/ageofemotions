@@ -7,7 +7,6 @@ import Footer from "../components/footer";
 import Form from "../components/form";
 import GiftForYou from "../components/giftforyou";
 import GiftButton from "../components/shared/giftButton";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -19,9 +18,9 @@ export default function Home() {
       </Head>
 
       <div className="flex flex-col w-full">
-        <div className="bg-[#faf8f5] flex justify-center p-8 ">
+        {/* <div className="bg-[#faf8f5] flex justify-center p-8 ">
           Ama Y Liberate P1
-        </div>
+        </div> */}
 
         <div className="flex justify-center bg-[#fafbfb] p-2">
           <span className="relative flex aspect-square w-[7rem]">

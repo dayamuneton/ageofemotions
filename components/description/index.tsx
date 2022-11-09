@@ -1,5 +1,5 @@
 import React from "react";
-import { HiArrowLongDown } from "react-icons/hi2";
+import SouthIcon from "@mui/icons-material/South";
 
 function Description() {
   return (
@@ -22,7 +22,7 @@ function Description() {
           como quieres vivir. ​<br /> ​ Como puedes dar el primer paso? Comienza
           por comprender como te percibes ​<p>Recibe tu regalo aquí</p>
           <span className="my-12">
-            <HiArrowLongDown className="text-red-500 text-[3rem]" />
+            <SouthIcon className="text-red-500 text-[3rem]" />
           </span>
         </span>
       </div>

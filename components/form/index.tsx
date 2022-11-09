@@ -1,53 +1,122 @@
-import React from "react";
+import { FormEvent, useState } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 
+const MAILERLITE_API_URL = "https://connect.mailerlite.com/api/subscribers";
+
 function Form() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [terms, setTerms] = useState(false);
+
+  const subscribeToGift = async (e: FormEvent) => {
+    e.preventDefault();
+
+    const payload = {
+      email: email,
+      fields: {
+        name: name,
+        last_name: lastName,
+      },
+      groups: ["71259999082382462"],
+    };
+
+    const data = JSON.stringify(payload);
+
+    const response = await fetch(MAILERLITE_API_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${
+          process.env.NEXT_PUBLIC_MAILERLITE_API_KEY || ""
+        }`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: data,
+    });
+
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+
+    setEmail("");
+    setName("");
+    setLastName("");
+    setTerms(false);
+  };
+
   return (
     <div className="bg-[#faf8f5] flex flex-col items-center p-8">
       <span className="flex mb-10 text-3xl font-bold font-play-fair">
         Recibe tu
         <p className=" bg-[#e5f10d] pr-2">&nbsp;Regalo</p>
       </span>
-      <form className="bg-[#fdfdf9] p-8 w-[min(95%,40rem)]">
+      <form
+        className="bg-[#fdfdf9] p-8 w-[min(95%,40rem)]"
+        onSubmit={subscribeToGift}
+      >
         <div className="flex flex-col gap-8 sm:gap-0 sm:flex-row">
           <span className="inputBox">
             <label className="absolute top-[-1.5rem]" htmlFor="name">
               Nombre
             </label>
-            <input className="inputs" type="text" name="name" />
+            <input
+              className="inputs"
+              type="text"
+              name="name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </span>
 
           <span className="inputBox">
             <label className="absolute top-[-1.5rem]" htmlFor="lastname">
               Apellido
             </label>
-            <input className="inputs" type="text" name="lastname" />
+            <input
+              className="inputs"
+              type="text"
+              name="lastname"
+              value={lastName}
+              required
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </span>
 
           <span className="inputBox">
-            <label
-              className="absolute top-[-1.5rem]"
-              htmlFor="email"
-              aria-required
-            >
+            <label className="absolute top-[-1.5rem]" htmlFor="email">
               Email
             </label>
-            <input className="inputs" type="email" name="email" />
+            <input
+              className="inputs"
+              type="email"
+              name="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </span>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-2 mt-4 md:flex-row">
           <span>
-            <input type="checkbox" name="terms" id="" />
+            <input
+              type="checkbox"
+              name="terms"
+              id=""
+              required
+              checked={terms}
+              onChange={() => setTerms(!terms)}
+            />
             <label htmlFor="terms" className="px-2 text-sm">
               Acepto los términos y condiciones
             </label>
           </span>
 
-          <button className="p-2 px-8 text-white bg-black">
+          <button type="submit" className="p-2 px-8 text-white bg-black">
             Quiero mi regalo
           </button>
         </div>
@@ -69,8 +138,7 @@ function Form() {
             Términos de uso
           </Link>
         </span>
-        {/* </p> */}
-        {/* <p>Do Not Sell My Personal Information</p> */}
+
         <span className="flex items-center justify-between p-2 mt-4 text-white bg-black w-fit">
           <Link href="https://www.facebook.com/dayamuneton" target="_blank">
             <FacebookIcon />
