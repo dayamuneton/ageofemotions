@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import About from "../components/about";
 import Content from "../components/content";
 import Description from "../components/description";
@@ -18,9 +19,9 @@ export default function Home() {
       </Head>
 
       <div className="flex flex-col w-full">
-        {/* <div className="bg-[#faf8f5] flex justify-center p-8 ">
-          Ama Y Liberate P1
-        </div> */}
+        <div className="bg-[#faf8f5] flex justify-center p-8 ">
+          <Link href="/regalo-1">Ama Y Liberate P1</Link>
+        </div>
 
         <div className="flex justify-center bg-[#fafbfb] p-2">
           <span className="relative flex aspect-square w-[7rem]">

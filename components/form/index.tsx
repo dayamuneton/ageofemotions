@@ -48,7 +48,7 @@ function Form() {
   };
 
   return (
-    <div className="bg-[#faf8f5] flex flex-col items-center p-8">
+    <div className="bg-[#faf8f5] flex flex-col items-center p-8 w-full">
       <span className="flex mb-10 text-3xl font-bold font-play-fair">
         Recibe tu
         <p className=" bg-[#e5f10d] pr-2">&nbsp;Regalo</p>

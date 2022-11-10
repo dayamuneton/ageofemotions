@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function FooterBottom() {
   return (
-    <div className="flex flex-col items-center gap-2 p-4 pb-8 text-white bg-black border-t-2 border-white">
+    <div className="flex flex-col items-center w-full gap-2 p-4 pb-8 text-white bg-black border-t-2 border-white">
       <span className="flex gap-1 text-[.75rem] md:text-base ">
         <p>Daya Muneton © Todos los derechos reservados.</p>
         <Link

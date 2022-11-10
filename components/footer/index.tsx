@@ -5,7 +5,7 @@ import Top from "./top";
 
 function Footer() {
   return (
-    <div>
+    <div className="flex flex-col items-center w-full">
       <Top></Top>
       <Center></Center>
       <FooterBottom></FooterBottom>
