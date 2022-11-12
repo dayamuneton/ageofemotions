@@ -3,13 +3,13 @@ import React from "react";
 
 function ArtIsTheNewWay() {
   return (
-    <div className="bg-[#fefeff] flex-col flex items-center w-full md:max-w-[65vw]">
-      <h2 className="my-4 text-2xl font-bold text-center font-play-fair max-w-[50vw]">
-        El Arte Es La Nueva Forma De Ganar Consciencia De la Percepción Corporal
-        De las Emociones.
+    <div className="bg-[#fefeff] flex-col flex items-center w-full lg:max-w-[65vw]">
+      <h2 className="my-4 text-2xl font-bold text-center font-play-fair lg:max-w-[50vw] max-w-[90vw]">
+        El Arte Es La <p className="inline bg-[#e4f10c]">Nueva</p> Forma De
+        Ganar Consciencia De la Percepción Corporal De las Emociones.
       </h2>
-      <div className="flex flex-col items-center w-[30rem]">
-        <span className="relative flex w-full aspect-square">
+      <div className="flex flex-col items-center lg:max-w-[25rem] font-light border-b-4 mb-12 max-w-[90vw]">
+        <span className="relative flex w-[25rem] aspect-square">
           <Image src="/LeopardGlassesGirlSquare.jpg" alt="" fill />
         </span>
         <p className="my-8">

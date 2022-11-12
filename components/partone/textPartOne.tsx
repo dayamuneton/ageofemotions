@@ -4,7 +4,7 @@ import GiftButton from "../shared/giftButton";
 function TextPartOne() {
   return (
     <div className="mx-4 lg:mx-0 border-4 border-[#ecfe05] px-12 py-6 flex flex-col items-center lg:w-[25vw] bg-transparent my-4 z-[150]">
-      <h2 className="text-4xl font-light font-roboto-slab rotate-[-10deg]">
+      <h2 className="text-4xl font-light font-roboto-slab rotate-[-10deg] my-4">
         Parte 1
       </h2>
       <p className="py-4 text-2xl font-bold border-b-4 font-play-fair">
