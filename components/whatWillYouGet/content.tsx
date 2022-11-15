@@ -28,7 +28,9 @@ function WhatWillYouGetContent() {
           <p className="text-sm font-semibold">Con Daya Muneton </p>
         </span>
       </div>
-      <p className="w-full pr-4 mb-2 text-end font-popings">ToTal:$635.00</p>
+      <span className="w-full pr-4 mb-2 text-end font-popings">
+        ToTal:$<p className="inline line-through">635.00</p>
+      </span>
       <p className="text-3xl font-bold text-center">
         Solo por Nov - Dic <br /> 2022:
       </p>

@@ -1,4 +1,6 @@
+import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import About from "../components/about";
 import ArtIsTheNewWay from "../components/artIsTheNewWay";
@@ -8,6 +10,7 @@ import Footer from "../components/footer";
 import IsItFair from "../components/IsItFair";
 import ItsForYouIf from "../components/itsforyouif";
 import LetMeGuess from "../components/letMeGuess";
+import Navbar from "../components/navbar";
 import NoLongerPracticedAsBefore from "../components/NoLongerPracticedAsBefore";
 import PartOne from "../components/partone";
 import SeriousProblem from "../components/seriousProblem";
@@ -16,10 +19,13 @@ import WhatWillYouGet from "../components/whatWillYouGet";
 function GiftPart1() {
   return (
     <div className="flex flex-col items-center w-full overflow-hidden">
-      <div className="w-full bg-[#faf8f5] flex justify-center p-8 ">
-        <Link href="/">Regalo</Link>
-      </div>
+      <Head>
+        <title>Ama Y Liberate</title>
+        <meta name="description" content="Ama y liberate" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="flex flex-col items-center w-full">
+        <Navbar />
         <div className="bg-[#fefeff] flex flex-col items-center w-full pt-8">
           <PartOne />
           {/* <LetMeGuess /> */}

@@ -1,8 +1,9 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect, useRef } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MAILERLITE_API_URL = "https://connect.mailerlite.com/api/subscribers";
 
@@ -47,8 +48,21 @@ function Form() {
     setTerms(false);
   };
 
+  const router = useRouter();
+  const giftRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const scrollToGift = () => {
+      if (router.asPath === "/gift") {
+        giftRef.current?.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+    scrollToGift();
+  }, [router]);
   return (
-    <div className="bg-[#faf8f5] flex flex-col items-center p-8 w-full">
+    <div
+      ref={giftRef}
+      className="bg-[#faf8f5] flex flex-col items-center p-8 w-full"
+    >
       <span className="flex mb-10 text-3xl font-bold font-play-fair">
         Recibe tu
         <p className=" bg-[#e5f10d] pr-2">&nbsp;Regalo</p>
