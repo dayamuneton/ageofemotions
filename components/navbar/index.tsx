@@ -10,10 +10,12 @@ const navbarItems = [
   {
     href: "/",
     text: "Regalo",
+    alias: ["/gift"],
   },
   {
     href: "/parte1",
     text: "Programa",
+    alias: [],
   },
 ];
 
@@ -43,8 +45,14 @@ function Navbar() {
           showSidebar ? "left-0" : "left-[-100%]"
         } md:relative md:h-fit md:bg-[#faf8f5] md:left-0 md:w-full md:flex-row text-xl pt-4 md:py-4 md:justify-center `}
       >
-        {navbarItems.map(({ href, text }: any) => (
-          <NavItem key={href} href={href} text={text} asPath={router.asPath} />
+        {navbarItems.map(({ href, text, alias }: any) => (
+          <NavItem
+            key={href}
+            href={href}
+            text={text}
+            asPath={router.asPath}
+            alias={alias}
+          />
         ))}
       </div>
     </nav>
