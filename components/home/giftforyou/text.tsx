@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import GiftButton from "../shared/giftButton";
+import GiftButton from "../../shared/giftButton";
 
 function Text() {
   return (
     <div className="flex flex-col items-center gap-4 p-4 max-w-[80vw] md:max-w-[45ch]">
-      {/* <p className="text-[#76e2f1] text-4xl font-bold">Ama & Libérate</p> */}
       <p className="text-6xl font-bold text-center font-play-fair">
         Un Regalo <br /> Para Ti
       </p>

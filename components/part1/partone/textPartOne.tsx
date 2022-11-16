@@ -1,5 +1,5 @@
 import React from "react";
-import GiftButton from "../shared/giftButton";
+import GiftButton from "../../shared/giftButton";
 
 function TextPartOne() {
   return (
