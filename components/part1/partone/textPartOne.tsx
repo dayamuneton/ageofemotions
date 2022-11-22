@@ -16,7 +16,10 @@ function TextPartOne() {
         vida.
       </p>
       <button className="p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold">
-        INSCRIBIRME
+        {/* eslint-disable-next-line react/jsx-no-target-blank */}
+        <a href="https://subscribepage.io/PZs4xw" target="_blank">
+          INSCRIBIRME
+        </a>
       </button>
     </div>
   );

@@ -49,7 +49,10 @@ function WhatWillYouGetContent() {
       </div>
 
       <button className="mt-8 mb-4 p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold">
-        INSCRIBIRME, AHORA
+        {/* eslint-disable-next-line react/jsx-no-target-blank */}
+        <a href="https://subscribepage.io/PZs4xw" target="_blank">
+          INSCRIBIRME, AHORA
+        </a>
       </button>
     </div>
   );
