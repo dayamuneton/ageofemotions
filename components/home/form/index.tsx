@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const MAILERLITE_API_URL = "https://connect.mailerlite.com/api/subscribers";
+const amaYLiberateMailerLiteGroup = "72410303399200512";
+const agredoAlejoMailerLiteGroup = "71259999082382462";
 
 function Form() {
   const [email, setEmail] = useState("");
@@ -22,7 +24,7 @@ function Form() {
         name: name,
         last_name: lastName,
       },
-      groups: ["71259999082382462"],
+      groups: [amaYLiberateMailerLiteGroup],
     };
 
     const data = JSON.stringify(payload);
