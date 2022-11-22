@@ -146,11 +146,7 @@ function Form() {
             Política de privacidad
           </Link>
           |
-          <Link href="/politica-de-cookies" target="_blank">
-            Política de cookies
-          </Link>
-          |
-          <Link href="/terminos-y-condiciones" target="_blank">
+          <Link href="/terminos-de-uso" target="_blank">
             Términos de uso
           </Link>
         </span>

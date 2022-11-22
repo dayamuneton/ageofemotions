@@ -1,10 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
+import Head from "next/head";
 import React from "react";
 import FooterBottom from "../components/footer/footerBottom";
 
 function PrivacyPolicy() {
   return (
     <>
+      <Head>
+        <title>Política de privacidad</title>
+        <meta
+          name="description"
+          content="Política de privacidad Ama Y Liberate"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="flex justify-center">
         <div className="max-w-[min(90%,60ch)] flex flex-col my-20">
           <span className="flex justify-center">
@@ -12,280 +21,264 @@ function PrivacyPolicy() {
           </span>
           <h2 className="my-4 font-bold">General</h2>
           <p className="text-sm">
-            ​ This website, along with the corresponding social media accounts
-            and mobile applications, is owned and operated by DAYA MUNETON LLC.,
-            a US company ("DAYA MUNETON LLC" "we" or "us"). respects your
-            privacy and is committed to protecting it through this Privacy
-            Policy. This Privacy Policy governs your access to and use of
-            www.dayamuneton.com, including any content, functionality, services
-            and virtual services offered on or through www.dayamuneton.com (the
-            “Website”), whether as a guest or as a registered user. Please read
-            the Privacy Policy carefully before you start to use the website, by
-            using the website you agree to be bound by these Terms of Service
-            and to use the Site in accordance with these Terms of Service, our
-            Privacy Policy, our Refund Policy and any additional terms and
-            conditions that may apply to specific sections of the Site. You
-            accept and agree to be bound by and comply with the Privacy Policy.
-            If you do not wish to accept the Privacy Policy, you must not access
-            or use the Website. Our Company will obtain certain information
-            about you, in any way, automated or otherwise, during your visit.
-            This policy applies to information we collect on the Website and in
-            emails, text messages, or other electronic messages between you and
-            the Website.
+            Este sitio web, junto con las correspondientes cuentas de redes
+            sociales y aplicaciones móviles, es propiedad y está operado por
+            DAYA MUNETON LLC., una empresa estadounidense ("DAYA MUNETON LLC"
+            "nosotros" o "nosotros"). respeta su privacidad y se compromete a
+            protegerla a través de esta Política de privacidad. Esta Política de
+            privacidad rige su acceso y uso de www.dayamuneton.com y
+            www.amayliberate.com incluido cualquier contenido, funcionalidad,
+            servicios y servicios virtuales ofrecidos en o a través de
+            wwwamayliberate.com (el "Sitio web"), ya sea como invitado o como
+            usuario registrado. usuario. Lea atentamente la Política de
+            privacidad antes de comenzar a usar el sitio web. Al usar el sitio
+            web, acepta estar sujeto a estos Términos de servicio y usar el
+            Sitio de acuerdo con estos Términos de servicio, nuestra Política de
+            privacidad, nuestra Política de reembolso y cualquier términos y
+            condiciones adicionales que pueden aplicarse a secciones específicas
+            del Sitio. Usted acepta y está de acuerdo en estar sujeto y cumplir
+            con la Política de privacidad. Si no desea aceptar la Política de
+            Privacidad, no debe acceder ni utilizar el Sitio Web. Nuestra
+            Compañía obtendrá cierta información sobre usted, de cualquier
+            forma, automatizada o no, durante su visita. Esta política se aplica
+            a la información que recopilamos en el sitio web y en correos
+            electrónicos, mensajes de texto u otros mensajes electrónicos entre
+            usted y el sitio web.
           </p>
-          <h2 className="my-4 font-bold">​ Children under 18 ​</h2>
+          <h2 className="my-4 font-bold">​ Niños menores de 18 años</h2>
           <p className="text-sm">
-            Our website is not intended for children under the age of 18. No one
-            under the age of 18 may provide information on the Website. We do
-            not knowingly collect personal information from children under the
-            age of 18. If you are under the age of 18, do not use or provide any
-            information on this website or any of its features / register with
-            the website, make purchases through the website, use any of the
-            interactive or public comment features of this website or provide us
-            with information about yourself, including your name, address,
-            telephone number, email address, or any screen name or username you
-            may use. If we learn that we have collected or received personal
-            information from a child under the age of 18 without verification of
-            parental consent, we will delete that information. If you believe we
-            may obtain information from or about a child under the age of 18,
-            please contact us at info@dayamuneton.com ​
-          </p>
-          <h2 className="my-4 font-bold">Information we collect about you</h2>
-          <p className="text-sm">
-            We receive, collect, and store any information you enter on our
-            website or otherwise provide to us. In addition, we collect the
-            Internet Protocol (IP) address used to connect your computer to the
-            Internet; login details, email address, password, computer and
-            connection information and purchase history. Information We Collect
-            Through Automatic Data Collection Technology. As you browse our
-            website, we may use automatic data collection technologies including
-            Google Analytics to collect certain information about your
-            equipment, browsing actions and patterns. Generally, this will
-            include information about your location, your traffic pattern
-            through our website, and any communications between your computer
-            and our website. We may use software tools to measure and collect
-            session information, including page response times, length of visits
-            to certain pages, page interaction information, and methods used to
-            navigate away from the page. We also collect personally identifiable
-            information (including names, email, password, communications),
-            payment details (including credit card information), comments,
-            suggestions, product reviews, recommendations, and personal profile.
-            We collect information that users submit by filling out forms on the
-            website, responding to surveys, communicating through contact forms,
-            searching queries on our search feature, providing feedback, and
-            providing information when requesting a product or service through
-            the website.
+            Nuestro sitio web no está destinado a niños menores de 18 años.
+            Nadie menor de 18 años puede proporcionar información en el sitio
+            web. No recopilamos a sabiendas información personal de niños
+            menores de 18 años. Si es menor de 18 años, no use ni proporcione
+            ninguna información en este sitio web o cualquiera de sus
+            características / regístrese en el sitio web, realice compras a
+            través del sitio web , utilizar cualquiera de las funciones
+            interactivas o de comentarios públicos de este sitio web o
+            proporcionarnos información sobre usted, incluido su nombre,
+            dirección, número de teléfono, dirección de correo electrónico o
+            cualquier nombre de pantalla o nombre de usuario que pueda usar. Si
+            nos enteramos de que hemos recopilado o recibido información
+            personal de un niño menor de 18 años sin verificación del
+            consentimiento de los padres, eliminaremos esa información. Si cree
+            que podemos obtener información de o sobre un niño menor de 18 años,
+            contáctenos en info@amayleberate.com
           </p>
           <h2 className="my-4 font-bold">
-            ​ Why do we collect such personal information? ​
+            Información que recopilamos sobre usted
           </h2>
           <p className="text-sm">
-            As a visitor to this website, you can participate in most activities
-            without providing any personal information. Only when you try to
-            download resources and/or register for services do you need to
-            provide information. The Company collects your information to record
-            and support your participation in the activities you select. If you
-            sign up to download a book or resources, subscribe to our
-            newsletter, and/or purchase a product from us, we collect your
-            information. We use this information to track your preferences and
-            keep you informed about the products and services you have selected
-            to receive and any related products or services. If you are located
-            outside of the European Union and choose to receive free resources,
-            participate in any free training program, sign up for a webinar,
-            sign up for a live event, sign up for a seminar, or purchase any
-            products sold by the Company on this website, you will automatically
-            be signed up to receive our free email newsletter. If you do not
-            want to receive this newsletter, you can unsubscribe at any time. We
-            include an “unsubscribe” link at the bottom of every email we send.
-            If you ever have trouble unsubscribing, you can send a message to
-            info@dayamuneton.com requesting to unsubscribe from future emails.
-            We collect such personal and non-personal information for the
-            following purposes: To provide and operate the Services; to deliver
-            the requested product or service, To provide our users with ongoing
-            customer and technical support; T To be able to contact our visitors
-            and users with general and personalized notices related to the
-            service and promotional messages; To create aggregate statistical
-            data and other aggregated or inferred non-personal information,
-            which we or our business partners may use to provide and improve our
-            respective services; To comply with applicable laws and regulations;
-            To improve our overall performance and to provide you with offers,
-            promotions and information. From time to time, we may use the
-            information you provide to make offers to you to purchase products
-            and services provided by third parties in exchange for the third
-            party paying us a commission. If you choose to participate in such
-            promotions, the third parties will receive your information. From
-            time to time, we may use the information you provide to show you
-            advertisements that are tailored to your personal characteristics,
-            interests, and activities.
+            Recibimos, recopilamos y almacenamos cualquier información que
+            ingrese en nuestro sitio web o que nos proporcione de otra manera.
+            Además, recopilamos la dirección del Protocolo de Internet (IP)
+            utilizada para conectar su computadora a Internet; detalles de
+            inicio de sesión, dirección de correo electrónico, contraseña,
+            computadora e información de conexión e historial de compras.
+            Información que recopilamos a través de la tecnología de
+            recopilación automática de datos. Mientras navega por nuestro sitio
+            web, podemos utilizar tecnologías de recopilación automática de
+            datos, incluido Google Analytics, para recopilar cierta información
+            sobre su equipo, acciones y patrones de navegación. En general, esto
+            incluirá información sobre su ubicación, su patrón de tráfico a
+            través de nuestro sitio web y cualquier comunicación entre su
+            computadora y nuestro sitio web. Podemos usar herramientas de
+            software para medir y recopilar información de la sesión, incluidos
+            los tiempos de respuesta de la página, la duración de las visitas a
+            ciertas páginas, la información de interacción de la página y los
+            métodos utilizados para navegar fuera de la página. También
+            recopilamos información de identificación personal (incluidos
+            nombres, correo electrónico, contraseña, comunicaciones), detalles
+            de pago (incluida la información de la tarjeta de crédito),
+            comentarios, sugerencias, reseñas de productos, recomendaciones y
+            perfil personal. Recopilamos información que los usuarios envían
+            completando formularios en el sitio web, respondiendo encuestas,
+            comunicándose a través de formularios de contacto, buscando
+            consultas en nuestra función de búsqueda, brindando comentarios y
+            brindando información cuando solicitan un producto o servicio a
+            través del sitio web.
           </p>
           <h2 className="my-4 font-bold">
-            ¿How do we collect your information?
+            ¿Por qué recopilamos dicha información personal?​
           </h2>
           <p className="text-sm">
-            When you make a transaction on our website, as part of the process,
-            we collect personal information that you provide us, such as your
-            name, physical address and email address. Your personal information
-            will be used only for the specific reasons indicated above.
+            Como visitante de este sitio web, puede participar en la mayoría de
+            las actividades sin proporcionar ninguna información personal. Solo
+            cuando intenta descargar recursos y/o registrarse para servicios
+            necesita proporcionar información. La Compañía recopila su
+            información para registrar y respaldar su participación en las
+            actividades que seleccione. Si se registra para descargar un libro o
+            recursos, se suscribe a nuestro boletín informativo y/o nos compra
+            un producto, recopilamos su información. Usamos esta información
+            para rastrear sus preferencias y mantenerlo informado sobre los
+            productos y servicios que ha seleccionado para recibir y cualquier
+            producto o servicio relacionado. Si se encuentra fuera de la Unión
+            Europea y elige recibir recursos gratuitos, participar en cualquier
+            programa de capacitación gratuito, inscribirse en un seminario web,
+            inscribirse en un evento en vivo, inscribirse en un seminario o
+            comprar cualquier producto vendido por la Compañía en este sitio
+            web, se registrará automáticamente para recibir nuestro boletín
+            informativo por correo electrónico gratuito. Si no desea recibir
+            este boletín, puede darse de baja en cualquier momento. Incluimos un
+            enlace de "cancelar suscripción" en la parte inferior de cada correo
+            electrónico que enviamos. Si alguna vez tiene problemas para darse
+            de baja, puede enviar un mensaje a info@amayliberate.com.com
+            solicitando darse de baja de futuros correos electrónicos.
+            Recopilamos dicha información personal y no personal para los
+            siguientes propósitos: Para proporcionar y operar los Servicios;
+            para entregar el producto o servicio solicitado, Proporcionar a
+            nuestros usuarios soporte técnico y al cliente continuo; T Para
+            poder contactar a nuestros visitantes y usuarios con avisos
+            generales y personalizados relacionados con el servicio y mensajes
+            promocionales; Para crear datos estadísticos agregados y otra
+            información no personal agregada o inferida, que nosotros o nuestros
+            socios comerciales podemos usar para proporcionar y mejorar nuestros
+            respectivos servicios; Para cumplir con las leyes y regulaciones
+            aplicables; Para mejorar nuestro desempeño general y brindarle
+            ofertas, promociones e información. De vez en cuando, podemos
+            utilizar la información que nos proporciona para hacerle ofertas
+            para comprar productos y servicios proporcionados por terceros a
+            cambio de que el tercero nos pague una comisión. Si elige participar
+            en tales promociones, los terceros recibirán su información. De vez
+            en cuando, podemos utilizar la información que nos proporciona para
+            mostrarle anuncios que se adaptan a sus características, intereses y
+            actividades personales.
+          </p>
+          <h2 className="my-4 font-bold">¿Cómo recopilamos su información?</h2>
+          <p className="text-sm">
+            Cuando realiza una transacción en nuestro sitio web, como parte del
+            proceso, recopilamos la información personal que nos proporciona,
+            como su nombre, dirección física y dirección de correo electrónico.
+            Su información personal será utilizada únicamente por las razones
+            específicas indicadas anteriormente.
           </p>
           <h2 className="my-4 font-bold">
-            ¿How do we store, use, share and disclose the personal information
-            of visitors to this website?
+            ¿Cómo almacenamos, usamos, compartimos y divulgamos la información
+            personal de los visitantes de este sitio web?
           </h2>
           <p className="text-sm">
-            Our company is hosted on the Wix.com platform. Wix.com provides us
-            with the online platform that allows us to sell our products and
-            services. Your data may be stored through Wix.com data storage,
-            databases, and general Wix.com applications. They store your data on
-            secure servers behind a firewall. All direct payment gateways
-            offered by Wix.com and used by our company adhere to the standards
-            set by PCI-DSS managed by the PCI Security Standards Council, which
-            is a joint effort of brands like Visa, MasterCard, American Express,
-            and Discover. . PCI-DSS requirements help ensure the secure handling
-            of credit card information by our store and its service providers.
-            We do not sell, rent, rent or transfer any information collected
-            either automatically or through your voluntary action. We may
-            disclose your personal information to our subsidiaries, affiliates
-            and service providers in order to provide our services to you. We
-            may disclose your personal information to a third party, including a
-            lawyer or a collection agency, when necessary to enforce our terms
-            of service or any other agreement between you and the Company. We
-            may provide your information to any successor in interest in the
-            event of a merger, divestiture, restructuring, reorganization,
-            dissolution, or other sale or transfer of some or all of the
-            Company's assets and/or business. We may disclose information when
-            we are legally required to do so, in other words, when we believe in
-            good faith that the law requires it or for the protection of our
-            legal rights or when a court or other government entity requires us
-            to do so
+            "Usamos MailerLite para administrar nuestra lista de suscriptores de
+            marketing por correo electrónico y para enviar correos electrónicos
+            a nuestros suscriptores. MailerLite es un proveedor externo que
+            puede recopilar y procesar sus datos utilizando tecnologías estándar
+            de la industria para ayudarnos a monitorear y mejorar nuestro
+            boletín. La Política de privacidad de MailerLite está disponible en
+            {/* eslint-disable-next-line react/jsx-no-target-blank */}
+            <a
+              target="_blank"
+              href="https://www.mailerlite.com/legal/privacy-policy"
+              className="ml-1 text-blue-400 underline"
+            >
+              Politica de privacidad de MailerLite
+            </a>
           </p>
           <h2 className="my-4 font-bold">
-            ¿How do we communicate with visitors to this site? ​
+            ¿Cómo nos comunicamos con los visitantes de este sitio?​
           </h2>
           <p className="text-sm">
-            We may contact you to notify you about your account, to troubleshoot
-            problems with your account, to resolve a dispute, to collect fees or
-            money owed, to solicit your opinions through surveys or
-            questionnaires, to send updates about our company, or as necessary
-            to contact you. to enforce our User Agreement, applicable national
-            laws, and any agreements we may have with you. For these purposes,
-            we may communicate with you by email, telephone, text messages and
-            postal mail
+            Podemos comunicarnos con usted para notificarle sobre su cuenta,
+            para solucionar problemas con su cuenta, para resolver una disputa,
+            para cobrar tarifas o dinero adeudado, para solicitar sus opiniones
+            a través de encuestas o cuestionarios, para enviar actualizaciones
+            sobre nuestra empresa, o según sea necesario para contactarte. para
+            hacer cumplir nuestro Acuerdo de usuario, las leyes nacionales
+            aplicables y cualquier acuerdo que podamos tener con usted. Para
+            estos fines, podemos comunicarnos con usted por correo electrónico,
+            teléfono, mensajes de texto y correo postal.
           </p>
           <h2 className="my-4 font-bold">
-            ¿How do we use cookies and other tracking tools?
+            ​ Uso de cookies por parte de terceros ​
           </h2>
           <p className="text-sm">
-            Like other commercial websites, our website uses a standard
-            technology called "cookies" and server logs to collect information
-            about how our site is used. Information collected through cookies
-            and server logs may include the date and time of visits, pages
-            viewed, time spent on our site and websites visited just before and
-            after ours, as well as your IP address. . A cookie is a very small
-            text document, which often includes an anonymous unique identifier.
-            When you visit a website, that site's computer asks your computer
-            for permission to store this file in a part of your hard drive
-            designated specifically for cookies. Each website can send its own
-            cookie to your browser if your browser preferences allow it, but (to
-            protect your privacy) your browser only allows a website to access
-            cookies it has already sent to you, not those sent to you by others.
-            sites. . The Company reserves the right to use technological
-            equivalents of cookies, including social media pixels. These pixels
-            allow social networking sites to track visitors to external websites
-            in order to personalize the advertising messages that users see when
-            they visit that social networking website. The Company reserves the
-            right to use these pixels in accordance with the policies of the
-            various social media sites. Likewise, The Company reserves the
-            option of using "scripts" to collect information provided by
-            browsers or by Google Tag Manager. Said information may include the
-            user's location, the campaign by which the user entered our page,
-            type of search engine, among others. ​
+            Algunos proveedores de aplicaciones son terceros que pueden usar
+            cookies solos o junto con otras aplicaciones u otras tecnologías de
+            seguimiento para recopilar información sobre usted cuando usa
+            nuestro sitio web. La información que recopilan puede estar asociada
+            con su información personal o pueden recopilar información, incluida
+            información personal, sobre sus actividades en línea a lo largo del
+            tiempo y en diferentes sitios web y otros servicios en línea. Pueden
+            usar esta información para brindarle publicidad basada en intereses
+            (comportamiento) u otro contenido dirigido. No controlamos las
+            tecnologías de seguimiento de estos terceros o cómo se pueden
+            utilizar. Si tiene alguna pregunta sobre un anuncio u otro contenido
+            específico, debe comunicarse directamente con el proveedor
+            responsable en el siguiente link: Para obtener más información sobre
+            cómo Mailerlite procesa sus Datos personales,
+            {/* eslint-disable-next-line react/jsx-no-target-blank */}
+            <a
+              href="https://www.mailerlite.com/legal/cookie-policy"
+              target="_blank"
+              className="ml-1 text-blue-400 underline"
+            >
+              Consulte la Política de cookies de MailerLite.
+            </a>
+          </p>
+          <h2 className="my-4 font-bold">​ Políticas de correo electrónico</h2>​
+          <p className="text-sm">
+            Nos comprometemos a mantener la confidencialidad de su dirección de
+            correo electrónico. No vendemos, alquilamos ni arrendamos nuestras
+            listas de suscripción a terceros, y no divulgaremos su dirección de
+            correo electrónico a terceros, excepto según lo permitido en la
+            sección titulada Divulgación de su información. Mantendremos la
+            información que envíe por correo electrónico de acuerdo con la ley
+            aplicable. De conformidad con la Ley CAN-SPAM, todos los correos
+            electrónicos enviados desde nuestra organización indicarán
+            claramente de quién es el correo electrónico y brindarán información
+            clara sobre cómo contactar al remitente. Además, todos los correos
+            electrónicos también contendrán información concisa sobre cómo
+            eliminarse de nuestra lista de correo para que no reciba más
+            comunicaciones por correo electrónico de nuestra parte. Nuestros
+            correos electrónicos brindan a los usuarios la oportunidad de optar
+            por no recibir comunicaciones nuestras y de nuestros socios al leer
+            las instrucciones para darse de baja que se encuentran en la parte
+            inferior de cualquier correo electrónico que reciban de nosotros en
+            cualquier momento. Los usuarios que ya no deseen recibir nuestro
+            boletín o materiales promocionales pueden optar por no recibir estas
+            comunicaciones haciendo clic en el enlace para darse de baja en el
+            correo electrónico.
           </p>
           <h2 className="my-4 font-bold">
-            ​ Use of cookies by third parties ​
+            ¿Cómo protegemos su información y aseguramos las transmisiones de
+            información?
           </h2>
           <p className="text-sm">
-            Some content or applications, including advertisements, on the
-            Website are served by third parties, including advertisers, ad
-            networks and servers, content providers and application providers.
-            These third parties may use cookies alone or in conjunction with web
-            beacons or other tracking technologies to collect information about
-            you when you use our website. The information they collect may be
-            associated with your personal information or they may collect
-            information, including personal information, about your online
-            activities over time and across different websites and other online
-            services. They may use this information to provide you with
-            interest-based (behavioral) advertising or other targeted content.
-            We do not control the tracking technologies of these third parties
-            or how they may be used. If you have any questions about an
-            advertisement or other targeted content, you should contact the
-            responsible provider directly. email information If you choose to
-            communicate with us by email, we may retain the content of your
-            email messages together with your email address and our responses.
-            We provide the same protections for these electronic communications
-            that we employ in maintaining information received online, by mail,
-            and by telephone. This also applies when you register on our
-            website, register through any of our forms using your email address,
-            or make a purchase on this site. For more information, see the email
-            policies
+            Utilizamos métodos comercialmente razonables para garantizar la
+            seguridad de la información que nos proporciona y la información que
+            recopilamos automáticamente. Esto incluye el uso de protocolos de
+            seguridad estándar y trabajar solo con proveedores externos de
+            confianza. El correo electrónico no se reconoce como un medio seguro
+            de comunicación. Por este motivo, le pedimos que no nos envíe
+            información privada por correo electrónico. Sin embargo, hacerlo
+            está permitido, pero bajo su propio riesgo. Parte de la información
+            que puede ingresar en nuestro sitio web puede transmitirse de forma
+            segura a través de un medio seguro conocido como Capa de conexión
+            segura o SSL. La información de la tarjeta de crédito y otra
+            información confidencial nunca se transmite por correo electrónico.
+            La Compañía puede usar programas de software para crear estadísticas
+            resumidas, que se usan para evaluar la cantidad de visitantes a las
+            diferentes secciones de nuestro sitio, qué información es de mayor y
+            menor interés, determinar las especificaciones de diseño técnico e
+            identificar el rendimiento del sistema o las áreas problemáticas.
+            Por motivos de seguridad del sitio y para garantizar que este
+            servicio permanezca disponible para todos los usuarios, la Compañía
+            utiliza programas de software para monitorear el tráfico de la red
+            para identificar intentos no autorizados de cargar o cambiar
+            información, o de otra manera causar daños.
           </p>
-          <h2 className="my-4 font-bold">​ Email policies</h2>​
+          <h2 className="my-4 font-bold">​ Cambios en la política </h2>
           <p className="text-sm">
-            We are committed to keeping your email address confidential. We do
-            not sell, rent or lease our subscription lists to third parties, and
-            we will not disclose your email address to third parties, except as
-            permitted in the section titled Disclosure of Your Information. We
-            will maintain the information you submit via email in accordance
-            with applicable law. In compliance with the CAN-SPAM Act, all emails
-            sent from our organization will clearly indicate who the email is
-            from and provide clear information on how to contact the sender. In
-            addition, all emails will also contain concise information on how to
-            remove yourself from our mailing list so that you do not receive
-            further email communications from us. Our emails provide users with
-            the opportunity to opt out of receiving communications from us and
-            our partners by reading the unsubscribe instructions at the bottom
-            of any email they receive from us at any time. Users who no longer
-            wish to receive our newsletter or promotional materials may opt out
-            of receiving these communications by clicking the unsubscribe link
-            in the email.
+            Es nuestra política publicar cualquier cambio que hagamos a nuestra
+            política de privacidad en esta página. Si hacemos cambios
+            sustanciales en la forma en que tratamos la información personal de
+            nuestros usuarios, se lo notificaremos por correo electrónico a la
+            dirección de correo electrónico especificada en su cuenta y/o
+            mediante un aviso en la página de inicio del sitio web. La fecha de
+            la última revisión de la política de privacidad se identifica en la
+            parte inferior de la página. Usted es responsable de asegurarse de
+            que tengamos una dirección de correo electrónico actualizada, activa
+            y entregada para usted, y de visitar periódicamente nuestro sitio
+            web y esta política de privacidad para verificar cualquier cambio.
           </p>
-          <h2 className="my-4 font-bold">
-            ¿How do we protect your information and secure information
-            transmissions?
-          </h2>
-          <p className="text-sm">
-            We use commercially reasonable methods to ensure the security of the
-            information you provide to us and the information we collect
-            automatically. This includes using standard security protocols and
-            working only with trusted third-party providers. Email is not
-            recognized as a secure means of communication. For this reason, we
-            ask that you do not send us private information by email. However,
-            doing so is allowed, but at your own risk. Some of the information
-            you may enter on our website may be transmitted securely through a
-            secure medium known as Secure Sockets Layer, or SSL. Credit card
-            information and other sensitive information is never transmitted via
-            email. The Company may use software programs to create summary
-            statistics, which are used to assess the number of visitors to
-            different sections of our site, what information is of most and
-            least interest, determine technical design specifications, and
-            identify the system performance or problem areas. For site security
-            purposes and to ensure that this service remains available to all
-            users, the Company uses software programs to monitor network traffic
-            to identify unauthorized attempts to upload or change information,
-            or otherwise cause damage.
-          </p>
-          <h2 className="my-4 font-bold">​ Policy Changes</h2>
-          <p className="text-sm">
-            It is our policy to post any changes we make to our privacy policy
-            on this page. If we make material changes in the way we treat our
-            users' personal information, we will notify you by email to the
-            email address specified in your account and/or by means of a notice
-            on the home page of the website. The date the privacy policy was
-            last revised is identified at the bottom of the page. You are
-            responsible for ensuring that we have an up-to-date active and
-            delivered email address for you, and that you periodically visit our
-            website and this privacy policy to check for any changes. ​
-          </p>
-          <h2 className="my-4 font-bold">GDPR rights of visitors</h2>
+          <h2 className="my-4 font-bold">RGPD derechos de los visitantes</h2>
           <p className="text-sm">
             If you are located within the European Union, you are entitled to
             certain information and you have certain rights under the General
@@ -311,7 +304,51 @@ function PrivacyPolicy() {
             of entering into a contract with us. ​ Contact Us ​ The company
             welcomes your questions or comments regarding the Privacy Policy:
             DAYA MUNETON LLC Contact us at info@dayamuneton.com In force from
-            November 22, 2021
+            November 22, 2021 Si se encuentra dentro de la Unión Europea, tiene
+            derecho a cierta información y tiene ciertos derechos en virtud del
+            Reglamento general de protección de datos. Esos derechos incluyen:
+            Retendremos la información que elija proporcionarnos hasta lo
+            primero de lo siguiente: (a) si nos solicita que eliminemos la
+            información, (b) nuestra decisión de dejar de usar nuestros
+            proveedores de datos existentes, o (c) la Compañía decide que el
+            valor de retener los datos es superado por los costos de retención.
+            Tiene derecho a solicitar el acceso a sus datos almacenados por la
+            Compañía y los derechos a rectificar o eliminar sus datos
+            personales. Tiene derecho a solicitar restricciones en el
+            procesamiento de sus datos. Tiene derecho a oponerse al tratamiento
+            de sus datos y derecho a la portabilidad de sus datos. En la medida
+            en que haya dado su consentimiento para que la Compañía procese sus
+            datos personales, tiene derecho a retirar ese consentimiento en
+            cualquier momento, sin que ello afecte a la legalidad del
+            procesamiento basado en el consentimiento que tuvo lugar antes de
+            retirar su consentimiento. Tiene derecho a presentar una reclamación
+            ante una autoridad de control competente en materia relativa al
+            Reglamento General de Protección de Datos. Solo requerimos la
+            información que es razonablemente necesaria para realizar un
+            contrato con usted. No le pediremos su consentimiento para ningún
+            procesamiento innecesario como condición para celebrar un contrato
+            con nosotros. Solo requerimos la información que es razonablemente
+            necesaria para realizar un contrato con usted. No le pediremos su
+            consentimiento para ningún procesamiento innecesario como condición
+            para celebrar un contrato con nosotros.
+          </p>
+          <h2 className="my-4 font-bold">Contáctenos</h2>
+          {/* eslint-disable-next-line react/jsx-no-target-blank */}
+          <a
+            href="mailto:info@amayliberate.com"
+            target="_blank"
+            className="text-blue-400 underline"
+          >
+            info@amayliberate.com
+          </a>
+          <br />
+          <p className="text-sm">
+            La empresa agradece sus preguntas o comentarios con respecto a la
+            Política de Privacidad:
+          </p>
+          <h2 className="my-4 font-bold">DAYA MUNETON LLC</h2>
+          <p className="text-sm">
+            Vigente a partir del 22 de noviembre de 2022
           </p>
         </div>
       </div>
