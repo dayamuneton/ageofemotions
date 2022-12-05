@@ -1,7 +1,21 @@
+import { useRouter } from "next/router";
 import React from "react";
 import GiftButton from "../../shared/giftButton";
 
 function TextPartOne() {
+  const router = useRouter();
+
+  const redirectToCheckout = async () => {
+    const response = await fetch("/api/create-checkout-session");
+    const data = await response.json();
+    const url = data.url;
+
+    console.log(url);
+    if (typeof url === "string") {
+      router.push(url);
+    }
+  };
+
   return (
     <div className="mx-4 lg:mx-0 border-4 border-[#ecfe05] px-12 py-6 flex flex-col items-center lg:w-[25vw] bg-transparent my-4 z-[150]">
       <h2 className="text-4xl font-light font-roboto-slab rotate-[-10deg] my-4">
@@ -15,11 +29,14 @@ function TextPartOne() {
         tener muchas confusiones, dolor y estancamiento en varios aspectos de tu
         vida.
       </p>
-      <button className="p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold">
+      <button
+        onClick={redirectToCheckout}
+        className="p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold"
+      >
         {/* eslint-disable-next-line react/jsx-no-target-blank */}
-        <a href="https://subscribepage.io/PZs4xw" target="_blank">
-          INSCRIBIRME
-        </a>
+        {/* <a href="https://subscribepage.io/PZs4xw" target="_blank"> */}
+        INSCRIBIRME
+        {/* </a> */}
       </button>
     </div>
   );
