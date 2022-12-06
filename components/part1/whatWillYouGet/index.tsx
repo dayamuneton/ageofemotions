@@ -17,7 +17,7 @@ function WhatWillYouGet() {
         <div className="flex flex-wrap justify-center gap-4 mb-4 lg:flex-col lg:items-center lg:mb-0">
           <div className=" pt-8  pb-4 rounded-2xl flex flex-col items-center lg:w-[25ch] w-[45vw]">
             <span className="relative flex items-center w-full">
-              <p className="absolute text-4xl leading-3 rotate-[-90deg] whitespace-nowrap h-fit w-fit  left-[-1.5rem] ">
+              <p className="absolute text-3xl leading-3 rotate-[-90deg] whitespace-nowrap h-fit w-fit  left-[-1.5rem] font-belsey font-medium">
                 Parte 1
               </p>
 
@@ -52,7 +52,7 @@ function WhatWillYouGet() {
             title="Prácticas 7-9"
             text="Implementa en tu vida LA SUBROGACIÓN. Estas prácticas te ayudarán en la solución de problemas y cumplimiento de metas,  un proceso simple que tal vez lo lleves haciendo inconscientemente durante muchos años pero ahora lo vamos hacer con arte y con intención."
           />
-          <span className="relative flex aspect-[7/10] rounded-2xl overflow-hidden w-[25ch] drop-shadow-sm">
+          <span className="relative flex aspect-[7/10] rounded-2xl overflow-hidden w-[25ch] drop-shadow">
             <Image src="/whatWillYouGetCardImg.png" fill alt="" />
           </span>
           {/* <HabitCard

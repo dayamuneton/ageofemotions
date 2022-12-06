@@ -11,32 +11,26 @@ function WhatWillYouGetContent() {
 
       <div className="flex flex-col pl-4 my-8 max-w-[40ch]">
         <span className="my-1">
-          <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
-            10 SEMANAS
-          </h3>
+          <h3 className="text-[#fe6061] text-3xl font-cutive">10 SEMANAS</h3>
           <p className="text-sm font-semibold">
             Programa Ama & Libérate Parte I
           </p>
         </span>
         <span className="my-1">
-          <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
-            10 DESCARGAS
-          </h3>
+          <h3 className="text-[#fe6061] text-3xl font-cutive">10 DESCARGAS</h3>
           <p className="text-sm font-semibold">
             Descargas Digitales videos, PDF y Arte
           </p>
         </span>
         <span className="my-1">
-          <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
-            10 PRÁCTICAS
-          </h3>
+          <h3 className="text-[#fe6061] text-3xl font-cutive">10 PRÁCTICAS</h3>
           <p className="text-sm font-semibold">
             Workbooks para ayudarte a ganar consciencia corporal de las
             emociones.
           </p>
         </span>
         <span className="my-1">
-          <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
+          <h3 className="text-[#fe6061] text-3xl font-cutive">
             UNA SECCION 1:1
           </h3>
           <p className="text-sm font-semibold">Una mentoría con Daya Muneton</p>
@@ -46,9 +40,13 @@ function WhatWillYouGetContent() {
         ToTal:$<p className="inline line-through">635.00</p>
       </span>
       <p className="text-3xl font-bold text-center">
-        Válido desde <br /> Dic 2022 - Enero 2023:
+        Válido desde <br /> Dic 2022 - Ene 2023:
       </p>
-      <p className="text-white bg-[#fe6061] text-4xl my-2">$174.00</p>
+      {/* <span className=""> */}
+      <p className="bg-[#fe6061]  my-2 text-white  text-4xl font-belsey">
+        $174.00
+      </p>
+      {/* </span> */}
       <div className="bg-[#e8e7e7] flex flex-col items-center p-4 px-8">
         <h3 className=" text-[#fe6061] text-2xl font-bold flex flex-col items-center">
           <p className="bg-white w-fit">Oferta de</p>
@@ -60,7 +58,7 @@ function WhatWillYouGetContent() {
           tendrán acceso a la parte II y III de este programa AMA & LIBÉRATE.
         </span>
       </div>
-      <p className="text-[#fe6061] text-4xl my-2">GRATIS</p>
+      <p className="text-[#fe6061] text-4xl my-2 font-cutive">GRATIS</p>
 
       <SignUpButton />
     </div>
