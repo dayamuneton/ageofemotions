@@ -17,7 +17,7 @@ const createCheckoutSession = async (
     payment_method_types: ["card"],
     line_items: [
       {
-        price: process.env.STRIPE_TEST_PRODUCT,
+        price: process.env.STRIPE_10_PRACTICES_PRODUCT,
         quantity: 1,
       },
     ],
