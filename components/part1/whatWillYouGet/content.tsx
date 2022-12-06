@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import SignUpButton from "../../shared/signUpButton";
 
 function WhatWillYouGetContent() {
   return (
@@ -8,33 +9,46 @@ function WhatWillYouGetContent() {
         <Image src="/AmaYLiberateLogo.png" alt="" fill />
       </span>
 
-      <div className="flex flex-col my-8">
+      <div className="flex flex-col pl-4 my-8 max-w-[40ch]">
         <span className="my-1">
           <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
-            VIDEOS Y PDF.
+            10 SEMANAS
           </h3>
-          <p className="text-sm font-semibold">Ama & Libérate Parte I </p>
+          <p className="text-sm font-semibold">
+            Programa Ama & Libérate Parte I
+          </p>
         </span>
         <span className="my-1">
           <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
-            ARTE GRATIS
+            10 DESCARGAS
           </h3>
-          <p className="text-sm font-semibold">Descargas Digitales </p>
+          <p className="text-sm font-semibold">
+            Descargas Digitales videos, PDF y Arte
+          </p>
+        </span>
+        <span className="my-1">
+          <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
+            10 PRÁCTICAS
+          </h3>
+          <p className="text-sm font-semibold">
+            Workbooks para ayudarte a ganar consciencia corporal de las
+            emociones.
+          </p>
         </span>
         <span className="my-1">
           <h3 className="text-[#fe6061] text-3xl font-roboto-slab">
             UNA SECCION 1:1
           </h3>
-          <p className="text-sm font-semibold">Con Daya Muneton </p>
+          <p className="text-sm font-semibold">Una mentoría con Daya Muneton</p>
         </span>
       </div>
       <span className="w-full pr-4 mb-2 text-end font-popings">
         ToTal:$<p className="inline line-through">635.00</p>
       </span>
       <p className="text-3xl font-bold text-center">
-        Solo por Nov - Dic <br /> 2022:
+        Válido desde <br /> Dic 2022 - Enero 2023:
       </p>
-      <p className="text-white bg-[#fe6061] text-4xl my-2">$87.00</p>
+      <p className="text-white bg-[#fe6061] text-4xl my-2">$174.00</p>
       <div className="bg-[#e8e7e7] flex flex-col items-center p-4 px-8">
         <h3 className=" text-[#fe6061] text-2xl font-bold flex flex-col items-center">
           <p className="bg-white w-fit">Oferta de</p>
@@ -42,18 +56,13 @@ function WhatWillYouGetContent() {
         </h3>
         <span className="w-[30ch]">
           Solo las personas que se inscriban hasta
-          <p className="inline mx-1 bg-white">22-NOV-2022,</p>
-          tendrán acceso a la parte II y III de este programa AMA & LLIBÉRATE.
+          <p className="inline mx-1 bg-white">30-Dic-2022,</p>
+          tendrán acceso a la parte II y III de este programa AMA & LIBÉRATE.
         </span>
-        <p className="text-[#fe6061] text-4xl ">GRATIS</p>
       </div>
+      <p className="text-[#fe6061] text-4xl my-2">GRATIS</p>
 
-      <button className="mt-8 mb-4 p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold">
-        {/* eslint-disable-next-line react/jsx-no-target-blank */}
-        <a href="https://subscribepage.io/PZs4xw" target="_blank">
-          INSCRIBIRME, AHORA
-        </a>
-      </button>
+      <SignUpButton />
     </div>
   );
 }

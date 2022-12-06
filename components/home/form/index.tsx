@@ -5,10 +5,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const MAILERLITE_API_URL = "https://connect.mailerlite.com/api/subscribers";
-const amaYLiberateMailerLiteGroup = "72410303399200512";
-const agredoAlejoMailerLiteGroup = "71259999082382462";
-
 function Form() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -24,22 +20,25 @@ function Form() {
         name: name,
         last_name: lastName,
       },
-      groups: [amaYLiberateMailerLiteGroup],
+      groups: [process.env.NEXT_PUBLIC_MAILERLITE_GIFT_GROUP_ID],
     };
 
     const data = JSON.stringify(payload);
 
-    const response = await fetch(MAILERLITE_API_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${
-          process.env.NEXT_PUBLIC_MAILERLITE_API_KEY || ""
-        }`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: data,
-    });
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_MAILERLITE_SUBSCRIBERS_API_URL || "",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${
+            process.env.NEXT_PUBLIC_MAILERLITE_API_KEY || ""
+          }`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: data,
+      }
+    );
 
     const jsonResponse = await response.json();
     console.log(jsonResponse);

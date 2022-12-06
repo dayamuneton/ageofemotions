@@ -29,7 +29,7 @@ function Content() {
         </span>
         <div className="flex flex-col gap-2 my-4 md:flex-row">
           {contentCards.map(({ title, text }: any) => (
-            <Card key="title" title={title} text={text} />
+            <Card key={title} title={title} text={text} />
           ))}
         </div>
       </div>
