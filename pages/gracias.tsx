@@ -51,9 +51,9 @@ function SuccessSubscription() {
               <span>
                 <p className="font-semibold">PASO 3:</p>
                 <p className="font-thin">
-                  En tu semana 10 tendrás seccion 1:1con Daya Muneton, preguntas
-                  y respuestas. Te comunicaremos el horario para hacer tu video
-                  llamada.
+                  En tu semana 10 tendrás seccion 1:1 con Daya Muneton,
+                  preguntas y respuestas. Te comunicaremos el horario para hacer
+                  tu video llamada.
                 </p>
               </span>
               <span className="flex flex-col my-12">
