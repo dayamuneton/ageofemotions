@@ -13,17 +13,6 @@ function TextPartOne() {
         vida.
       </p>
       <SignUpButton />
-      {/* <div className="flex flex-col items-center p-8 border-[3px] border-black rounded-xl">
-        <p className="text-sm leading-4">
-          Inscríbete con el email en <br /> donde recibirás el programa.
-        </p>
-
-        <button className="mt-2 mb-4 p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold">
-
-            INSCRIBIRME
-
-        </button>
-      </div> */}
     </div>
   );
 }

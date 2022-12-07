@@ -40,7 +40,7 @@ function WhatWillYouGet() {
               Prácticas 1-3
             </h2>
             <p className="text-sm font-light leading-4">
-              -Rompiendo Creencias. <br /> -Cuál es tu modelo mental? <br />{" "}
+              -Rompiendo Creencias. <br /> -Cuál es tu modelo mental? <br />
               -Cómo Reconfigurar Tus Herramientas Mentales.
             </p>
           </div>
@@ -55,10 +55,6 @@ function WhatWillYouGet() {
           <span className="relative flex aspect-[7/10] rounded-2xl overflow-hidden w-[25ch] drop-shadow">
             <Image src="/whatWillYouGetCardImg.png" fill alt="" />
           </span>
-          {/* <HabitCard
-            title="Terminología"
-            text="Términos y conceptos de ciencia que no puede faltar cuando  aprendres sobre el cuerpo y las emociones."
-          /> */}
         </div>
       </div>
       <PersonalizedMentoring />

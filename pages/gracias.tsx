@@ -23,7 +23,7 @@ function SuccessSubscription() {
         </span>
         <div className="mx-auto max-w-[60ch] w-[95%]">
           <p className="my-8 text-xl font-bold font-play-fair ">
-            ¡Felicitaciones! Acabas de adquirir con exito el acceso al programa
+            ¡Felicitaciones! Acabas de adquirir con éxito el acceso al programa
             Ama & Liberate, para ayudarte a ganar percepción corporal de tus
             emociones.
           </p>
