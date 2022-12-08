@@ -14,10 +14,10 @@ function Text() {
         tener una vida emocionalmente coherente.
       </p>
       <span className="flex">
-        <p className="text-[#fe6160] text-4xl rotate-[-10deg] mr-8 font-cutive">
+        <p className="text-[#fe6160] text-4xl rotate-[-10deg] mr-8 font-cutive whitespace-nowrap my-2">
           +1 Práctica
         </p>
-        <span className="aspect-square w-[3rem] relative flex">
+        <span className="aspect-square min-w-[3rem] min-h-[3rem] relative flex">
           <Image src="/CorazonRoto.png" alt="" fill />
         </span>
       </span>
