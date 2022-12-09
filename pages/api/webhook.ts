@@ -67,6 +67,12 @@ interface CheckoutSession extends Stripe.Event.Data.Object {
     name: string;
     email: string;
   };
+  id: string;
+  data: {
+    object: {
+      id: string;
+    };
+  };
 }
 
 const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -93,6 +99,8 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
 
       const name = checkoutSession.customer_details.name;
       const email = checkoutSession.customer_details.email;
+
+      console.log(checkoutSession.data.object.id);
 
       subscribeToPartOne(email, name);
 

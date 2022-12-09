@@ -23,8 +23,6 @@ const createCheckoutSession = async (
     ],
   });
 
-  res.status(200).json({
-    url: session.url,
-  });
+  res.status(200).json(session);
 };
 export default createCheckoutSession;
