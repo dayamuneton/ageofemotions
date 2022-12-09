@@ -9,12 +9,8 @@ function SignUpButton() {
     const data = await response.json();
     const url = data.url;
 
-    console.log(data.id);
-    console.log(data.url);
-
     if (typeof url === "string") {
-      // router.push(url);
-      window.open(url, "_blank");
+      router.push(url);
     }
   };
   return (
