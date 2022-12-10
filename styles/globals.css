@@ -5,58 +5,67 @@
 @tailwind utilities;
 
 .inputs {
-  display: flex;
-  width: 100%;
-  border-width: 2px;
-  border-color: black;
-  font-size: min(16px, 1rem);
-  outline: none;
-  padding: 0.5rem;
+   display: flex;
+   width: 100%;
+   border-width: 2px;
+   border-color: black;
+   font-size: min(16px, 1rem);
+   outline: none;
+   padding: 0.5rem;
+}
+.signUpInputs {
+   display: flex;
+   width: 100%;
+   /* border-width: 2px; */
+   /* border-color: black; */
+   font-size: min(16px, 1rem);
+   outline: none;
+   padding: 0.5rem;
 }
 .inputBox {
-  display: flex;
-  position: relative;
-  width: 100%;
+   display: flex;
+   position: relative;
+   width: 100%;
 }
 .termsAndConditionsTitles {
-  font-weight: bolder;
+   font-weight: bolder;
 }
 .termsAndConditionsText {
-  font-size: smaller;
+   font-size: smaller;
 }
 
 .font-haviland {
-  font-family: "Mr De Haviland", cursive;
+   font-family: "Mr De Haviland", cursive;
 }
 .font-play-fair {
-  font-family: "Playfair Display", serif;
+   font-family: "Playfair Display", serif;
 }
 .font-roboto {
-  font-family: "Roboto", sans-serif;
+   font-family: "Roboto", sans-serif;
 }
 .font-roboto-slab {
-  font-family: "Roboto Slab", serif;
+   font-family: "Roboto Slab", serif;
 }
 .font-popings {
-  font-family: "Poppins", sans-serif;
+   font-family: "Poppins", sans-serif;
 }
 .font-cutive {
-  font-family: "Cutive", serif;
+   font-family: "Cutive", serif;
 }
 .font-cutive-mono {
-  font-family: "Cutive Mono", monospace;
+   font-family: "Cutive Mono", monospace;
 }
 .font-belsey {
-  font-family: "Besley", serif;
+   font-family: "Besley", serif;
 }
 .navUl {
-  position: fixed;
-  transition: 0.5s;
-  background-color: white;
-  width: max-content;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  white-space: nowrap;
+   position: fixed;
+   transition: 0.5s;
+   background-color: white;
+   width: max-content;
+   z-index: 1000;
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   white-space: nowrap;
 }

@@ -1,50 +1,42 @@
-import { FormEvent, useState, useEffect, useRef } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
-function Form() {
+function SignUpForm() {
    const [email, setEmail] = useState("");
-   const [name, setName] = useState("");
+   const [firstName, setFirstName] = useState("");
    const [lastName, setLastName] = useState("");
    const [terms, setTerms] = useState(false);
 
-   const subscribeToGift = async (e: FormEvent) => {
+   const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
 
       const payload = {
-         email: email,
-         fields: {
-            name: name,
-            last_name: lastName,
-         },
-         groups: [process.env.NEXT_PUBLIC_MAILERLITE_GIFT_GROUP_ID],
+         email,
+         firstName,
+         lastName,
       };
 
-      const data = JSON.stringify(payload);
+      const response = await fetch("/api/create-checkout-session", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+         },
+         body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      const url = data.url;
 
-      const response = await fetch(
-         process.env.NEXT_PUBLIC_MAILERLITE_SUBSCRIBERS_API_URL || "",
-         {
-            method: "POST",
-            headers: {
-               Authorization: `Bearer ${
-                  process.env.NEXT_PUBLIC_MAILERLITE_API_KEY || ""
-               }`,
-               "Content-Type": "application/json",
-               Accept: "application/json",
-            },
-            body: data,
-         }
-      );
-
-      const jsonResponse = await response.json();
-      console.log(jsonResponse);
+      if (typeof url === "string") {
+         router.push(url);
+      }
 
       setEmail("");
-      setName("");
+      setFirstName("");
       setLastName("");
       setTerms(false);
    };
@@ -53,7 +45,7 @@ function Form() {
    const giftRef = useRef<HTMLDivElement>(null);
    useEffect(() => {
       const scrollToGift = () => {
-         if (router.asPath === "/gift") {
+         if (router.asPath === "/signup") {
             giftRef.current?.scrollIntoView({ behavior: "smooth" });
          }
       };
@@ -62,28 +54,27 @@ function Form() {
    return (
       <div
          ref={giftRef}
-         className="bg-[#faf8f5] flex flex-col items-center p-8 w-full"
+         className="bg-[#e9e7e6] flex flex-col items-center p-8 w-full sm:max-w-2xl my-8"
       >
-         <span className="flex mb-10 text-3xl font-bold font-play-fair">
-            Recibe tu
-            <p className=" bg-[#e5f10d] pr-2">&nbsp;Regalo</p>
+         <span className="flex mb-2 text-xl font-bold text-center font-play-fair text-[#1b1655] font-popings">
+            Inscríbete aquí y lo recibirás en tu correo
          </span>
          <form
-            className="bg-[#fdfdf9] p-8 w-[min(95%,40rem)]"
-            onSubmit={subscribeToGift}
+            className="p-6 pb-2 w-[min(95%,40rem)]"
+            onSubmit={redirectToCheckout}
          >
-            <div className="flex flex-col gap-8 sm:gap-0 sm:flex-row">
+            <div className="flex flex-col gap-8 sm:gap-4 sm:flex-row">
                <span className="inputBox">
                   <label className="absolute top-[-1.5rem]" htmlFor="name">
                      Nombre
                   </label>
                   <input
-                     className="inputs"
+                     className="signUpInputs"
                      type="text"
                      name="name"
                      required
-                     value={name}
-                     onChange={(e) => setName(e.target.value)}
+                     value={firstName}
+                     onChange={(e) => setFirstName(e.target.value)}
                   />
                </span>
 
@@ -92,7 +83,7 @@ function Form() {
                      Apellido
                   </label>
                   <input
-                     className="inputs"
+                     className="signUpInputs"
                      type="text"
                      name="lastname"
                      value={lastName}
@@ -106,7 +97,7 @@ function Form() {
                      Email
                   </label>
                   <input
-                     className="inputs"
+                     className="signUpInputs"
                      type="email"
                      name="email"
                      required
@@ -116,7 +107,7 @@ function Form() {
                </span>
             </div>
 
-            <div className="flex flex-col items-center justify-between gap-2 mt-4 md:flex-row">
+            <div className="flex flex-col items-center justify-between gap-2 mt-2 md:flex-row">
                <span>
                   <input
                      type="checkbox"
@@ -130,9 +121,13 @@ function Form() {
                      Acepto los términos y condiciones
                   </label>
                </span>
-
-               <button type="submit" className="p-2 px-8 text-white bg-black">
-                  Quiero mi regalo
+            </div>
+            <div className="flex w-full">
+               <button
+                  type="submit"
+                  className="p-2 px-8 text-black bg-[#ff6161] mx-auto mt-2"
+               >
+                  Inscríbete
                </button>
             </div>
          </form>
@@ -163,7 +158,7 @@ function Form() {
                   href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
                   target="_blank"
                >
-                  <YouTubeIcon className="text-[1.4rem]" />
+                  <YouTubeIcon className="text-[1.45rem]" />
                </Link>
                <Link
                   href="https://www.instagram.com/dayamuneton/"
@@ -177,4 +172,4 @@ function Form() {
    );
 }
 
-export default Form;
+export default SignUpForm;
