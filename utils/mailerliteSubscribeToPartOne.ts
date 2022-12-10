@@ -24,15 +24,20 @@ export const subscribeToPartOne = async (email?: string, fullName?: string) => {
 
    const data = JSON.stringify(payload);
 
-   await fetch(process.env.NEXT_PUBLIC_MAILERLITE_SUBSCRIBERS_API_URL || "", {
-      method: "POST",
-      headers: {
-         Authorization: `Bearer ${
-            process.env.NEXT_PUBLIC_MAILERLITE_API_KEY || ""
-         }`,
-         "Content-Type": "application/json",
-         Accept: "application/json",
-      },
-      body: data,
-   });
+   const response = await fetch(
+      process.env.NEXT_PUBLIC_MAILERLITE_SUBSCRIBERS_API_URL || "",
+      {
+         method: "POST",
+         headers: {
+            Authorization: `Bearer ${
+               process.env.NEXT_PUBLIC_MAILERLITE_API_KEY || ""
+            }`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+         },
+         body: data,
+      }
+   );
+
+   console.log("log", response.json());
 };
