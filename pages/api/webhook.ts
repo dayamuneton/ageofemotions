@@ -63,7 +63,7 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
 
          console.log("log", "final", subscriberData);
 
-         subscribeToPartOne(subscriberData.email, subscriberData.name);
+         await subscribeToPartOne(subscriberData.email, subscriberData.name);
 
          break;
 

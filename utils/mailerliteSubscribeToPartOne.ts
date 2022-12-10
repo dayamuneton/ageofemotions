@@ -3,6 +3,8 @@ import { firstLetterUpperCaseEachWord } from "./firstLetterUpperCase";
 export const subscribeToPartOne = async (email?: string, fullName?: string) => {
    if (!email || !fullName) return;
 
+   console.log("log", "data for mailerlite", email, fullName);
+
    const splitName = firstLetterUpperCaseEachWord(fullName);
 
    const name = splitName[0];
