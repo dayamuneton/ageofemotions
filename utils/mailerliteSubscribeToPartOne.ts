@@ -41,5 +41,7 @@ export const subscribeToPartOne = async (email?: string, fullName?: string) => {
       }
    );
 
-   console.log("log", response.json());
+   const mailerliteResponse = await response.json();
+
+   console.log("log", mailerliteResponse);
 };

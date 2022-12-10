@@ -55,13 +55,11 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
             checkoutSessionId
          );
 
-         console.log("log", "fir", subscriberData);
-
          if (!subscriberData) {
             subscriberData = checkoutSession.customer_details;
          }
 
-         console.log("log", "final", subscriberData);
+         console.log("log", "subscriberData", subscriberData);
 
          await subscribeToPartOne(subscriberData.email, subscriberData.name);
 
