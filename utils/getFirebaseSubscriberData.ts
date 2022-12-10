@@ -7,7 +7,15 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 
-export const getFirebaseSubscriberData = async (checkoutSessionId: string) => {
+export interface UserInterface extends DocumentData {
+   email: string;
+   name: string;
+   lastCheckoutSessionId?: string;
+}
+
+export const getFirebaseSubscriberData = async (checkoutSessionId?: string) => {
+   if (!checkoutSessionId) return;
+
    const usersRef = collection(db, "users");
    const usersQuery = query(
       usersRef,
@@ -16,11 +24,9 @@ export const getFirebaseSubscriberData = async (checkoutSessionId: string) => {
 
    const usersSnapshot = await getDocs(usersQuery);
 
-   let data: DocumentData = {};
+   if (usersSnapshot.empty) return;
 
-   usersSnapshot.forEach((user) => {
-      data = user.data();
-   });
+   let data = usersSnapshot.docs[0].data() as UserInterface;
 
    return data;
 };

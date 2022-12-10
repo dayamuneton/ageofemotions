@@ -2,7 +2,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 import { buffer } from "micro";
 import { subscribeToPartOne } from "../../utils/mailerliteSubscribeToPartOne";
-import { getFirebaseSubscriberData } from "../../utils/getFirebaseSubscriberData";
+import {
+   getFirebaseSubscriberData,
+   UserInterface,
+} from "../../utils/getFirebaseSubscriberData";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
    apiVersion: "2022-11-15",
@@ -21,9 +24,7 @@ interface CheckoutSession extends Stripe.Event.Data.Object {
       name: string;
       email: string;
    };
-   object: {
-      id: string;
-   };
+   id: string;
 }
 
 const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -48,9 +49,7 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
       case "checkout.session.completed":
          const checkoutSession = event.data.object as CheckoutSession;
 
-         const checkoutSessionId = checkoutSession.object?.id;
-
-         console.log("log", "id", checkoutSessionId);
+         const checkoutSessionId = checkoutSession.id;
 
          let subscriberData = await getFirebaseSubscriberData(
             checkoutSessionId
@@ -58,19 +57,13 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
 
          console.log("log", "fir", subscriberData);
 
-         // const { name, email } = subscriberData
-
          if (!subscriberData) {
-            const { name, email } = checkoutSession.customer_details;
-
-            subscriberData = {
-               name,
-               email,
-            };
-            console.log("log", subscriberData);
+            subscriberData = checkoutSession.customer_details;
          }
 
-         // subscribeToPartOne(email, name);
+         console.log("log", "final", subscriberData);
+
+         // subscribeToPartOne(subscriberData.email, subscriberData.name);
 
          break;
 
