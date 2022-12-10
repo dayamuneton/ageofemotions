@@ -21,10 +21,8 @@ interface CheckoutSession extends Stripe.Event.Data.Object {
       name: string;
       email: string;
    };
-   data: {
-      object: {
-         id: string;
-      };
+   object: {
+      id: string;
    };
 }
 
@@ -50,7 +48,8 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
       case "checkout.session.completed":
          const checkoutSession = event.data.object as CheckoutSession;
 
-         const checkoutSessionId = checkoutSession.data?.object?.id;
+         const checkoutSessionId = checkoutSession.object?.id;
+
          console.log("log", "id", checkoutSessionId);
 
          let subscriberData = await getFirebaseSubscriberData(
