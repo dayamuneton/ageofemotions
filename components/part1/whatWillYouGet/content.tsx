@@ -4,7 +4,7 @@ import SignUpButton from "../../shared/signUpButton";
 
 function WhatWillYouGetContent() {
    return (
-      <div className="border-2 flex flex-col items-center border-[#e4f10c] py-8 px-4 lg:px-8 w-[95vw] lg:w-full my-4 lg:my-0 mx-auto lg:mx-0  lg:pb-4">
+      <div className="border-2 flex flex-col items-center border-[#e4f10c] py-8 px-4 lg:px-8 w-[95vw] lg:max-w-md my-4 lg:my-0 mx-auto lg:mx-0 lg:pb-4">
          <span className="flex relative aspect-square h-[10rem]">
             <Image src="/AmaYLiberateLogo.png" alt="" fill />
          </span>
@@ -50,21 +50,19 @@ function WhatWillYouGetContent() {
          <p className="text-3xl font-bold text-center">
             Válido desde <br /> Dic 2022 - Ene 2023:
          </p>
-         {/* <span className=""> */}
          <p className="bg-[#fe6061]  my-2 text-white  text-4xl font-belsey">
             $174.00
          </p>
-         {/* </span> */}
          <div className="bg-[#e8e7e7] flex flex-col items-center p-4 px-8 mb-4">
             <h3 className=" text-[#fe6061] text-2xl font-bold flex flex-col items-center">
                <p className="bg-white w-fit">Oferta de</p>
                <p className="bg-white">Lanzamiento</p>
             </h3>
-            <span className="w-[30ch]">
+            <span className="max-w-[30ch]">
                Solo las personas que se inscriban hasta
                <p className="inline mx-1 bg-white">30-Dic-2022,</p>
                tendrán acceso a la parte II y III de este programa AMA &
-               LIBÉRATE.
+               LIBÉRATE cuando esté listo
             </span>
             <p className="text-[#fe6061] text-4xl my-2 font-cutive">GRATIS</p>
          </div>

@@ -54,7 +54,7 @@ function SignUpForm() {
    return (
       <div
          ref={giftRef}
-         className="bg-[#e9e7e6] flex flex-col items-center p-8 w-full sm:max-w-2xl my-8"
+         className="bg-[#e9e7e6] flex flex-col items-center p-8 w-full sm:max-w-3xl my-8"
       >
          <span className="flex mb-2 text-xl font-bold text-center font-play-fair text-[#1b1655] font-popings">
             Inscríbete aquí y lo recibirás en tu correo

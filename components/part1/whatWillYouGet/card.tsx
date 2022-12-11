@@ -7,7 +7,7 @@ interface HabitCardProps {
 
 function HabitCard({ title, text }: HabitCardProps) {
    return (
-      <div className="bg-[#bcc8d9] p-9 pt-4 rounded-2xl flex flex-col items-center lg:max-w-[30ch] w-[70vw]">
+      <div className="bg-[#bcc8d9] p-9 pt-4 rounded-2xl flex flex-col items-center lg:w-full  w-[70vw]">
          <h2 className="bg-[#e4f10c] text-xl font-semibold my-2 font-popings whitespace-nowrap mb-4">
             {title}
          </h2>

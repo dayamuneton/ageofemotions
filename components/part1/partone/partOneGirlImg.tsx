@@ -1,16 +1,12 @@
+import Image from "next/image";
 import React from "react";
 
 function PartOneGirlImg() {
-  return (
-    <div className="z-[100]">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className="flex w-[90vw] lg:w-[23vw]  mx-auto"
-        src="/LeoMujerSelfie.jpg"
-        alt=""
-      />
-    </div>
-  );
+   return (
+      <span className="flex aspect-[2/3] relative mx-auto w-[90vw] lg:max-w-[18rem]">
+         <Image src="/LeoMujerSelfie.jpg" alt="" fill />
+      </span>
+   );
 }
 
 export default PartOneGirlImg;
