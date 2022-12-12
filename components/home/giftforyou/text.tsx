@@ -18,7 +18,10 @@ function Text() {
             <p className="text-[#fe6160] text-4xl rotate-[-10deg] mr-8 font-cutive whitespace-nowrap my-2">
                +1 Práctica
             </p>
-            <HeartBrokenIcon className="drop-shadow-[0px_0px_.05rem_#000] text-[3rem] text-[#f35b3a] " />
+
+            <span className="aspect-square min-w-[3rem] min-h-[3rem] relative flex">
+               <Image src="/CorazonRoto.png" alt="" fill />
+            </span>
          </span>
          <p className="bg-[#bdc9d9] font-semibold border-[1.5px] border-black p-2 px-8 md:px-8">
             Esta práctica te ayuda a comprender porque no tener percepción
