@@ -62,7 +62,7 @@ function WhatWillYouGetContent() {
                Solo las personas que se inscriban hasta
                <p className="inline mx-1 bg-white">30-Dic-2022,</p>
                tendrán acceso a la parte II y III de este programa AMA &
-               LIBÉRATE cuando esté listo
+               LIBÉRATE cuando esté listo.
             </span>
             <p className="text-[#fe6061] text-4xl my-2 font-cutive">GRATIS</p>
          </div>
