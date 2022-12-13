@@ -20,7 +20,14 @@ function GiftPart1() {
       <div className="flex flex-col items-center w-full overflow-hidden">
          <Head>
             <title>Ama Y Liberate</title>
-            <meta name="description" content="Ama y liberate" />
+            <meta
+               name="description"
+               content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."
+            />
+            <meta
+               name="keywords"
+               content="Amor, Libertad, Ciencia Tecnología, Arte"
+            />
             <link rel="icon" href="/favicon.ico" />
          </Head>
 

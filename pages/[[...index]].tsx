@@ -12,34 +12,41 @@ import ArtIsTheNewWay from "../components/home/artIsTheNewWay";
 import Logo from "../components/home/logo";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col items-center overflow-hidden">
-      <Head>
-        <title>Tu Regalo</title>
-        <meta name="description" content="Tu regalo" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+   return (
+      <div className="flex flex-col items-center overflow-hidden">
+         <Head>
+            <title>Tu Regalo</title>
+            <meta
+               name="description"
+               content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."
+            />
+            <meta
+               name="keywords"
+               content="Arte, Ciencia, Tecnología, Amor, Liberate, Regalo"
+            />
+            <link rel="icon" href="/favicon.ico" />
+         </Head>
 
-      <Navbar />
+         <Navbar />
 
-      <Logo />
+         <Logo />
 
-      <GiftForYou />
+         <GiftForYou />
 
-      <Description></Description>
+         <Description></Description>
 
-      <Form />
+         <Form />
 
-      <div className="text-bold bg-gradient-to-b from-[#bdc9d9] to-[#f2e2f6] p-8 pb-20 flex flex-col items-center w-full">
-        <Content />
-        <GiftButton />
-        <br />
-        <About />
+         <div className="text-bold bg-gradient-to-b from-[#bdc9d9] to-[#f2e2f6] p-8 pb-20 flex flex-col items-center w-full">
+            <Content />
+            <GiftButton />
+            <br />
+            <About />
+         </div>
+
+         <LeopardGlassesGirl />
+         <ArtIsTheNewWay />
+         <Footer></Footer>
       </div>
-
-      <LeopardGlassesGirl />
-      <ArtIsTheNewWay />
-      <Footer></Footer>
-    </div>
-  );
+   );
 }
