@@ -125,7 +125,7 @@ function SignUpForm() {
             <div className="flex w-full">
                <button
                   type="submit"
-                  className="p-2 px-8 text-black bg-[#ff6161] mx-auto mt-2"
+                  className="p-2 px-8 text-black bg-orange mx-auto mt-2"
                >
                   Inscríbete
                </button>

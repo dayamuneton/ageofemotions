@@ -2,9 +2,8 @@ import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import NavItem from "./navItem";
 import { HiMenu } from "react-icons/hi";
-import CloseIcon from "@mui/icons-material/Close";
 import { MdClose } from "react-icons/md";
-import useClickOutside from "../shared/useClickOutside";
+import useClickOutside from "@utils/useClickOutside";
 
 const navbarItems = [
    {

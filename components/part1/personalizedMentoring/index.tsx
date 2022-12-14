@@ -3,7 +3,7 @@ import React from "react";
 
 function PersonalizedMentoring() {
    return (
-      <div className="bg-[#bdc8d8] w-[90vw] px-8 pb-8 mb-16 rounded-3xl max-w-2xl">
+      <div className=" w-[90vw] px-8 pb-8 mb-16 rounded-3xl max-w-2xl bg-blueGray">
          <div className="p-2 mt-4 overflow-hidden bg-white rounded-full w-fit">
             <span className="relative flex aspect-square w-[4rem] ">
                <Image src="/BlackAndWhiteHeart.png" fill alt="" />

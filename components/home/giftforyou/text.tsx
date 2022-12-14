@@ -1,7 +1,6 @@
+import GiftButton from "@components/shared/giftButton";
 import Image from "next/image";
 import React from "react";
-import GiftButton from "../../shared/giftButton";
-import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 
 function Text() {
    return (
@@ -9,13 +8,13 @@ function Text() {
          <p className="text-6xl font-bold text-center font-play-fair">
             Un Regalo <br /> Para Ti
          </p>
-         <span className="bg-[#8f9cb2] h-[.5rem] flex w-[70%]"> </span>
+         <span className="bg-blueGray h-[.5rem] flex w-[70%]"> </span>
          <p className="font-semibold text-center">
             ​ 3 Técnicas para comenzar a usar tu cuerpo como una herramienta
             para tener una vida emocionalmente coherente.
          </p>
          <span className="flex">
-            <p className="text-[#fe6160] text-4xl rotate-[-10deg] mr-8 font-cutive whitespace-nowrap my-2">
+            <p className="text-orange text-4xl rotate-[-10deg] mr-8 font-cutive whitespace-nowrap my-2">
                +1 Práctica
             </p>
 
@@ -23,7 +22,7 @@ function Text() {
                <Image src="/CorazonRoto.png" alt="" fill />
             </span>
          </span>
-         <p className="bg-[#bdc9d9] font-semibold border-[1.5px] border-black p-2 px-8 md:px-8">
+         <p className="bg-blueGray font-semibold border-[1.5px] border-black p-2 px-8 md:px-8">
             Esta práctica te ayuda a comprender porque no tener percepción
             corporal de las emociones, te ha llevado a tener mucho dolor y
             confusiones en el amor.

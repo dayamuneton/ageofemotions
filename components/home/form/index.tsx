@@ -66,7 +66,7 @@ function Form() {
       >
          <span className="flex mb-10 text-3xl font-bold font-play-fair">
             Recibe tu
-            <p className=" bg-[#e5f10d] pr-2">&nbsp;Regalo</p>
+            <p className="pr-2  bg-yellow">&nbsp;Regalo</p>
          </span>
          <form
             className="bg-[#fdfdf9] p-8 w-[min(95%,40rem)]"

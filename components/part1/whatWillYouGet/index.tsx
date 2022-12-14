@@ -19,8 +19,8 @@ function WhatWillYouGet() {
                </p>
             </div>
 
-            <div className="bg-[#bcc8d9] p-8 pt-4 rounded-2xl flex flex-col items-center lg:w-full w-[70vw]">
-               <h2 className="bg-[#e4f10c] text-xl font-semibold my-2 font-popings whitespace-nowrap">
+            <div className="bg-blueGray p-8 pt-4 rounded-2xl flex flex-col items-center lg:w-full w-[70vw]">
+               <h2 className="bg-yellow text-xl font-semibold my-2 font-popings whitespace-nowrap">
                   Prácticas 1-3
                </h2>
                <p className="text-sm leading-4 ">

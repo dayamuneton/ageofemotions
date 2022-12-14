@@ -1,4 +1,4 @@
-import SignUpButton from "../../shared/signUpButton";
+import SignUpButton from "@components/shared/signUpButton";
 
 function TextPartOne() {
    return (

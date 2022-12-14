@@ -1,5 +1,4 @@
 import React from "react";
-import PartOneGirlImg from "./partOneGirlImg";
 import TextAndLogo from "./textAndLogo";
 
 function PartOne() {

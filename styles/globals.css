@@ -16,8 +16,6 @@
 .signUpInputs {
    display: flex;
    width: 100%;
-   /* border-width: 2px; */
-   /* border-color: black; */
    font-size: min(16px, 1rem);
    outline: none;
    padding: 0.5rem;

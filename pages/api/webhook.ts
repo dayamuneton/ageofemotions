@@ -1,11 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 import { buffer } from "micro";
-import { subscribeToPartOne } from "../../utils/mailerliteSubscribeToPartOne";
-import {
-   getFirebaseSubscriberData,
-   UserInterface,
-} from "../../utils/getFirebaseSubscriberData";
+import { subscribeToPartOne } from "@utils/mailerliteSubscribeToPartOne";
+import { getFirebaseSubscriberData } from "@utils/getFirebaseSubscriberData";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
    apiVersion: "2022-11-15",

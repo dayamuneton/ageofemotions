@@ -1,19 +1,19 @@
 import Head from "next/head";
 import React from "react";
-import About from "../components/about";
-import ArtIsTheNewWay from "../components/part1/artIsTheNewWay";
-import CreateConcept from "../components/part1/createConcepts";
-import ExpensiveTransformation from "../components/part1/expensiveTransformation";
-import Footer from "../components/footer";
-import IsItFair from "../components/part1/IsItFair";
-import ItsForYouIf from "../components/part1/itsforyouif";
-import Navbar from "../components/navbar";
-import NoLongerPracticedAsBefore from "../components/part1/NoLongerPracticedAsBefore";
-import PartOne from "../components/part1/partone";
-import SeriousProblem from "../components/part1/seriousProblem";
-import WhatWillYouGet from "../components/part1/whatWillYouGet";
-import PersonalizedMentoring from "../components/part1/whatWillYouGet/personalizedMentoring";
-import SignUpForm from "../components/part1/signupForm";
+import About from "@components/about";
+import ArtIsTheNewWay from "@components/part1/artIsTheNewWay";
+import CreateConcept from "@components/part1/createConcepts";
+import ExpensiveTransformation from "@components/part1/expensiveTransformation";
+import Footer from "@components/footer";
+import IsItFair from "@components/part1/IsItFair";
+import ItsForYouIf from "@components/part1/itsforyouif";
+import Navbar from "@components/navbar";
+import NoLongerPracticedAsBefore from "@components/part1/NoLongerPracticedAsBefore";
+import PartOne from "@components/part1/partone";
+import SeriousProblem from "@components/part1/seriousProblem";
+import WhatWillYouGet from "@components/part1/whatWillYouGet";
+import SignUpForm from "@components/part1/signupForm";
+import PersonalizedMentoring from "@components/part1/personalizedMentoring";
 
 function GiftPart1() {
    return (
@@ -55,7 +55,7 @@ function GiftPart1() {
 
          <ItsForYouIf />
 
-         <div className="text-bold bg-gradient-to-b from-[#bdc9d9] to-[#f2e2f6] p-8 pb-20 flex flex-col items-center w-full">
+         <div className="flex flex-col items-center w-full p-8 pb-20 text-bold bg-gradient-to-b from-blueGray to-rose">
             <About />
          </div>
 

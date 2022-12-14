@@ -1,7 +1,7 @@
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
-import { db } from "../../utils/firebaseConfig";
+import { db } from "@utils/firebaseConfig";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
    apiVersion: "2022-11-15",

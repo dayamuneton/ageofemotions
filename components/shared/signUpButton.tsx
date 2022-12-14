@@ -13,7 +13,7 @@ function SignUpButton() {
    return (
       <button
          onClick={updatePath}
-         className=" p-4 px-12 bg-[#ff6161] rounded-[.6rem] text-sm font-semibold"
+         className=" p-4 px-12 bg-orange rounded-[.6rem] text-sm font-semibold"
       >
          INSCRIBIRME
       </button>
