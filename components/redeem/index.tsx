@@ -14,13 +14,13 @@ function RedeemContent() {
          <RedeemForm />
          <p className="mt-2 text-white">*El código es de un solo uso</p>
          <div className="flex flex-col my-12 md:flex-row">
-            <div className="my-16">
-               <span className=" relative rotate-[-5deg] flex aspect-[4/3] w-[24rem] max-w-full shadow-[0px_0px_7rem_#26266b]">
+            <div className="my-16 flex justify-center">
+               <span className=" relative rotate-[-5deg] flex aspect-[4/3] md:w-[24rem] max-w-[80vw] w-full shadow-[0px_0px_7rem_#26266b]">
                   <Image src="/A&Lgiftcard.png" alt="" fill />
                </span>
             </div>
             <div className="flex flex-col items-center justify-center mb-8 md:mb-0">
-               <p className="text-white text-lg font-medium w-[35ch] text-center">
+               <p className="text-white text-lg font-medium w-[95vw] max-w-[35ch] text-center">
                   Una vez lo redimas este Gift Card te llegará directo a tu
                   email el programa: Ama y Libérate.
                </p>

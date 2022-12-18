@@ -7,9 +7,9 @@ import Link from "next/link";
 function FooterBottom() {
    return (
       <div className="flex flex-col items-center w-full gap-2 p-4 pb-8 text-white bg-black border-t-2 border-white">
-         <span className="flex flex-col items-center text-sm md:flex-row">
+         <span className="flex flex-col items-center text-sm md:flex-row text-center">
             <p>Daya Muneton © Todos los derechos reservados.</p>
-            <span className="flex gap-1 sm:ml-1">
+            <span className="flex flex-col justify-center items-center sm:flex-row w-full gap-1 sm:ml-1">
                <Link
                   className="pr-2 border-r"
                   href="/politica-de-privacidad"
@@ -24,8 +24,8 @@ function FooterBottom() {
             </span>
          </span>
 
-         <span>
-            E-Mail:&nbsp;
+         <span className="flex flex-col sm:flex-row items-center max-w-[95vw]">
+            <p className="whitespace-nowrap">Email:&nbsp;</p>
             <a
                href="mailto:info@amayliberate.com"
                target="_blank"

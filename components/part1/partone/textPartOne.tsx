@@ -2,7 +2,7 @@ import SignUpButton from "@shared/signUpButton";
 
 function TextPartOne() {
    return (
-      <div className="mx-4 lg:mx-0 border-4 border-[#ecfe05] py-6 px-12  bg-transparent my-4 z-[1500]">
+      <div className="mx-4 max-w-[95vw] lg:mx-0 border-4 border-[#ecfe05] py-6 px-12  bg-transparent my-4 z-[1500]">
          <div className="flex flex-col items-center mx-auto lg:w-[16rem]">
             <h2 className="text-4xl font-belsey rotate-[-10deg] my-4">
                Parte 1

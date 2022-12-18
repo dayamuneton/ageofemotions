@@ -5,7 +5,7 @@ import SouthIcon from "@mui/icons-material/South";
 function CreateConcept() {
    return (
       <div className="flex justify-center w-full pt-8 ">
-         <div className="w-[50ch] flex flex-col items-center font-light ">
+         <div className="w-[50ch] max-w-[95vw] flex flex-col items-center font-light ">
             <span className="flex aspect-[4/3] relative h-[15rem]">
                <Image src="/DayaMunetonEdited.png" alt="" fill />
             </span>

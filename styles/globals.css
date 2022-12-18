@@ -67,6 +67,7 @@
    flex-direction: column;
    height: 100vh;
    white-space: nowrap;
+   max-width: 95vw;
 }
 .radial-bg {
    /* background: ; */

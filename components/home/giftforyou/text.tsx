@@ -13,7 +13,7 @@ function Text() {
             ​ 3 Técnicas para comenzar a usar tu cuerpo como una herramienta
             para tener una vida emocionalmente coherente.
          </p>
-         <span className="flex">
+         <span className="flex max-w-[95vw] justify-center w-full">
             <p className="text-orange text-4xl rotate-[-10deg] mr-8 font-cutive whitespace-nowrap my-2">
                +1 Práctica
             </p>

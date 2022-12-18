@@ -42,7 +42,7 @@ function Navbar() {
    return (
       <nav className="w-full">
          <div
-            className="fixed z-50 right-0 w-fit flex justify-end text-[2rem] p-3 text-[#555]"
+            className="fixed z-50 right-0 max-w-[95vw] w-fit flex justify-end text-[2rem] p-3 text-[#555]"
             onClick={toggleSidebar}
          >
             {showSidebar ? <MdClose /> : <HiMenu />}
