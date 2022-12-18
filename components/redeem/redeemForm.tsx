@@ -91,7 +91,7 @@ function RedeemForm() {
                </span>
             </div>
 
-            <div className="flex flex-col justify-between w-full gap-2 mx-auto mt-2 md:flex-row">
+            <div className="flex flex-col justify-between w-full gap-2 mx-auto mt-2 md:flex-row max-w-[95vw] overflow-hidden">
                <span>
                   <input
                      type="checkbox"
@@ -101,15 +101,15 @@ function RedeemForm() {
                      checked={terms}
                      onChange={() => setTerms(!terms)}
                   />
-                  <label htmlFor="terms" className="px-2 text-sm">
+                  <label htmlFor="terms" className="px-2 text-sm ">
                      Acepto los términos y condiciones
                   </label>
                </span>
             </div>
-            <div className="flex w-full">
+            <div className="flex justify-center w-full max-w-[95vw] overflow-hidden">
                <button
                   type="submit"
-                  className="p-2 px-8 mx-auto mt-2 text-white bg-[#b592f8]"
+                  className="p-2 px-8 mt-2 text-white bg-[#b592f8]"
                >
                   Inscríbete
                </button>

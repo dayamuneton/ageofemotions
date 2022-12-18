@@ -8,7 +8,7 @@ function RedeemContent() {
          <span className="my-8 relative flex aspect-square h-[5rem]">
             <Image src="/AmaYLiberateLogo.png" alt="" fill />
          </span>
-         <div className="w-[20ch] text-center text-xl font-bold text-white">
+         <div className="w-[20ch] max-w-[95vw] text-center text-xl font-bold text-white">
             Ingresa tu código aquí y redime tu regalo
          </div>
          <RedeemForm />
@@ -24,7 +24,7 @@ function RedeemContent() {
                   Una vez lo redimas este Gift Card te llegará directo a tu
                   email el programa: Ama y Libérate.
                </p>
-               <span className="relative flex aspect-[1.47/1] h-[10rem] w-[14rem]">
+               <span className="relative flex aspect-[1.47/1] h-[10rem] w-[14rem] max-w-[95vw]">
                   <Image src="/A&LMockUps.png" alt="" fill />
                </span>
             </div>

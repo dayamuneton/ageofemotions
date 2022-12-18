@@ -6,7 +6,7 @@ import React from "react";
 
 function Giftcard() {
    return (
-      <div className="flex flex-col items-center w-full  bg-blueGray-darker min-h-[100vh] h-full">
+      <div className="flex flex-col items-center w-full  bg-blueGray-darker min-h-[100vh] h-full max-w-[100vw] overflow-hidden">
          <Head>
             <title>Gift Card</title>
             <meta name="giftcard" content="Ama & Liberate Gift Card" />

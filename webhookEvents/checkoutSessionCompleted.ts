@@ -33,11 +33,12 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
 
       const userRef = doc(db, "users", email);
 
+      await subscribeToGetGiftCard(email, code);
+
       await updateDoc(userRef, {
          giftCardCodes: arrayUnion(code),
+         getGiftCard: false,
       });
-
-      await subscribeToGetGiftCard(email, code);
       console.log(`log, ${email} ${code}`);
       return;
    }
