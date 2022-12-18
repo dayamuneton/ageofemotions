@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import React from "react";
 import RedeemForm from "./redeemForm";
 
 function RedeemContent() {
-   const router = useRouter();
    return (
       <>
          <span className="my-8 relative flex aspect-square h-[5rem]">
@@ -27,12 +26,12 @@ function RedeemContent() {
                   <p>te llegará directo a tuemail el programa:</p>
                   <p>Ama y Libérate.</p>
                </span>
-               <button
-                  onClick={() => router.push("/parte1")}
+               <Link
+                  href="/parte1"
                   className="bg-[#b592f8] p-2 text-white my-2"
                >
                   Más información
-               </button>
+               </Link>
                <span className="relative flex aspect-[1.47/1] h-[10rem] w-[14rem] max-w-[95vw]">
                   <Image src="/A&LMockUps.png" alt="" fill />
                </span>
