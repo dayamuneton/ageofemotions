@@ -57,7 +57,7 @@ const RedeemGiftCard = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const { fullName, email, code } = req.body;
 
-   const usersRef = collection(db, "users", email);
+   const usersRef = collection(db, "users");
 
    let codeIsRedeemed = await checkIfCodeIsRedeemed(code);
 
