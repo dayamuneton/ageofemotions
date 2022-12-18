@@ -21,25 +21,25 @@ function RedeemForm() {
          code,
       };
 
-      const response = await fetch("/api/redeem", {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-         },
-         body: JSON.stringify(payload),
-      });
-      const data = await response.json();
-      const url = data.url;
+      try {
+         await fetch("/api/redeem", {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+               Accept: "application/json",
+            },
+            body: JSON.stringify(payload),
+         });
 
-      if (typeof url === "string") {
-         router.push(url);
+         setEmail("");
+         setFullName("");
+         setCode("");
+         setTerms(false);
+
+         router.push("/gracias");
+      } catch (error) {
+         console.log(error);
       }
-
-      setEmail("");
-      setFullName("");
-      setCode("");
-      setTerms(false);
    };
 
    return (
