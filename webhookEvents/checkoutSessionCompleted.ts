@@ -37,7 +37,7 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
          giftCardCodes: arrayUnion(code),
       });
 
-      await subscribeToGetGiftCard(email, subscriberData.giftCardCode);
+      await subscribeToGetGiftCard(email, code);
       console.log(`log, ${email} ${code}`);
       return;
    }
