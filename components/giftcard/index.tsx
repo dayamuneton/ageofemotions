@@ -19,15 +19,17 @@ function GiftcardContent() {
          <div className=" w-[90vw] max-w-[95vw] md:max-w-md text-center mb-6 text-white">
             <h2 className="text-lg font-bold text-[#b592f8]">IMPORTANTE:</h2>
             <p>*El código es de un solo uso</p>
+            Para redimirlo, haz clic
+            <Link href="/redeem" className="mx-1 text-blue-400 underline">
+               Aquí
+            </Link>
+            o utiliza este enlace:
+            <Link href="/redeem" className="mx-1 text-blue-400 underline">
+               www.amayliberate.com/redeem
+            </Link>
             <p>
-               Para redimirlo debes entrar el código
-               <Link href="/redeem" className="mx-1 text-blue-400 underline">
-                  Aquí
-               </Link>
-            </p>
-            <p>
-               También puedes compartir este link y redimirlo
-               www.amayliberate/redeem
+               Si deseas compartir este código con otra persona, envía este
+               enlace para que puedan redimirlo ellos mismos
             </p>
          </div>
       </>
