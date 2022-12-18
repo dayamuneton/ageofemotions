@@ -1,6 +1,8 @@
 const subscribeToGetGiftCard = async (email: string, giftCardCode: string) => {
+   console.log("log", giftCardCode);
+
    if (!email || !giftCardCode) {
-      return new Error("Email and Giftcard code are required");
+      return console.log("log Email and Giftcard code are required");
    }
 
    console.log("log", "data for mailerlite", email);
