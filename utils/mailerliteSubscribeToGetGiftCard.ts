@@ -1,27 +1,16 @@
-import { firstLetterUpperCaseEachWord } from "./firstLetterUpperCase";
-
-export const subscribeToPartOne = async (email: string, fullName: string) => {
-   if (!email || !fullName) return;
-
-   console.log("log", "data for mailerlite", email, fullName);
-
-   const splitName = firstLetterUpperCaseEachWord(fullName);
-
-   const name = splitName[0];
-
-   let lastName = "";
-
-   if (splitName.length > 1) {
-      lastName = splitName[splitName.length - 1];
+const subscribeToGetGiftCard = async (email: string, giftCardCode: string) => {
+   if (!email || !giftCardCode) {
+      return new Error("Email and Giftcard code are required");
    }
+
+   console.log("log", "data for mailerlite", email);
 
    const payload = {
       email: email,
       fields: {
-         name: name,
-         last_name: lastName,
+         gift_card_code: giftCardCode,
       },
-      groups: [process.env.NEXT_PUBLIC_MAILERLITE_PART_ONE_GROUP_ID],
+      groups: [process.env.NEXT_PUBLIC_MAILERLITE_GIFTCARD_GROUP_ID],
    };
 
    const data = JSON.stringify(payload);
@@ -40,8 +29,9 @@ export const subscribeToPartOne = async (email: string, fullName: string) => {
          body: data,
       }
    );
-
    const mailerliteResponse = await response.json();
 
    console.log("log", mailerliteResponse);
 };
+
+export default subscribeToGetGiftCard;

@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 import { buffer } from "micro";
-import { subscribeToPartOne } from "@utils/mailerliteSubscribeToPartOne";
-import { getFirebaseSubscriberData } from "@utils/getFirebaseSubscriberData";
+import checkoutSessionCompletedEvent from "../../webhookEvents/checkoutSessionCompleted";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
    apiVersion: "2022-11-15",
@@ -15,14 +14,6 @@ export const config = {
       bodyParser: false,
    },
 };
-
-interface CheckoutSession extends Stripe.Event.Data.Object {
-   customer_details: {
-      name: string;
-      email: string;
-   };
-   id: string;
-}
 
 const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
    if (req.method !== "POST") return;
@@ -44,22 +35,7 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
 
    switch (event.type) {
       case "checkout.session.completed":
-         const checkoutSession = event.data.object as CheckoutSession;
-
-         const checkoutSessionId = checkoutSession.id;
-
-         let subscriberData = await getFirebaseSubscriberData(
-            checkoutSessionId
-         );
-
-         if (!subscriberData) {
-            subscriberData = checkoutSession.customer_details;
-         }
-
-         console.log("log", "subscriberData", subscriberData);
-
-         await subscribeToPartOne(subscriberData.email, subscriberData.name);
-
+         checkoutSessionCompletedEvent(event.data.object);
          break;
 
       default:

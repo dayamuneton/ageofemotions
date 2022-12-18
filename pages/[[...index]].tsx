@@ -1,5 +1,5 @@
-import About from "@components/about";
-import Footer from "@components/footer";
+import About from "@shared/about";
+import Footer from "@shared/footer";
 import ArtIsTheNewWay from "@components/home/artIsTheNewWay";
 import Content from "@components/home/content";
 import Description from "@components/home/description";
@@ -7,8 +7,8 @@ import Form from "@components/home/form";
 import GiftForYou from "@components/home/giftforyou";
 import LeopardGlassesGirl from "@components/home/leopardGlassesGirl";
 import Logo from "@components/home/logo";
-import Navbar from "@components/navbar";
-import GiftButton from "@components/shared/giftButton";
+import Navbar from "@shared/navbar";
+import GiftButton from "@shared/giftButton";
 import Head from "next/head";
 
 export default function Home() {

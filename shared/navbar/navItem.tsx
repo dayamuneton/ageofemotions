@@ -17,7 +17,7 @@ function NavItem({ href, text, asPath, alias }: NavItemProps) {
    }
    const textColor = match ? "text-lightBlue" : "text-gray-600";
    return (
-      <span className="flex justify-center w-[70%] md:w-fit p-2 mx-auto border-b-2 md:border-b-0 md:mx-0">
+      <span className="flex justify-center w-[70%] p-2 mx-auto border-b-2 ">
          <Link
             className={`${textColor} mx-[5rem]  hover:drop-shadow `}
             href={href || "/"}

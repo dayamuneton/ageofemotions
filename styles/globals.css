@@ -18,6 +18,7 @@
    width: 100%;
    font-size: min(16px, 1rem);
    outline: none;
+   color: black;
    padding: 0.5rem;
 }
 .inputBox {
@@ -66,4 +67,8 @@
    flex-direction: column;
    height: 100vh;
    white-space: nowrap;
+}
+.radial-bg {
+   /* background: ; */
+   background: radial-gradient(#26266b, #1d1228 70%, transparent);
 }

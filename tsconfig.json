@@ -16,7 +16,10 @@
       "incremental": true,
       "paths": {
          "@components/*": ["./components/*"],
-         "@utils/*": ["./utils/*"]
+         "@utils/*": ["./utils/*"],
+         "@shared/*": ["./shared/*"],
+         "@context/*": ["./context/*"],
+         "@webhook/*": ["./webhookEvents/*"]
       }
    },
    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

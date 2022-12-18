@@ -16,6 +16,16 @@ const navbarItems = [
       text: "Programa",
       alias: ["/signup"],
    },
+   {
+      href: "/giftcard",
+      text: "Gift-Card",
+      alias: [],
+   },
+   {
+      href: "/redeem",
+      text: "Redimir",
+      alias: [],
+   },
 ];
 
 function Navbar() {
@@ -32,7 +42,7 @@ function Navbar() {
    return (
       <nav className="w-full">
          <div
-            className="fixed md:hidden z-50 w-full flex justify-end text-[2rem] p-3"
+            className="fixed z-50 right-0 w-fit flex justify-end text-[2rem] p-3 text-[#555]"
             onClick={toggleSidebar}
          >
             {showSidebar ? <MdClose /> : <HiMenu />}
@@ -42,7 +52,7 @@ function Navbar() {
             ref={navUlRef}
             className={`navUl ${
                showSidebar ? "left-0" : "left-[-100%]"
-            } md:relative md:h-fit md:bg-[#faf8f5] md:left-0 md:w-full md:flex-row text-xl pt-4 md:py-4 md:justify-center `}
+            } text-xl pt-4  `}
          >
             {navbarItems.map(({ href, text, alias }: any) => (
                <NavItem

@@ -5,19 +5,19 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-function SignUpForm() {
+function GiftcardForm() {
    const [email, setEmail] = useState("");
-   const [firstName, setFirstName] = useState("");
-   const [lastName, setLastName] = useState("");
    const [terms, setTerms] = useState(false);
+   const router = useRouter();
 
    const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
 
+      const getGiftCard = true;
+
       const payload = {
          email,
-         firstName,
-         lastName,
+         getGiftCard,
       };
 
       const response = await fetch("/api/saveDataInFirebase", {
@@ -36,68 +36,22 @@ function SignUpForm() {
       }
 
       setEmail("");
-      setFirstName("");
-      setLastName("");
       setTerms(false);
    };
 
-   const router = useRouter();
-   const giftRef = useRef<HTMLDivElement>(null);
-   useEffect(() => {
-      const scrollToGift = () => {
-         if (router.asPath === "/signup") {
-            giftRef.current?.scrollIntoView({ behavior: "smooth" });
-         }
-      };
-      scrollToGift();
-   }, [router]);
    return (
-      <div
-         ref={giftRef}
-         className="bg-[#e9e7e6] flex flex-col items-center p-8 w-full sm:max-w-3xl my-8"
-      >
-         <span className="flex mb-2 text-xl font-bold text-center font-play-fair text-[#1b1655] font-popings">
-            Inscríbete aquí y lo recibirás en tu correo
-         </span>
+      <div className="bg-[#111] text-white flex flex-col items-center p-8 w-full sm:max-w-3xl my-8 shadow-[0px_0px_7rem_#26266b]">
          <form
             className="p-6 pb-2 w-[min(95%,40rem)]"
             onSubmit={redirectToCheckout}
          >
             <div className="flex flex-col gap-8 sm:gap-4 sm:flex-row">
-               <span className="inputBox">
-                  <label className="absolute top-[-1.5rem]" htmlFor="name">
-                     Nombre
-                  </label>
-                  <input
-                     className="signUpInputs"
-                     type="text"
-                     name="name"
-                     required
-                     value={firstName}
-                     onChange={(e) => setFirstName(e.target.value)}
-                  />
-               </span>
-
-               <span className="inputBox">
-                  <label className="absolute top-[-1.5rem]" htmlFor="lastname">
-                     Apellido
-                  </label>
-                  <input
-                     className="signUpInputs"
-                     type="text"
-                     name="lastname"
-                     value={lastName}
-                     required
-                     onChange={(e) => setLastName(e.target.value)}
-                  />
-               </span>
-
-               <span className="inputBox">
+               <span className="relative flex items-center w-full max-w-md gap-1 mx-auto text-white">
                   <label className="absolute top-[-1.5rem]" htmlFor="email">
-                     Email
+                     Email:
                   </label>
                   <input
-                     className="signUpInputs"
+                     className="text-black signUpInputs"
                      type="email"
                      name="email"
                      required
@@ -107,7 +61,7 @@ function SignUpForm() {
                </span>
             </div>
 
-            <div className="flex flex-col items-center justify-between gap-2 mt-2 md:flex-row">
+            <div className="flex flex-col items-center justify-between w-full max-w-md gap-2 mx-auto mt-2 md:flex-row">
                <span>
                   <input
                      type="checkbox"
@@ -125,7 +79,7 @@ function SignUpForm() {
             <div className="flex w-full">
                <button
                   type="submit"
-                  className="p-2 px-8 mx-auto mt-2 text-black bg-orange"
+                  className="p-2 px-8 mx-auto mt-2 text-white bg-[#b592f8]"
                >
                   Inscríbete
                </button>
@@ -172,4 +126,4 @@ function SignUpForm() {
    );
 }
 
-export default SignUpForm;
+export default GiftcardForm;
