@@ -35,7 +35,7 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
 
    switch (event.type) {
       case "checkout.session.completed":
-         checkoutSessionCompletedEvent(event.data.object);
+         await checkoutSessionCompletedEvent(event.data.object);
          break;
 
       default:
