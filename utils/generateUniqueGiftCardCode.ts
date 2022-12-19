@@ -1,10 +1,4 @@
-import {
-   collection,
-   CollectionReference,
-   getDocs,
-   query,
-   where,
-} from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 
 const generateRandomString = (length: number) => {
@@ -20,29 +14,21 @@ const generateRandomString = (length: number) => {
    return result;
 };
 
-const isCodeInUseByAnUser = async (
-   usersRef: CollectionReference,
-   code: string
-) => {
-   const usersQuery = query(
-      usersRef,
-      where("giftCardCodes", "array-contains", code)
-   );
+const giftCardCodeExists = async (code: string) => {
+   const codeRef = doc(db, "giftcardcodes", code);
 
-   const usersSnapshot = await getDocs(usersQuery);
+   const codeSnapshot = await getDoc(codeRef);
 
-   return !usersSnapshot.empty;
+   return codeSnapshot.exists();
 };
 
 const generateUniqueGiftCardCode = async () => {
-   const usersRef = collection(db, "users");
-
    let code = "";
    let codeInUse = true;
 
    while (codeInUse) {
       code = generateRandomString(10);
-      codeInUse = await isCodeInUseByAnUser(usersRef, code);
+      codeInUse = await giftCardCodeExists(code);
    }
 
    return code;

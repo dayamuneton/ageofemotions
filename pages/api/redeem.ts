@@ -1,53 +1,29 @@
 import { db } from "@utils/firebaseConfig";
 import { subscribeToPartOne } from "@utils/mailerliteSubscribeToPartOne";
-import {
-   arrayRemove,
-   collection,
-   CollectionReference,
-   doc,
-   getDoc,
-   getDocs,
-   query,
-   setDoc,
-   updateDoc,
-   where,
-} from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const checkIfCodeIsRedeemed = async (code: string) => {
-   const codeRef = doc(db, "redeemedCodes", code);
+const isGiftCardCodeValid = async (code: string) => {
+   const codeRef = doc(db, "giftcardcodes", code);
 
    const codeSnapshot = await getDoc(codeRef);
 
-   return codeSnapshot.exists();
-};
+   if (!codeSnapshot.exists()) return false;
 
-const clearCodeFromFieldIfItExist = async (
-   usersRef: CollectionReference,
-   code: string
-) => {
-   const usersQuery = query(
-      usersRef,
-      where("giftCardCodes", "array-contains", code)
-   );
+   const codeHasBeenRedeemed = codeSnapshot.data().redeemed;
 
-   const usersSnapshot = await getDocs(usersQuery);
-
-   if (usersSnapshot.empty) return false;
-
-   const userRef = usersSnapshot.docs[0].ref;
-
-   await updateDoc(userRef, {
-      giftCardCodes: arrayRemove(code),
-   });
-
-   const redeemedCodeRef = doc(db, "redeemedCodes", code);
-
-   await setDoc(redeemedCodeRef, {
-      redeemed: true,
-   });
+   if (codeHasBeenRedeemed) return false;
 
    return true;
+};
+
+const markGiftCardCodeAsRedeemed = async (code: string, email: string) => {
+   const codeRef = doc(db, "giftcardcodes", code);
+
+   await updateDoc(codeRef, {
+      redeemed: true,
+      redeemerEmail: email,
+   });
 };
 
 const RedeemGiftCard = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -57,17 +33,15 @@ const RedeemGiftCard = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const { fullName, email, code } = req.body;
 
-   const usersRef = collection(db, "users");
+   let codeIsValid = await isGiftCardCodeValid(code);
 
-   let codeIsRedeemed = await checkIfCodeIsRedeemed(code);
-
-   if (codeIsRedeemed) return;
-
-   let codeExisted = await clearCodeFromFieldIfItExist(usersRef, code);
-
-   if (!codeExisted) return;
+   if (!codeIsValid) return;
 
    await subscribeToPartOne(email, fullName);
+
+   await markGiftCardCodeAsRedeemed(code, email);
+
+   console.log(`log, Redeemer ${email}, code ${code}`);
 
    res.status(200).send("OK");
 };

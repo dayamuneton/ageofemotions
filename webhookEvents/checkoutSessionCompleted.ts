@@ -3,7 +3,7 @@ import { getFirebaseSubscriberData } from "@utils/getFirebaseSubscriberData";
 import subscribeToGetGiftCard from "@utils/mailerliteSubscribeToGetGiftCard";
 import { subscribeToPartOne } from "@utils/mailerliteSubscribeToPartOne";
 import generateUniqueGiftCardCode from "@utils/generateUniqueGiftCardCode";
-import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@utils/firebaseConfig";
 
 interface CheckoutSessionCompleted extends Stripe.Event.Data.Object {
@@ -39,7 +39,15 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
          giftCardCodes: arrayUnion(code),
          getGiftCard: false,
       });
-      console.log(`log, ${email} ${code}`);
+
+      const docRef = doc(db, "giftcardcodes", code);
+
+      await setDoc(docRef, {
+         redeemed: false,
+         buyerEmail: email,
+      });
+
+      console.log(`log, buyer ${email}, code ${code}`);
       return;
    }
    await subscribeToPartOne(subscriberData.email, subscriberData.name);
