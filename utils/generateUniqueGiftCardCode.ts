@@ -1,7 +1,7 @@
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 
-const generateRandomString = (length: number) => {
+export const generateRandomString = (length: number) => {
    const characters =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -22,7 +22,7 @@ const giftCardCodeExists = async (code: string) => {
    return codeSnapshot.exists();
 };
 
-const generateUniqueGiftCardCode = async () => {
+export const generateUniqueGiftCardCode = async () => {
    let code = "";
    let codeInUse = true;
 

@@ -10,7 +10,7 @@ function SuccessSubscription() {
       <div className="flex flex-col items-center w-full h-[100vh] overflow-x-hidden">
          <Head>
             <title>Gracias</title>
-            <meta name="description" content="Compra exitosa" />
+            <meta name="description" content="Regalo Adquirido" />
             <link rel="icon" href="/favicon.ico" />
          </Head>
          <Navbar />
@@ -23,9 +23,8 @@ function SuccessSubscription() {
             </span>
             <div className="mx-auto max-w-[70ch] w-[95%]">
                <p className="my-8 text-xl font-bold font-play-fair ">
-                  ¡Felicitaciones! Acabas de adquirir con éxito el acceso al
-                  programa Ama & Liberate, para ayudarte a ganar percepción
-                  corporal de tus emociones.
+                  ¡Felicitaciones! Acabas de adquirir con éxito el acceso al al
+                  regalo de este programa Ama & Libérate.
                </p>
                <div className="flex ">
                   <SouthIcon className="text-orange text-[2rem]" />
@@ -37,28 +36,26 @@ function SuccessSubscription() {
                      <span>
                         <p className="font-semibold">PASO 1:</p>
                         <p className="font-thin">
-                           Revisa tu email para qe puedas empezar hoy mismo con
-                           la primera práctica del programa Ama & Liberate.
+                           Revisa tu email para que puedas tener acceso al
+                           regalo.
                         </p>
                      </span>
                      <span>
                         <p className="font-semibold">PASO 2:</p>
                         <p className="font-thin">
-                           El resto de las prácticas se liberarán cada semana
-                           para que puedas hacer ejercicios de percepción día
-                           por día.
+                           En pocas horas me contactaré contigo por whatsApp
+                           resolveremos las dudas, te contaré mi proceso para
+                           identificar y evaluar lo que realmente me estaba
+                           funcionando y me permitía escalar, basada en la
+                           información que tienes en el PDF.
                         </p>
                      </span>
-                     <span>
-                        <p className="font-semibold">PASO 3:</p>
-                        <p className="font-thin">
-                           En tu semana 10 tendrás seccion 1:1 con Daya Muneton,
-                           preguntas y respuestas. Te comunicaremos el horario
-                           para hacer tu video llamada.
-                        </p>
-                     </span>
+
                      <span className="flex flex-col my-12">
-                        <p>Si tienes alguna duda, escribenos </p>
+                        <p className="font-semibold">
+                           Comparte tu número de WhatsApp al siguiente correo
+                           electrónico.
+                        </p>
                         <a
                            href="mailto:info@amayliberate.com"
                            className="text-blue-400 underline"

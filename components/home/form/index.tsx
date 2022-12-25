@@ -4,12 +4,14 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { reportLeadEvent } from "@pixelEvents/events";
 
 function Form() {
    const [email, setEmail] = useState("");
    const [name, setName] = useState("");
    const [lastName, setLastName] = useState("");
    const [terms, setTerms] = useState(false);
+   const router = useRouter();
 
    const subscribeToGift = async (e: FormEvent) => {
       e.preventDefault();
@@ -41,6 +43,11 @@ function Form() {
       );
 
       const jsonResponse = await response.json();
+
+      await reportLeadEvent("/", email, name);
+
+      router.push("/gracias-regalo");
+
       console.log(jsonResponse);
 
       setEmail("");
@@ -49,7 +56,6 @@ function Form() {
       setTerms(false);
    };
 
-   const router = useRouter();
    const giftRef = useRef<HTMLDivElement>(null);
    useEffect(() => {
       const scrollToGift = () => {

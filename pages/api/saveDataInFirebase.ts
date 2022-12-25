@@ -1,6 +1,7 @@
 import { doc, FieldValue, setDoc } from "firebase/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@utils/firebaseConfig";
+import { reportInitializeCheckoutEvent } from "@pixelEvents/events";
 
 interface UserData {
    name?: string;
@@ -57,6 +58,8 @@ const saveDataInFirebase = async (
       await setDoc(userRef, data, {
          merge: true,
       });
+
+      await reportInitializeCheckoutEvent(cancel_url, email);
 
       res.status(200).json(session);
    } catch (e) {

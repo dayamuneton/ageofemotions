@@ -9,7 +9,7 @@ function GiftForYou() {
             <Text />
             <span className="relative flex w-[95vw]  md:w-[100%] border-blueGray border-[1.5rem] aspect-[1/1]">
                <Image
-                  src="/dayamunetonRose.jpg"
+                  src="/cover-3-filtros.png"
                   priority={true}
                   fill
                   alt="Daya Muneton Rose"

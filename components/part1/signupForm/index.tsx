@@ -14,10 +14,13 @@ function SignUpForm() {
    const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
 
+      const getGiftCard = false;
+
       const payload = {
          email,
          firstName,
          lastName,
+         getGiftCard,
       };
 
       const response = await fetch("/api/saveDataInFirebase", {
