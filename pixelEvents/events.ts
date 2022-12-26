@@ -59,5 +59,7 @@ export const reportInitializeCheckoutEvent = async (
          em: [lowerCaseSha256HexHash(email)],
       },
    };
+   console.log(`log InitializeCheckout ${reqPayload}`);
+
    return await apiConvertions(reqPayload);
 };
