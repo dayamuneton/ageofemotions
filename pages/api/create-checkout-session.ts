@@ -17,8 +17,8 @@ const createCheckoutSession = async (
 
    const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      success_url: `${process.env.MY_DOMAIN}/${success_url}`,
-      cancel_url: `${process.env.MY_DOMAIN}/${cancel_url}`,
+      success_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/${success_url}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/${cancel_url}`,
       allow_promotion_codes: true,
       payment_method_types: ["card"],
       line_items: [

@@ -10,9 +10,6 @@ const makePostRequestToConvertionsAPI = async (payload: any) => {
          body: JSON.stringify(payload),
       }
    );
-
-   console.log(response);
-
-   return response;
+   return await response.json();
 };
 export default makePostRequestToConvertionsAPI;

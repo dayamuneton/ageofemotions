@@ -4,9 +4,9 @@ import apiConvertions from "./apiConvertions";
 export const reportPageViewEvent = async (url: string) => {
    const reqPayload = {
       event_name: "PageView",
-      event_source_url: `${process.env.MY_DOMAIN}${url}`,
+      event_source_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}${url}`,
    };
-   await apiConvertions(reqPayload);
+   return await apiConvertions(reqPayload);
 };
 
 export const reportPurchaseEvent = async (
@@ -17,7 +17,7 @@ export const reportPurchaseEvent = async (
 ) => {
    const reqPayload = {
       event_name: "Purchase",
-      event_source_url: `${process.env.MY_DOMAIN}${url}`,
+      event_source_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}${url}`,
       user_data: {
          em: [lowerCaseSha256HexHash(email)],
          fn: [lowerCaseSha256HexHash(firstName)],
@@ -27,7 +27,7 @@ export const reportPurchaseEvent = async (
          value: amountTotal / 100 || 0,
       },
    };
-   await apiConvertions(reqPayload);
+   return await apiConvertions(reqPayload);
 };
 
 export const reportLeadEvent = async (
@@ -37,13 +37,13 @@ export const reportLeadEvent = async (
 ) => {
    const reqPayload = {
       event_name: "Lead",
-      event_source_url: `${process.env.MY_DOMAIN}${url}`,
+      event_source_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}${url}`,
       user_data: {
          em: [lowerCaseSha256HexHash(email)],
          fn: [lowerCaseSha256HexHash(firstName)],
       },
    };
-   await apiConvertions(reqPayload);
+   return await apiConvertions(reqPayload);
 };
 
 export const reportInitializeCheckoutEvent = async (
@@ -52,10 +52,10 @@ export const reportInitializeCheckoutEvent = async (
 ) => {
    const reqPayload = {
       event_name: "InitiateCheckout",
-      event_source_url: `${process.env.MY_DOMAIN}${url}`,
+      event_source_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}${url}`,
       user_data: {
          em: [lowerCaseSha256HexHash(email)],
       },
    };
-   await apiConvertions(reqPayload);
+   return await apiConvertions(reqPayload);
 };

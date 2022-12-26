@@ -18,6 +18,7 @@ const saveDataInFirebase = async (
    if (req.method !== "POST") {
       res.status(405).send("Method Not Allowed");
    }
+
    const { firstName, lastName, email, getGiftCard } = req.body;
 
    const cancel_url = getGiftCard ? "giftcard" : "parte1";
@@ -28,7 +29,7 @@ const saveDataInFirebase = async (
    };
 
    const response = await fetch(
-      `${process.env.MY_DOMAIN}/api/create-checkout-session`,
+      `${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/create-checkout-session`,
       {
          method: "POST",
          headers: {
@@ -58,8 +59,9 @@ const saveDataInFirebase = async (
       await setDoc(userRef, data, {
          merge: true,
       });
+      console.log(session);
 
-      await reportInitializeCheckoutEvent(cancel_url, email);
+      await reportInitializeCheckoutEvent(`/${cancel_url}`, email);
 
       res.status(200).json(session);
    } catch (e) {

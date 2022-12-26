@@ -13,16 +13,20 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const user_data = {
       ...basePayload.data[0].user_data,
-      ...reqPayload.user_data,
+      ...(reqPayload.user_data || {}),
    };
 
    const payload = {
       data: [{ ...basePayload.data[0], ...reqPayload, user_data }],
    };
 
+   // console.log(user_data);
+   // console.log(payload);
+
    try {
-      await makePostRequestToConvertionsAPI(payload);
-      res.status(200).send("OK");
+      const response = await makePostRequestToConvertionsAPI(payload);
+
+      res.status(200).json(response);
    } catch (error) {
       res.status(500).json(error);
    }
