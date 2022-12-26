@@ -27,6 +27,8 @@ export const reportPurchaseEvent = async (
          value: amountTotal / 100 || 0,
       },
    };
+   console.log(`log purchase ${reqPayload}`);
+
    return await apiConvertions(reqPayload);
 };
 
