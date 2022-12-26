@@ -10,14 +10,14 @@ export const reportPageViewEvent = async (url: string) => {
 };
 
 export const reportPurchaseEvent = async (
-   url: string,
+   fullUrl: string,
    email: string,
    firstName: string,
    amountTotal: number
 ) => {
    const reqPayload = {
       event_name: "Purchase",
-      event_source_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}${url}`,
+      event_source_url: `${fullUrl}`,
       user_data: {
          em: [lowerCaseSha256HexHash(email)],
          fn: [lowerCaseSha256HexHash(firstName)],

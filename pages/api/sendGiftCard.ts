@@ -8,22 +8,22 @@ const sendGiftCard = async (req: NextApiRequest, res: NextApiResponse) => {
       port: 465,
       host: "mail.privateemail.com",
       secure: true,
-      auth: {
-         user: process.env.SMTP_TRANSPORT_AUTH_USER,
-         pass: process.env.SMTP_TRANSPORT_AUTH_PASS,
-      },
+      // auth: {
+      // user: process.env.SMTP_TRANSPORT_AUTH_USER,
+      // pass: process.env.SMTP_TRANSPORT_AUTH_PASS,
+      // },
    });
 
-   const mailOptions = {
-      from: `"Ama & Libérate" <${process.env.SMTP_TRANSPORT_AUTH_USER}>`,
-      to: "",
-      subject: "Gift Card sent from my server",
-      html: "<p>Hola</p>",
-   };
+   // const mailOptions = {
+   //    from: `"Ama & Libérate" <${process.env.SMTP_TRANSPORT_AUTH_USER}>`,
+   //    to: "",
+   //    subject: "Gift Card sent from my server",
+   //    html: "<p>Hola</p>",
+   // };
 
    try {
-      const info = await transporter.sendMail(mailOptions);
-      console.log("Email sent: %s", info);
+      // const info = await transporter.sendMail(mailOptions);
+      // console.log("Email sent: %s", info);
    } catch (error) {
       console.log(`Error ${error}`);
    }
