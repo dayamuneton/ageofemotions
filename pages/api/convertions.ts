@@ -8,11 +8,8 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
    }
 
    const { reqPayload } = req.body;
-   console.log(`reqPayload ${reqPayload}`);
 
    const basePayload = generateBasePayload(req);
-
-   console.log(`log basePayload ${basePayload.data[0].user_data}`);
 
    const user_data = {
       ...basePayload.data[0].user_data,
@@ -23,8 +20,10 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
       data: [{ ...basePayload.data[0], ...reqPayload, user_data }],
    };
 
-   console.log(`log user_data ${user_data}`);
-   console.log(`log payload ${payload}`);
+   if (reqPayload?.event_name !== "PageView") {
+      console.log(`log user_data ${user_data}`);
+      console.log(`log payload ${payload}`);
+   }
 
    try {
       const response = await makePostRequestToConvertionsAPI(payload);
