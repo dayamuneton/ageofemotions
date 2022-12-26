@@ -45,6 +45,8 @@ export const reportLeadEvent = async (
          fn: [lowerCaseSha256HexHash(firstName)],
       },
    };
+   console.log(`log Lead ${reqPayload}`);
+
    return await apiConvertions(reqPayload);
 };
 
