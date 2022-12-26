@@ -1,5 +1,6 @@
 const apiConvertions = async (reqPayload: any) => {
    console.log(process.env.NEXT_PUBLIC_MY_DOMAIN);
+   console.log(`log what ${reqPayload}`);
 
    const response = await fetch(
       `${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/convertions`,
