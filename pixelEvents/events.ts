@@ -27,8 +27,6 @@ export const reportPurchaseEvent = async (
          value: amountTotal / 100 || 0,
       },
    };
-   console.log(`log purchase ${reqPayload}`);
-
    return await apiConvertions(reqPayload);
 };
 
@@ -45,8 +43,6 @@ export const reportLeadEvent = async (
          fn: [lowerCaseSha256HexHash(firstName)],
       },
    };
-   console.log(`log Lead ${reqPayload}`);
-
    return await apiConvertions(reqPayload);
 };
 
@@ -61,7 +57,5 @@ export const reportInitializeCheckoutEvent = async (
          em: [lowerCaseSha256HexHash(email)],
       },
    };
-   console.log(`log InitializeCheckout ${reqPayload}`);
-
    return await apiConvertions(reqPayload);
 };

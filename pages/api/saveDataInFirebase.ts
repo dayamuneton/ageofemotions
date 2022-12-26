@@ -59,8 +59,6 @@ const saveDataInFirebase = async (
       await setDoc(userRef, data, {
          merge: true,
       });
-      // console.log(session);
-
       await reportInitializeCheckoutEvent(`/${cancel_url}`, email);
 
       res.status(200).json(session);

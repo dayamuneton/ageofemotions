@@ -9,10 +9,17 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const { reqPayload } = req.body;
 
+   console.log(`log convertionsapi reqpayload ${reqPayload}`);
+
+   if (!reqPayload) {
+      res.status(500).send("Event Payload undefined");
+      return;
+   }
+
    const basePayload = generateBasePayload(req);
 
    const user_data = {
-      ...basePayload.data[0].user_data,
+      ...(basePayload.data[0].user_data || {}),
       ...(reqPayload.user_data || {}),
    };
 
@@ -22,7 +29,7 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
    if (reqPayload?.event_name !== "PageView") {
       console.log(`log user_data ${user_data}`);
-      console.log(`log payload ${payload}`);
+      console.log(`log payload ${payload.data[0]}`);
    }
 
    try {
