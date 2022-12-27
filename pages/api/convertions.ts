@@ -9,7 +9,7 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const { reqPayload } = req.body;
 
-   console.log(`log convertionsapi reqpayload ${reqPayload}`);
+   console.log(`log convertionsapi eventName ${reqPayload?.event_name}`);
 
    if (!reqPayload) {
       res.status(500).send("Event Payload undefined");
