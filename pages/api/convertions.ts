@@ -5,16 +5,17 @@ import generateBasePayload from "@pixelEvents/basePayload";
 const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
    if (req.method !== "POST") {
       res.status(405).send("Method Not Allowed");
+      return;
    }
 
    const { reqPayload } = req.body;
-
-   console.log(`log convertionsapi eventName ${reqPayload?.event_name}`);
 
    if (!reqPayload) {
       res.status(500).send("Event Payload undefined");
       return;
    }
+
+   console.log(`log convertionsapi eventName ${reqPayload?.event_name}`);
 
    const basePayload = generateBasePayload(req);
 
