@@ -14,8 +14,9 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(500).send("Event Payload undefined");
       return;
    }
-
-   console.log(`log convertionsapi eventName ${reqPayload?.event_name}`);
+   if (reqPayload.event_name !== "PageView") {
+      console.log(`log convertionsapi eventName ${reqPayload.event_name}`);
+   }
 
    const basePayload = generateBasePayload(req);
 
