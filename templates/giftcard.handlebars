@@ -1,0 +1,145 @@
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Email Template</title>
+      <style>
+         *{ 
+            margin: 0;
+            padding: 0;
+         }
+         body{
+            margin: 0 auto;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+         } 
+         .header{
+            background-color: #1d1228;
+         }
+         .text-white{
+            color: white;
+         }
+         .giftcardImage{ 
+
+            width: 100%;
+         } 
+         .title{
+            font-size:xx-large;
+            font-weight: bold;
+            padding-top: 16px;
+            margin: 0;
+         }
+         .code{
+            padding-top: 16px;
+            padding-bottom: 16px;
+         }
+         .content{ 
+            max-width: 42rem; 
+         }
+         .container{
+            background: white;
+            max-width: 100%;
+            margin: 0 auto;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 32px;
+            padding-bottom: 32px;
+         }
+         .text-start{
+            text-align: left;
+         }
+         .ul{
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 16px;
+         }
+         .ul li{
+            padding-top: 16px;
+         }
+         .important{
+            margin-top: 50px;
+            margin-bottom: 50px;
+         }
+         .footer{
+            margin-top: 40px;
+         }
+         .smIcon{
+            background-color: #000;
+            border-radius: 50%;
+            padding: 8px;
+            max-width: 24px;
+            max-height: 24px;
+            display: inline-block;
+         }
+         .smIconImage{
+            max-width: 100%;
+            max-height: 100%;
+            margin-top: auto;
+         }
+         .marginBlockFooter{
+            margin-top: 16px;
+            margin-bottom: 16px;
+         }
+         .redeemLink{
+            color: rgb(96 165 250);
+            margin-right: auto;
+
+         }
+
+      </style>
+   </head>
+   <body>
+      <table align="center" bgcolor="#1d1228" border="0" cellpadding="0" cellspacing="0" width="640px" style="color: #fff;">
+         <tbody>
+            <tr>
+               <td align="center" class="title">Gift Card</td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="content">
+         <div class="text-white header">
+            <p class="title">Código Gift Card</p>
+            <p class="code" >{{giftcardcode}}</p>
+            <img
+               src="https://firebasestorage.googleapis.com/v0/b/amayliberate.appspot.com/o/A%26Lgiftcard.png?alt=media&token=4a7c2c86-093a-43ef-a7bd-8449065ae226"
+               alt="Header image"
+               class="giftcardImage"
+            />
+         </div>
+         <div class="container">
+
+            <center>
+               <p class="title">IMPORTANTE</p>
+            </center>
+            <div class="important">
+               <p class="text-start">***EL CÓDIGO ES DE UN SOLO USO.</p>
+               <ul class="ul text-start">
+                  <li>
+                     Para redimirlo ingresa el código que aparece en la parte superior de la Gift Card en el formulario que aparece <a target="_blank" href="https://www.amayliberate.com/redeem" class="redeemLink">Aquí</a>
+                  </li>
+                  <li>
+                     Si no eres tú quien recibe el programa y deseas compartir el código a quien le vas a dar el Gift Card, reenvía este enlace, de manera que la persona pueda redimirlo y le llegue a su correo electrónico.
+                  </li>
+               </ul>
+               <div class="text-start">
+                  <a target="_blank" href="https://www.amayliberate.com/redeem" class="redeemLink">wwww.amayliberate.com/redeem</a>
+               </div>
+            </div>
+            <center>
+               <p class="title">GRACIAS !!</p>
+            </center>
+            <div class="footer text-start">
+               <p>Ama Y Libérate</p>
+               <p class="marginBlockFooter">United States of America</p>
+               <a target="_blank" href="https://www.facebook.com/dayamuneton" class="smIcon">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/amayliberate.appspot.com/o/socialMediaIcons%2Ffacebook.png?alt=media&token=aae74562-905e-42a5-a72c-ffdee6861ac9" alt="Facebook Icon" class="smIconImage"/>
+               </a>
+               <a target="_blank" href="https://www.instagram.com/dayamuneton/" class="smIcon">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/amayliberate.appspot.com/o/socialMediaIcons%2Finstagram.png?alt=media&token=3265fbf6-81b8-4d8f-90c8-232d6dbdfe19" alt="Instagram Icon" class="smIconImage"/>
+               </a>
+            </div>
+         
+         </div>
+      </div>
+   </body>
+</html>

@@ -27,6 +27,7 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const payload = {
       data: [{ ...basePayload.data[0], ...reqPayload, user_data }],
+      // test_event_code: "",
    };
 
    if (reqPayload?.event_name !== "PageView") {
@@ -39,6 +40,8 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
       res.status(200).json(response);
    } catch (error) {
+      console.log(error);
+
       res.status(500).json(error);
    }
 };
