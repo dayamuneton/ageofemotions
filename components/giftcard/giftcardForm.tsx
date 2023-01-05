@@ -45,7 +45,7 @@ function GiftcardForm() {
             className="p-6 pb-2 w-[min(95%,40rem)] flex flex-col items-center"
             onSubmit={redirectToCheckout}
          >
-            <div className="flex flex-col gap-8 sm:gap-4 sm:flex-row w-full">
+            <div className="flex flex-col w-full gap-8 sm:gap-4 sm:flex-row">
                <span className="relative flex items-center w-full max-w-[95vw] md:max-w-md gap-1 mx-auto text-white">
                   <label className="absolute top-[-1.5rem]" htmlFor="email">
                      Email:
@@ -108,12 +108,12 @@ function GiftcardForm() {
                >
                   <FacebookIcon className="text-[1.2rem]" />
                </Link>
-               <Link
+               {/* <Link
                   href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
                   target="_blank"
                >
                   <YouTubeIcon className="text-[1.45rem]" />
-               </Link>
+               </Link> */}
                <Link
                   href="https://www.instagram.com/dayamuneton/"
                   target="_blank"

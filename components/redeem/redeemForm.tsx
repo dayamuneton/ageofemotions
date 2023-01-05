@@ -138,12 +138,12 @@ function RedeemForm() {
                >
                   <FacebookIcon className="text-[1.2rem]" />
                </Link>
-               <Link
+               {/* <Link
                   href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
                   target="_blank"
                >
                   <YouTubeIcon className="text-[1.45rem]" />
-               </Link>
+               </Link> */}
                <Link
                   href="https://www.instagram.com/dayamuneton/"
                   target="_blank"

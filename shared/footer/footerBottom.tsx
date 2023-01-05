@@ -6,12 +6,12 @@ import Link from "next/link";
 
 function FooterBottom() {
    return (
-      <div className="flex flex-col items-center w-full  gap-2 p-4 pb-8 text-white bg-black border-t-2 border-white">
+      <div className="flex flex-col items-center w-full gap-2 p-4 pb-8 text-white bg-black border-t-2 border-white">
          <span className="flex flex-col items-center text-sm md:flex-row text-center max-w-[95vw] overflow-hidden">
             <p className="whitespace-nowrap w-full max-w-[95vw]">
                Daya Muneton © Todos los derechos reservados.
             </p>
-            <span className="flex flex-col justify-center items-center sm:flex-row w-full gap-1 sm:ml-1">
+            <span className="flex flex-col items-center justify-center w-full gap-1 sm:flex-row sm:ml-1">
                <Link
                   className="pr-2 border-r"
                   href="/politica-de-privacidad"
@@ -40,12 +40,12 @@ function FooterBottom() {
             <Link href="https://www.facebook.com/dayamuneton" target="_blank">
                <FacebookIcon />
             </Link>
-            <Link
+            {/* <Link
                href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
                target="_blank"
             >
                <YouTubeIcon className="text-[1.7rem]" />
-            </Link>
+            </Link> */}
             <Link href="https://www.instagram.com/dayamuneton/" target="_blank">
                <InstagramIcon />
             </Link>
