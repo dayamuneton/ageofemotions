@@ -19,7 +19,7 @@ function GiftPart1() {
    return (
       <div className="flex flex-col items-center w-full overflow-hidden">
          <Head>
-            <title>Ama Y Liberate</title>
+            <title>Parte 1</title>
             <meta
                name="description"
                content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."
