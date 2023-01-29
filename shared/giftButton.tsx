@@ -15,7 +15,7 @@ function GiftButton() {
          className="p-4 px-12 bg-orange rounded-[.6rem] text-sm font-semibold"
          onClick={updatePath}
       >
-         QUIERO MI GUÍA, CLICK AQUÍ
+         QUIERO COMENZAR AHORA
       </button>
    );
 }

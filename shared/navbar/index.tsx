@@ -16,16 +16,16 @@ const navbarItems = [
       text: "Programa",
       alias: ["/signup"],
    },
-   {
-      href: "/giftcard",
-      text: "Gift-Card",
-      alias: [],
-   },
-   {
-      href: "/redeem",
-      text: "Redimir",
-      alias: [],
-   },
+   // {
+   //    href: "/giftcard",
+   //    text: "Gift-Card",
+   //    alias: [],
+   // },
+   // {
+   //    href: "/redeem",
+   //    text: "Redimir",
+   //    alias: [],
+   // },
 ];
 
 function Navbar() {

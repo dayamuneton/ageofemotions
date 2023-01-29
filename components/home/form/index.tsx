@@ -70,9 +70,9 @@ function Form() {
          ref={giftRef}
          className="bg-[#faf8f5] flex flex-col items-center p-8 w-full"
       >
-         <span className="flex mb-10 text-3xl font-bold font-play-fair">
-            Recibe tu
-            <p className="pr-2 bg-yellow">&nbsp;Regalo</p>
+         <span className="flex flex-col mb-10 text-3xl font-bold md:flex-row ">
+            Recibe tu Entrenamiento
+            <p className="pr-2 mx-1 w-fit bg-yellow">Gratuito</p>
          </span>
          <form
             className="bg-[#fdfdf9] p-8 w-[min(95%,40rem)]"

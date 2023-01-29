@@ -1,18 +1,19 @@
 import React from "react";
 import SouthIcon from "@mui/icons-material/South";
 
-function Description() {
+function BadPractices() {
    return (
-      <div className="flex justify-center">
-         <div className="flex flex-col items-center max-w-[min(40rem,80%)]">
-            <span className="text-4xl mb-4  mt-[4rem] font-play-fair font-bold">
-               🤝¡Tu no tienes por que pasar por lo mismo que yo!
+      <div className="flex justify-center w-fit">
+         <div className="flex flex-col items-center max-w-[min(42rem,80%)] bg-white px-14 ">
+            <span className="text-3xl mb-4  mt-[4rem]  font-bold leading-7">
+               No nos enseñan que el liderazgo empieza por saber gestionar tus
+               propias emociones y poder tener mejor comunicación con los demás.
             </span>
-            <span className="p-4 mb-10 font-bold bg-lightBlue text-orange">
+            <span className="p-4 mb-10 font-semibold bg-[#e8e6e6] text-orange leading-4">
                Estas son las prácticas que durante siete años me mantuvieron
-               estancada a mí y a mi núcleo familiar. SIP! Lo leíste bien, es
-               mucho tiempo desperdiciado y quiero contarte lo que puedes
-               evitar. ​
+               estancada en varios aspectos de mi vida, quiero contarte lo que
+               puedes evitar para que nada vuelva a frenar tu impulso de tus
+               emprendimientos.
             </span>
             <span className="flex flex-col items-center text-[#777]">
                <span>
@@ -62,4 +63,4 @@ function Description() {
    );
 }
 
-export default Description;
+export default BadPractices;

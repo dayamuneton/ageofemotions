@@ -1,15 +1,15 @@
 import About from "@shared/about";
 import Footer from "@shared/footer";
-import ArtIsTheNewWay from "@components/home/artIsTheNewWay";
 import Content from "@components/home/content";
-import Description from "@components/home/description";
 import Form from "@components/home/form";
-import GiftForYou from "@components/home/giftforyou";
-import LeopardGlassesGirl from "@components/home/leopardGlassesGirl";
-import Logo from "@components/home/logo";
+import GiftForYou from "@shared/giftforyou";
 import Navbar from "@shared/navbar";
 import GiftButton from "@shared/giftButton";
 import Head from "next/head";
+import ThreeReasons from "@components/home/3reasons";
+import DivergentThinking from "@components/home/divergentThinking";
+import ServicesCards from "@components/home/servicesCards";
+import BadPractices from "@shared/badPractices";
 
 export default function Home() {
    return (
@@ -29,23 +29,38 @@ export default function Home() {
 
          <Navbar />
 
-         <Logo />
+         {/* <Logo /> */}
 
          <GiftForYou />
 
-         <Description />
+         <div className="bg-[#faf8f5] w-full flex- flex-col items-center flex pb-4">
+            <ThreeReasons />
+            <DivergentThinking />
+
+            <div className="my-14">
+               <h2 className="mb-2 text-5xl font-semibold">Trabaja conmigo</h2>
+               <p className="ml-16 text-xl text-orange font-cutive">
+                  Y escala tu negocio integralmente
+               </p>
+            </div>
+            <ServicesCards />
+         </div>
+
+         {/* <StructureOfYourGoals /> */}
+
+         <BadPractices />
 
          <Form />
 
-         <div className="flex flex-col items-center w-full p-8 pb-20 text-bold bg-gradient-to-b from-blueGray to-rose">
+         <div className="flex flex-col items-center w-full p-8 pb-20 bg-white text-bold">
             <Content />
             <GiftButton />
             <br />
             <About />
          </div>
 
-         <LeopardGlassesGirl />
-         <ArtIsTheNewWay />
+         {/* <LeopardGlassesGirl /> */}
+         {/* <ArtIsTheNewWay /> */}
          <Footer />
       </div>
    );

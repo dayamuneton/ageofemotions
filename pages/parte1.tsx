@@ -45,7 +45,7 @@ function GiftPart1() {
 
          <CreateConcept />
 
-         <ArtIsTheNewWay />
+         {/* <ArtIsTheNewWay /> */}
 
          <div className="bg-[#fafbfb] flex flex-col items-center w-full">
             <WhatWillYouGet />

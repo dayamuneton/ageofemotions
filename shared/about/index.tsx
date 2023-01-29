@@ -3,49 +3,40 @@ import React from "react";
 
 function About() {
    return (
-      <div>
-         <h2 className="mb-8 text-lg font-bold">Conoce tu host...</h2>
+      <div className="w-full max-w-2xl">
+         <h2 className="mb-8 text-lg font-bold">Así comenzó todo...</h2>
          <div className="flex flex-col items-center">
-            <span>
-               <p className="text-6xl font-haviland">Hola, soy</p>
-               <p className="text-4xl font-semibold font-play-fair">
-                  Daya Muneton
-               </p>
-               <p className="font-semibold">La fundadora de Ama y Libérate</p>
-            </span>
-            <span className="flex aspect-square relative w-[10rem] rounded-full overflow-hidden bg-[#f9d1c3] m-4">
-               <Image src="/fotodaya1-1.png" alt="" fill />
-            </span>
-            <span className="flex flex-col gap-8 max-w-[50ch] font-light ">
+            <span className="flex flex-col gap-8 max-w-[50ch]  ">
                <p>
-                  Durante 20 años experimenté como artista la facilidad que te
-                  brinda el arte para conectar las teorías de las emociones con
-                  las sensaciones, porque al igual que muchas personas viví el
-                  dolor al punto de estar agotada y sentir desinterés por vivir,
-                  el arte me ayudó a comprender como llegué ahí y finalmente
-                  pude liberarme de eso.
+                  Aprendí que aunque era una líder en mi vida y mis empresas,
+                  había logrado ser coherente con mis sueños y mis resultados,
+                  no era tan fácil para las personas a mi alrededor, al no estar
+                  educada sobre mis emociones no podía transmitir ese
+                  conocimiento, es muy frustrante ver a tu equipo de trabajo y
+                  los seres que amas sin poder ayudarles a salir adelante.
+               </p>
+               {/*  */}
+               <p>
+                  Comencé a comprender algo muy interesante que le sucede a los
+                  líderes , lo que me sucedía a nivel familiar podría ser la
+                  mima razón por la que no pueden replicar su éxito a su equipo
+                  de trabajo.
                </p>
                <p>
-                  Si alguien sabe usar el arte como un recurso que te ayuda a
-                  ganar claridad sobre tus emociones, soy yo.
+                  Entonces diseñe este programa que ayuda promover la empatía,
+                  la sensibilización y la inclusión entre las personas, las
+                  marcas, las instituciones, los influencers y las empresas con
+                  esta crisis de salud emocional que esta afectando a nuestra
+                  comunidad y nos limita el progreso y la creatividad.
                </p>
                <p>
-                  Un miedo y un dolor arraigado volvío cuando mi hijo comenzó a
-                  vivir la misma situación, siento que lo mejor que puedo hacer
-                  por él, es ayudarme a mi misma, ser valiente recursiva y
-                  creativa. Cuando no tienes una estrategia basada en
-                  conocimiento sobre ti, que sea adaptable, medible y que
-                  sientas que avanzas, hace que llegues a estados de
-                  incertidumbre, miedo y estancamiento.
+                  Soy Daya Muneton artista y emprendedora, me gusta llevar mis
+                  proyectos a niveles altos, hoy más que nunca, en medio de una
+                  crisis mundial de salud mental, estoy convirtiendo este
+                  programa en una empresa para que este mensaje pueda crecer
+                  más, expandirse más y beneficiar a más personas en todo el
+                  mundo.
                </p>
-               <p>
-                  Soy artista y emprendedora, me gusta escalar y crecer, así que
-                  haré lo humanamente posible para ayudarlo, me siento
-                  comprometida y por esta razón creé AMA y LIBÉRATE, un programa
-                  que me permite compartir todo lo que hemos aprendido, no
-                  hacerlo me hace complice del dolor de muchas personas.
-               </p>
-               <p>Eres mi inspiración y vamos a salir de esto.</p>
             </span>
          </div>
       </div>

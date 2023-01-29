@@ -5,9 +5,9 @@ import React from "react";
 function WhatWillYouGetContent() {
    return (
       <div className="border-2 flex flex-col items-center border-yellow py-8 px-4 lg:px-8 w-[95vw] lg:max-w-md my-4 lg:my-0 mx-auto lg:mx-0 lg:pb-4">
-         <span className="flex relative aspect-square h-[10rem]">
+         {/* <span className="flex relative aspect-square h-[10rem]">
             <Image src="/AmaYLiberateLogo.png" alt="" fill />
-         </span>
+         </span> */}
 
          <div className="flex flex-col pl-4 my-5 max-w-[40ch]">
             <span className="my-1">
@@ -43,7 +43,7 @@ function WhatWillYouGetContent() {
             </span>
          </div>
          <span className="w-full pr-4 mb-2 text-end font-popings">
-            ToTal:$<p className="inline line-through">635.00</p>
+            ToTal:$<p className="inline line-through">248.00</p>
          </span>
          <p className="text-3xl font-bold text-center">
             Válido desde <br /> Dic 2022 - Ene 2023:
@@ -52,7 +52,7 @@ function WhatWillYouGetContent() {
             $174.00
          </p>
          <div className="bg-[#e8e7e7] flex flex-col items-center p-4 px-8 mb-4">
-            <h3 className="flex flex-col items-center text-2xl font-bold  text-orange">
+            <h3 className="flex flex-col items-center text-2xl font-bold text-orange">
                <p className="bg-white w-fit">Oferta de</p>
                <p className="bg-white">Lanzamiento</p>
             </h3>
