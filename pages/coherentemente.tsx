@@ -8,7 +8,7 @@ import React from "react";
 
 function Coherentemente() {
    return (
-      <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col items-center w-full h-full">
          <Head>
             <title>CoherenteMente</title>
             <meta
@@ -40,7 +40,7 @@ function Coherentemente() {
 
          <GiftForYou />
 
-         <div className="bg-[#faf8f5] py-12">
+         <div className="bg-[#faf8f5] w-full py-12">
             <BadPractices />
          </div>
          <StructureOfYourGoals />

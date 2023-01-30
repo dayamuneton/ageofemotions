@@ -3,7 +3,7 @@ import React from "react";
 
 function OpenRoads() {
    return (
-      <div className="flex items-center py-8 bg-white w-[90vw] max-w-3xl">
+      <div className="flex flex-col md:flex-row items-center py-8 bg-white w-[90vw] max-w-3xl">
          <span className="relative flex w-full aspect-square">
             <Image src="/DayaPulgarArriba.png" alt="" fill />
          </span>

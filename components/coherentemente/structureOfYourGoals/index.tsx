@@ -26,18 +26,20 @@ const pdfs = [
 
 function StructureOfYourGoals() {
    return (
-      <div className="flex flex-col w-full  items-center bg-[#fafafa] ">
-         <StructureHeader />
-         {pdfs.map(({ title, text, photoURL, buttonText, subTitle }) => (
-            <StructureCard
-               key={title}
-               title={title}
-               text={text}
-               buttonText={buttonText}
-               subTitle={subTitle}
-               photoURL={photoURL}
-            />
-         ))}
+      <div className="w-full bg-[#fafafa] flex justify-center">
+         <div className="flex flex-col w-[90vw] max-w-3xl  items-center  ">
+            <StructureHeader />
+            {pdfs.map(({ title, text, photoURL, buttonText, subTitle }) => (
+               <StructureCard
+                  key={title}
+                  title={title}
+                  text={text}
+                  buttonText={buttonText}
+                  subTitle={subTitle}
+                  photoURL={photoURL}
+               />
+            ))}
+         </div>
       </div>
    );
 }

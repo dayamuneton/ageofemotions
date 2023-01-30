@@ -144,11 +144,11 @@ function Tecnologicamente() {
                   tu negocio.
                </p>
             </div>
-            <div className="flex items-center justify-center gap-2 my-12">
+            <div className="flex flex-wrap items-center justify-center gap-2 my-12 max-w-[90vw]">
                {tecnologicalServices.map((service) => (
                   <div
                      key={service}
-                     className="text-white hexagon bg-[#555] aspect-square flex flex-col items-center justify-center px-4 w-[13ch] text-center text-sm"
+                     className="text-white hexagon bg-[#555] aspect-square flex flex-col items-center justify-center px-4 w-[30vw] sm:max-w-[13ch]    text-center text-sm"
                   >
                      {service}
                   </div>
@@ -159,13 +159,16 @@ function Tecnologicamente() {
             <h2 className="my-8 text-4xl font-bold text-yellow">
                Conoce Al Equipo
             </h2>
-            <div className="flex">
+            <div className="flex md:flex-row flex-col max-w-3xl w-[90vw] items-center">
                {teamMembers.map(({ photoURL, name, description, linkedIn }) => (
-                  <div key={name} className="flex flex-col items-center">
-                     <span className="relative flex aspect-square w-[7rem] rounded-full overflow-hidden">
+                  <div
+                     key={name}
+                     className="flex flex-col items-center max-w-[30ch]"
+                  >
+                     <span className="relative flex aspect-square w-[10rem] rounded-full overflow-hidden">
                         <Image src={photoURL} alt={name} fill />
                      </span>
-                     <p> {name} </p>
+                     <p className="font-play-fair my-4"> {name} </p>
                      <p> {description} </p>
                   </div>
                ))}

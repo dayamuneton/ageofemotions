@@ -7,7 +7,7 @@ function ExtensionStrategy() {
          <h2 className="py-12 text-2xl font-semibold text-center">
             Creemos juntos una estrategia de extensión
          </h2>
-         <div className="flex items-center">
+         <div className="flex flex-col md:flex-row items-center">
             <span className="relative flex w-full aspect-square">
                <Image src="/DayaTablet.png" alt="" fill />
             </span>

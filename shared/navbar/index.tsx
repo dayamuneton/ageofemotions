@@ -16,6 +16,26 @@ const navbarItems = [
       text: "Programa",
       alias: ["/signup"],
    },
+   {
+      href: "/camiseta",
+      text: "Camiseta",
+      alias: [],
+   },
+   {
+      href: "/coherentemente",
+      text: "CoherenteMENTE",
+      alias: [],
+   },
+   {
+      href: "/creativamente",
+      text: "CreativaMENTE",
+      alias: [],
+   },
+   {
+      href: "/tecnologicamente",
+      text: "TecnológicaMENTE",
+      alias: [],
+   },
    // {
    //    href: "/giftcard",
    //    text: "Gift-Card",
