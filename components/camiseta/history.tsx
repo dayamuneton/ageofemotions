@@ -2,13 +2,13 @@ import React from "react";
 
 function History() {
    return (
-      <div className="flex flex-col items-center w-full py-8 bg-[#fafafa]">
-         <div className="flex flex-col items-center w-[90vw] max-w-3xl">
+      <div className="flex flex-col items-center w-full py-8 ">
+         <div className="flex flex-col items-center w-[90vw] max-w-2xl">
             <h2 className="w-full my-8 text-xl font-bold text-bold">
                La historia de la camiseta
             </h2>
-            <div className="flex gap-3 text-sm">
-               <div className="flex flex-col w-full gap-3">
+            <div className="flex flex-col md:flex-row gap-5 text-sm font-thin leading-5">
+               <div className="flex flex-col w-full gap-3 ">
                   <p>
                      Por respeto a mi hijo, nunca hice registros fotográficos de
                      su estado físico cuando la falta de salud emocional estaba

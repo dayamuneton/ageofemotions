@@ -3,7 +3,7 @@ import SouthIcon from "@mui/icons-material/South";
 import GiftButton from "@shared/giftButton";
 function ThreeReasons() {
    return (
-      <div className="flex flex-col items-center w-full max-w-3xl p-12 bg-white my-14 ">
+      <div className="flex flex-col items-center w-full max-w-3xl p-12 bg-white mt-12 ">
          <h2 className="mb-6 text-3xl font-bold ">
             Tres razones por las que es
             <p className="inline bg-yellow"> difícil escalar </p>

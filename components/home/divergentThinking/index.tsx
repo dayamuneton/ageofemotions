@@ -7,15 +7,22 @@ function DivergentThinking() {
          <span className="relative flex w-[100%] aspect-[9/10]">
             <Image src="/RedesDayaMuneton.png" alt="" fill />
          </span>
-         <div className="md:w-[70%] w-[85vw] flex flex-col  font-thin p-4">
-            <h2 className="text-2xl font-bold">Hola Soy</h2>
+         <div className="md:w-[70%] w-[85vw] flex flex-col  font-thin leading-5 p-4">
+            <h2 className="text-2xl font-bold mb-2">Hola Soy</h2>
             <p className="text-[2.5rem] text-center my-2 font-haviland">
                Daya Muneton
             </p>
+            <span className="my-3">
+               Creadora de
+               <p className="inline mx-1 font-semibold">AGE OF EMOTIONS</p>,
+               diseñé este programa por que creo es hora de aprender a vivir de
+               una manera más actualizada, educada sobre ti mismo y lograr tus
+               resultados con coherencia.
+            </span>
             <span className="">
                Aquí encontrarás todo junto, desde cómo cultivar una
                <p className="inline mx-1 font-semibold">
-                  mente altamente creativa
+                  mente coherente y altamente creativa
                </p>
                para
                <p className="inline mx-1 font-semibold">

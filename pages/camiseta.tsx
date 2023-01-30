@@ -3,8 +3,12 @@ import Ageofemotions from "@components/camiseta/ageofemotions";
 import AyudameAayudar from "@components/camiseta/ayudameaayudar";
 import History from "@components/camiseta/history";
 import LograrQueEntiendan from "@components/camiseta/lograrQueEntiendan";
+import QuieroParticipar from "@components/camiseta/quieroParticipar";
+import TrabajaConmigo from "@components/camiseta/trabajaConmigo";
+import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 
 function Camiseta() {
@@ -63,7 +67,26 @@ function Camiseta() {
          <LograrQueEntiendan />
          <Ageofemotions />
          <AyudameAayudar />
-         <History />
+         <div className="flex flex-col items-center w-full bg-[#f4f4f4]">
+            <QuieroParticipar />
+            <TrabajaConmigo />
+         </div>
+         <div className="bg-[#fafafa] w-full flex flex-col items-center">
+            <History />
+            <div className="w-[80vw] max-w-[25ch] flex flex-col items-center mb-6">
+               <span className="flex relative w-full aspect-[2/3]">
+                  <Image src="/camiseta.jpg" alt="" fill />
+               </span>
+               <span className="text-orange whitespace-nowrap text-xl font-bold text-center leading-5 mt-2">
+                  <p>USD $1,000,000</p>
+                  <p>Un millón de Dolares</p>
+               </span>
+               <button className="w-full border-2 border-black bg-white my-8 py-2 text-sm font-bold text-center">
+                  QUIERO LA CAMISETA
+               </button>
+            </div>
+         </div>
+         <FooterBottom />
       </div>
    );
 }

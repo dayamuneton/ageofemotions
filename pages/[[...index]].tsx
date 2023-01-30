@@ -10,6 +10,7 @@ import ThreeReasons from "@components/home/3reasons";
 import DivergentThinking from "@components/home/divergentThinking";
 import ServicesCards from "@components/home/servicesCards";
 import BadPractices from "@shared/badPractices";
+import WelcomeToAOE from "@components/home/welcome";
 
 export default function Home() {
    return (
@@ -35,6 +36,7 @@ export default function Home() {
 
          <div className="bg-[#faf8f5] w-full flex- flex-col items-center flex pb-4">
             <ThreeReasons />
+            <WelcomeToAOE />
             <DivergentThinking />
 
             <div className="my-14">
