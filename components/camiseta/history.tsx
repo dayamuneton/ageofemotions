@@ -1,8 +1,20 @@
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useRef } from "react";
 
 function History() {
+   const router = useRouter();
+
+   const historyRef = useRef<HTMLDivElement>(null);
+   useEffect(() => {
+      const scrollToGift = () => {
+         if (router.asPath === "/historia") {
+            historyRef.current?.scrollIntoView({ behavior: "smooth" });
+         }
+      };
+      scrollToGift();
+   }, [router]);
    return (
-      <div className="flex flex-col items-center w-full py-8 ">
+      <div ref={historyRef} className="flex flex-col items-center w-full py-8 ">
          <div className="flex flex-col items-center w-[90vw] max-w-2xl">
             <h2 className="w-full my-8 text-xl font-bold text-bold">
                La historia de la camiseta

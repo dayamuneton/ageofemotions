@@ -53,18 +53,18 @@ function Tecnologicamente() {
          <Navbar />
          <div className="bg-[#e8e6e6] w-full p-4  flex justify-center pb-16">
             <div className="max-w-[60ch] w-[90vw] flex flex-col items-center">
-               <h2 className="text-2xl font-bold">TecnologicaMENTE</h2>
+               <h2 className="text-2xl font-bold">TecnológicaMENTE</h2>
                <p>Servicio personalizado</p>
             </div>
          </div>
          <div className="relative flex flex-col items-center w-full bg-black">
             <div className="absolute w-full top-[-3rem]">
-               <span className="p-8 text-2xl bg-white border-4 border-yellow w-[90vw] max-w-2xl mx-auto font-cutive flex flex-col">
+               <span className="p-8 text-xl bg-white border-4 border-yellow w-[90vw] max-w-2xl mx-auto font-cutive flex flex-col">
                   <p>Que la tecnología no sea lo que te</p>
                   <p>este deteniendo !</p>
                </span>
             </div>
-            <div className="pt-[7rem] text-white w-[90vw] max-w-3xl flex flex-col gap-6 font-thin leading-5 border-b-2 border-white">
+            <div className="pt-[9rem] text-white w-[90vw] max-w-3xl flex flex-col gap-6 font-thin leading-5 border-b-2 border-white">
                <h2 className="text-2xl font-medium">
                   Has pasado por estás situaciónes...
                </h2>
@@ -118,9 +118,14 @@ function Tecnologicamente() {
                   Para dar el primer paso escríbeme por WhatsApp haciendo click
                   siguiente botón.
                </p>
-               <button className="py-3 mx-auto mb-4 text-sm font-medium text-black rounded-lg px-7 bg-orange w-fit">
+               <a
+                  href="https://wa.link/lolg4d"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="py-3 mx-auto mb-4 text-sm font-medium text-black rounded-lg px-7 bg-orange w-fit"
+               >
                   Daya, Revisa mi negocio online
-               </button>
+               </a>
             </div>
             <div className=" text-white w-[90vw] max-w-3xl flex flex-col gap-6 font-thin leading-5">
                <h2 className="text-3xl font-semibold text-yellow">

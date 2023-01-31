@@ -1,3 +1,4 @@
+import HistoriaButton from "@shared/historiaButton";
 import Image from "next/image";
 import React from "react";
 
@@ -49,9 +50,7 @@ function CamisetaTextImg() {
                   ayudará a sanar mentes, sanar cuerpos y hasta salvar vidas.
                </p>
             </div>
-            <button className="p-2 px-12 border-[3px] border-black my-4 text-sm font-medium">
-               Conocer la historia de la camiseta
-            </button>
+            <HistoriaButton />
          </div>
       </div>
    );

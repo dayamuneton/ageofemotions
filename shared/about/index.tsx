@@ -1,3 +1,4 @@
+import HistoriaButton from "@shared/historiaButton";
 import Image from "next/image";
 import React from "react";
 
@@ -31,7 +32,7 @@ function About() {
                   sanas sino para mejorar la comunicación en equipos de trabajo,
                   mejorar la empátia, el liderazgo y la creatividad.
                </p>
-               <p>
+               <p className="mb-4">
                   Soy Daya Muneton artista y emprendedora, me gusta llevar mis
                   proyectos a niveles altos, hoy más que nunca, en medio de una
                   crisis mundial de salud mental, estoy convirtiendo este
@@ -39,9 +40,7 @@ function About() {
                   más, expandirse más y beneficiar a más personas en todo el
                   mundo.
                </p>
-               <button className="bg-white border-2 border-black py-3 px-12 mt-8 w-fit text-sm font-bold">
-                  Conocer la historia completa
-               </button>
+               <HistoriaButton text="completa" />
             </span>
          </div>
       </div>

@@ -1,27 +1,29 @@
+import CamisetaButton from "@shared/camisetaButton";
+import HistoriaButton from "@shared/historiaButton";
 import Image from "next/image";
 import React from "react";
 
 function AyudameAayudar() {
    return (
       <div className="flex flex-col items-center w-full py-8 bg-white">
-         <div className="flex flex-col items-center">
-            <h2 className="text-[#777] font-bold text-3xl">Ayúdame a ayudar</h2>
-            <p className="text-sm">
-               Si alguna vez pensaste en ayudar y no sabes cómo, está es una
-               oportunidad. ​
-            </p>
-         </div>
          <div className="flex flex-col items-center md:flex-row w-[90vw] max-w-3xl">
+            <div className="flex flex-col items-center ">
+               <h2 className="text-[#777] font-bold text-3xl">
+                  Ayúdame a ayudar
+               </h2>
+               <p className="text-sm">
+                  Si alguna vez pensaste en ayudar y no sabes cómo, está es una
+                  oportunidad. ​
+               </p>
+            </div>
             <div className="flex flex-col items-center p-4">
-               <span className="flex relative w-[17rem] max-w-[40vw] aspect-[2/3] ">
+               <span className="flex relative w-[17rem] max-w-[40vw] aspect-[2/3] mb-4">
                   <Image src="/camiseta.jpg" alt="" fill />
                </span>
-               <span className="my-4  font-bold text-center border-[3px] border-black px-8 p-2">
-                  Quiero la camiseta
-               </span>
+               <CamisetaButton />
             </div>
             <div className="flex flex-col items-center">
-               <div className="flex flex-col items-center gap-3 p-4 text-sm font-thin leading-4">
+               <div className="flex flex-col items-center gap-3 p-4 text-sm font-thin leading-4 mb-4">
                   <p>
                      Me gusta llevar mis proyectos a niveles altos, hoy más que
                      nunca, en medio de una crisis mundial de salud mental,
@@ -62,9 +64,7 @@ function AyudameAayudar() {
                      </li>
                   </ul>
                </div>
-               <button className="p-2 px-12 border-[3px] border-black my-4 text-sm font-medium">
-                  Conocer la historia de la camiseta
-               </button>
+               <HistoriaButton />
             </div>
          </div>
       </div>

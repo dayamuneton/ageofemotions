@@ -4,7 +4,7 @@ import SouthIcon from "@mui/icons-material/South";
 function BadPractices() {
    return (
       <div className="flex justify-center w-full">
-         <div className="flex flex-col items-center w-full max-w-3xl bg-white px-14 ">
+         <div className="flex flex-col items-center w-full max-w-3xl bg-white px-8 ">
             <span className="text-3xl mb-4  mt-[4rem]  font-bold leading-7">
                No nos enseñan que el liderazgo empieza por saber gestionar tus
                propias emociones y poder tener mejor comunicación con los demás.

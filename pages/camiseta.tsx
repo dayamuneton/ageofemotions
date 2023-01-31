@@ -5,6 +5,7 @@ import History from "@components/camiseta/history";
 import LograrQueEntiendan from "@components/camiseta/lograrQueEntiendan";
 import QuieroParticipar from "@components/camiseta/quieroParticipar";
 import TrabajaConmigo from "@components/camiseta/trabajaConmigo";
+import CamisetaButton from "@shared/camisetaButton";
 import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
 import Head from "next/head";
@@ -27,14 +28,14 @@ function Camiseta() {
             <link rel="icon" href="/favicon.ico" />
          </Head>
          <Navbar />
-         <div className="flex flex-col items-center w-full bg-white">
-            <h1 className="flex flex-col items-center my-6 text-3xl font-bold">
+         <div className="flex flex-col items-center w-full bg-white ">
+            <h1 className="flex flex-col items-center my-6 text-3xl font-bold max-w-[100vw] overflow-hidden">
                <p>La camiseta</p>
-               <span className="flex">
+               <span className="flex flex-wrap justify-center">
                   que
                   <p className="inline mx-1 text-yellow">TRANSFORMARÁ</p>
                </span>
-               <span className="flex">
+               <span className="flex flex-wrap justify-center">
                   Dolor en
                   <p className="inline mx-1 text-white bg-[#777]">
                      inspiración
@@ -44,7 +45,7 @@ function Camiseta() {
          </div>
          <div className="bg-[#e9e7e6] flex flex-col items-center py-8 w-full">
             <CamisetaTextImg />
-            <div className="text-sm font-thin leading-4 w-[90vw] max-w-3xl flex flex-col items-center gap-3">
+            <div className="text-sm font-thin leading-4 w-[80vw] max-w-3xl flex flex-col items-center gap-3">
                <p className="w-full">Nunca me rendí, aunque fue doloroso!</p>
                <p>
                   Para ayudar a mi hijo y mi hermano a entender sus emociones,
@@ -59,32 +60,29 @@ function Camiseta() {
                   programa pueda crecer más, expandirse más y beneficiar a más
                   personas en todo el mundo.
                </p>
-               <button className="p-2 px-14 border-[3px] border-black my-4 text-sm font-medium">
-                  QUIERO LA CAMISETA
-               </button>
+               <CamisetaButton />
             </div>
          </div>
          <LograrQueEntiendan />
          <Ageofemotions />
          <AyudameAayudar />
-         <div className="flex flex-col items-center w-full bg-[#f4f4f4]">
-            <QuieroParticipar />
-            <TrabajaConmigo />
-         </div>
+
          <div className="bg-[#fafafa] w-full flex flex-col items-center">
             <History />
-            <div className="w-[80vw] max-w-[25ch] flex flex-col items-center mb-6">
+            <div className="w-[80vw] max-w-[30ch] flex flex-col items-center mb-6">
                <span className="flex relative w-full aspect-[2/3]">
                   <Image src="/camiseta.jpg" alt="" fill />
                </span>
-               <span className="text-orange whitespace-nowrap text-xl font-bold text-center leading-5 mt-2">
+               <span className="text-orange  text-xl font-bold text-center leading-5 mt-2 mb-8">
                   <p>USD $1,000,000</p>
                   <p>Un millón de Dolares</p>
                </span>
-               <button className="w-full border-2 border-black bg-white my-8 py-2 text-sm font-bold text-center">
-                  QUIERO LA CAMISETA
-               </button>
+               <CamisetaButton />
             </div>
+         </div>
+         <div className="flex flex-col items-center w-full bg-[#f4f4f4]">
+            <QuieroParticipar />
+            <TrabajaConmigo />
          </div>
          <FooterBottom />
       </div>

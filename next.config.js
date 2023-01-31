@@ -8,6 +8,10 @@ const nextConfig = {
             source: "/signup",
             destination: "/parte1",
          },
+         {
+            source: "/historia",
+            destination: "/camiseta",
+         },
       ];
    },
    i18n: {

@@ -2,8 +2,8 @@ import React from "react";
 
 function WhatWillYouGet() {
    return (
-      <div className="bg-white w-[90vw] max-w-3xl p-8 mt-4 leading-4">
-         <p className="text-2xl font-bold">Lo que recibirás...</p>
+      <div className="bg-white w-[90vw] max-w-3xl p-8 mt-4 leading-4 flex flex-col items-center">
+         <p className="text-2xl font-bold w-full">Lo que recibirás...</p>
          <span className="bg-[#c7c7c7] flex justify-center w-full px-8 p-4 mt-6">
             <p className="max-w-[50ch]">
                ¿Cómo vamos a crear una estrategia de extensión? Asesorías online
@@ -43,6 +43,14 @@ function WhatWillYouGet() {
             negocio muera por el surgimiento de nuevos competidores o por estar
             desactualizada.
          </p>
+         <a
+            href="https://wa.link/f40q5a"
+            rel="noreferrer"
+            target="_blank"
+            className="border-black border-[3px] py-2 px-10 font-semibold mx-auto text-center mb-8"
+         >
+            Daya, creemos juntos algo nuevo para mi negocio.
+         </a>
       </div>
    );
 }

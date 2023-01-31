@@ -26,6 +26,17 @@ function TrabajaConmigo() {
                colectivo donde todos queremos un mundo más tranquilo.
             </p>
             <p>Te daremos todo el soporte que necesitas para lograrlo.</p>
+            <a
+               href="https://wa.link/w2lta2"
+               rel="noreferrer"
+               target="_blank"
+               className="flex flex-col gap-2 border-[3px] border-yellow py-2 px-10 items-center"
+            >
+               <p className="font-semibold text-center">
+                  Daya, quiero enseñar el programa AGE OF EMOTIONS
+               </p>
+               <p>Escríbeme por WhatsApp, click aquí</p>
+            </a>
          </div>
       </div>
    );
