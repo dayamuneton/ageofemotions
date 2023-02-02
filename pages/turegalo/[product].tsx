@@ -1,25 +1,40 @@
 import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
 import Head from "next/head";
-import React, { useState, FormEvent } from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { pdfs } from "@components/coherentemente/structureOfYourGoals";
+import Image from "next/image";
 
 function TuRegalo() {
    const [firstName, setFirstName] = useState("");
    const [lastName, setLastName] = useState("");
    const [email, setEmail] = useState("");
    const [terms, setTerms] = useState(false);
-
    const router = useRouter();
+   const [pdf, setPdf] = useState<typeof pdfs[number] | null>();
+
+   useEffect(() => {
+      if (router.asPath === "/turegalo/[product]") return;
+      console.log(router.asPath);
+
+      setPdf(pdfs.find((el) => el.link === router.asPath) || null);
+   }, [router]);
+
+   useEffect(() => {
+      if (pdf === null) {
+         router.push("/coherentemente");
+      }
+   }, [router, pdf]);
 
    const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
-      const pdf = pdfs.find((el) => el.link === router.asPath)!;
+
+      if (!pdf) return;
 
       const { product, mailerlite_group } = pdf;
 
@@ -73,6 +88,16 @@ function TuRegalo() {
             <p>recibir el PDF </p>
          </h2>
          <p className="mb-4">Available only in spanish</p>
+         {pdf && (
+            <>
+               <span className="flex relative min-w-[8rem] aspect-[52/66] border-[8px] rounded-lg border-black">
+                  <Image src={pdf.photoURL || ""} priority alt="" fill />
+               </span>
+               <p className="text-center text-xl font-bold max-w-[90vw] my-4">
+                  {pdf.title}
+               </p>
+            </>
+         )}
          {/* <div className="flex w-fit"> */}
          <form
             className="bg-white p-8 w-[min(95%,40rem)]"
