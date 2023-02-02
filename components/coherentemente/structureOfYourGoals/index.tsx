@@ -16,7 +16,8 @@ export const pdfs = [
    },
    {
       title: "Estructura De Tus Metas Con Una Mente Física",
-      photoURL: "/CoverMenteFisica.png",
+      photoURL:
+         "https://firebasestorage.googleapis.com/v0/b/amayliberate.appspot.com/o/images%2Fcover%20estructura%20mente%20fisica.png?alt=media&token=23c2361b-a231-4e45-806e-9e9f148abcb2",
       text: "Si quieres ser libre de decidir como quieres vivir o ver la vida, para lograr resultados en coherencia con lo que te propones,  aprende más sobre tu cuerpo unificado a tu mente.",
       buttonText: "OBTÉN ACCESO INMEDIATO",
       link: `/turegalo/mente_fisica`,
