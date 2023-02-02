@@ -125,28 +125,27 @@ function PrivacyPolicy() {
                puede darse de baja en cualquier momento. Incluimos un enlace de
                "cancelar suscripción" en la parte inferior de cada correo
                electrónico que enviamos. Si alguna vez tiene problemas para
-               darse de baja, puede enviar un mensaje a
-               info@amayliberate.com.com solicitando darse de baja de futuros
-               correos electrónicos. Recopilamos dicha información personal y no
-               personal para los siguientes propósitos: Para proporcionar y
-               operar los Servicios; para entregar el producto o servicio
-               solicitado, Proporcionar a nuestros usuarios soporte técnico y al
-               cliente continuo; T Para poder contactar a nuestros visitantes y
-               usuarios con avisos generales y personalizados relacionados con
-               el servicio y mensajes promocionales; Para crear datos
-               estadísticos agregados y otra información no personal agregada o
-               inferida, que nosotros o nuestros socios comerciales podemos usar
-               para proporcionar y mejorar nuestros respectivos servicios; Para
-               cumplir con las leyes y regulaciones aplicables; Para mejorar
-               nuestro desempeño general y brindarle ofertas, promociones e
-               información. De vez en cuando, podemos utilizar la información
-               que nos proporciona para hacerle ofertas para comprar productos y
-               servicios proporcionados por terceros a cambio de que el tercero
-               nos pague una comisión. Si elige participar en tales promociones,
-               los terceros recibirán su información. De vez en cuando, podemos
-               utilizar la información que nos proporciona para mostrarle
-               anuncios que se adaptan a sus características, intereses y
-               actividades personales.
+               darse de baja, puede enviar un mensaje a info@dayamuneton.com.com
+               solicitando darse de baja de futuros correos electrónicos.
+               Recopilamos dicha información personal y no personal para los
+               siguientes propósitos: Para proporcionar y operar los Servicios;
+               para entregar el producto o servicio solicitado, Proporcionar a
+               nuestros usuarios soporte técnico y al cliente continuo; T Para
+               poder contactar a nuestros visitantes y usuarios con avisos
+               generales y personalizados relacionados con el servicio y
+               mensajes promocionales; Para crear datos estadísticos agregados y
+               otra información no personal agregada o inferida, que nosotros o
+               nuestros socios comerciales podemos usar para proporcionar y
+               mejorar nuestros respectivos servicios; Para cumplir con las
+               leyes y regulaciones aplicables; Para mejorar nuestro desempeño
+               general y brindarle ofertas, promociones e información. De vez en
+               cuando, podemos utilizar la información que nos proporciona para
+               hacerle ofertas para comprar productos y servicios proporcionados
+               por terceros a cambio de que el tercero nos pague una comisión.
+               Si elige participar en tales promociones, los terceros recibirán
+               su información. De vez en cuando, podemos utilizar la información
+               que nos proporciona para mostrarle anuncios que se adaptan a sus
+               características, intereses y actividades personales.
             </p>
             <h2 className="my-4 font-bold">
                ¿Cómo recopilamos su información?
@@ -352,11 +351,11 @@ function PrivacyPolicy() {
             <h2 className="my-4 font-bold">Contáctenos</h2>
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a
-               href="mailto:info@amayliberate.com"
+               href="mailto:info@dayamuneton.com"
                target="_blank"
                className="text-blue-400 underline"
             >
-               info@amayliberate.com
+               info@dayamuneton.com
             </a>
             <br />
             <p className="text-sm">

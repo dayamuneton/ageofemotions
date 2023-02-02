@@ -1,6 +1,10 @@
 import { firstLetterUpperCaseEachWord } from "./firstLetterUpperCase";
 
-export const subscribeToPartOne = async (email: string, fullName: string) => {
+export const subscribeToGroup = async (
+   email: string,
+   fullName: string,
+   group: string
+) => {
    if (!email || !fullName) return;
 
    console.log("log", "data for mailerlite", email, fullName);
@@ -21,7 +25,7 @@ export const subscribeToPartOne = async (email: string, fullName: string) => {
          name: name,
          last_name: lastName,
       },
-      groups: [process.env.NEXT_PUBLIC_MAILERLITE_PART_ONE_GROUP_ID],
+      groups: [group],
    };
 
    const data = JSON.stringify(payload);

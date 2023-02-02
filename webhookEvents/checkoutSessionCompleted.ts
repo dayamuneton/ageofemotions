@@ -1,7 +1,7 @@
 import Stripe from "stripe";
 import { getFirebaseSubscriberData } from "@utils/getFirebaseSubscriberData";
 import subscribeToGetGiftCard from "@utils/mailerliteSubscribeToGetGiftCard";
-import { subscribeToPartOne } from "@utils/mailerliteSubscribeToPartOne";
+import { subscribeToGroup } from "@utils/mailerliteSubscribeToGroup";
 import generateUniqueGiftCardCode from "@utils/generateUniqueGiftCardCode";
 import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@utils/firebaseConfig";
@@ -26,7 +26,10 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
    let subscriberData = await getFirebaseSubscriberData(checkoutSessionId);
 
    if (!subscriberData) {
-      subscriberData = checkoutSession.customer_details;
+      subscriberData = {
+         ...checkoutSession.customer_details,
+         mailerlite_group: "",
+      };
    }
 
    console.log("log", "subscriberData", subscriberData);
@@ -69,7 +72,11 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
       amountTotal
    );
 
-   await subscribeToPartOne(subscriberData.email, subscriberData.name);
+   await subscribeToGroup(
+      subscriberData.email,
+      subscriberData.name,
+      subscriberData.mailerlite_group
+   );
    return;
 };
 export default checkoutSessionCompletedEvent;

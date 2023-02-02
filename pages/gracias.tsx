@@ -19,13 +19,13 @@ function SuccessSubscription() {
                Gracias
             </h1>
             <span className="mx-auto relative flex aspect-square w-[10rem]">
-               <Image src="/AmaYLiberateLogo.png" fill alt="" />
+               <Image src="/LogoAgeOfEmotions.png" fill alt="" />
             </span>
             <div className="mx-auto max-w-[70ch] w-[95%]">
                <p className="my-8 text-xl font-bold font-play-fair ">
                   ¡Felicitaciones! Acabas de adquirir con éxito el acceso al
-                  programa Ama & Liberate, para ayudarte a ganar percepción
-                  corporal de tus emociones.
+                  programa, para ayudarte a ganar percepción corporal de tus
+                  emociones.
                </p>
                <div className="flex ">
                   <SouthIcon className="text-orange text-[2rem]" />
@@ -38,7 +38,7 @@ function SuccessSubscription() {
                         <p className="font-semibold">PASO 1:</p>
                         <p className="font-thin">
                            Revisa tu email para qe puedas empezar hoy mismo con
-                           la primera práctica del programa Ama & Liberate.
+                           la primera práctica del programa.
                         </p>
                      </span>
                      <span>
@@ -60,10 +60,10 @@ function SuccessSubscription() {
                      <span className="flex flex-col my-12">
                         <p>Si tienes alguna duda, escribenos </p>
                         <a
-                           href="mailto:info@amayliberate.com"
+                           href="mailto:info@dayamuneton.com"
                            className="text-blue-400 underline"
                         >
-                           info@amayliberate.com
+                           info@dayamuneton.com
                         </a>
                      </span>
                   </div>

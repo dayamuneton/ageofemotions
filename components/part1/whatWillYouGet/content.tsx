@@ -5,9 +5,9 @@ import React from "react";
 function WhatWillYouGetContent() {
    return (
       <div className="border-2 flex flex-col items-center border-yellow py-8 px-4 lg:px-8 w-[95vw] lg:max-w-md my-4 lg:my-0 mx-auto lg:mx-0 lg:pb-4">
-         {/* <span className="flex relative aspect-square h-[10rem]">
-            <Image src="/AmaYLiberateLogo.png" alt="" fill />
-         </span> */}
+         <span className="flex relative aspect-square h-[10rem] rounded-full overflow-hidden">
+            <Image src="/LogoAgeOfEmotions.png" alt="" fill />
+         </span>
 
          <div className="flex flex-col pl-4 my-5 max-w-[40ch]">
             <span className="my-1">

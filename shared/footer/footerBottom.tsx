@@ -29,11 +29,11 @@ function FooterBottom() {
          <span className="flex flex-col sm:flex-row items-center max-w-[95vw]">
             <p className="whitespace-nowrap">Email:&nbsp;</p>
             <a
-               href="mailto:info@amayliberate.com"
+               href="mailto:info@dayamuneton.com"
                target="_blank"
                rel="noreferrer"
             >
-               info@amayliberate.com
+               info@dayamuneton.com
             </a>
          </span>
          <span className="flex items-center">

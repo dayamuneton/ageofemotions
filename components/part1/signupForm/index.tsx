@@ -14,13 +14,15 @@ function SignUpForm() {
    const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
 
-      const getGiftCard = false;
+      const product = process.env.NEXT_PUBLIC_STRIPE_10_PRACTICES_PRODUCT;
 
       const payload = {
          email,
          firstName,
          lastName,
-         getGiftCard,
+         product,
+         cancel_url: "parte1",
+         mailerlite_group: process.env.NEXT_PUBLIC_MAILERLITE_PART_ONE_GROUP_ID,
       };
 
       const response = await fetch("/api/saveDataInFirebase", {

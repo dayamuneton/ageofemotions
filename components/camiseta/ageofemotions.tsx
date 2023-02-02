@@ -5,20 +5,10 @@ function Ageofemotions() {
    return (
       <div className="w-full bg-[#faf9f4] flex justify-center pb-12">
          <div className="flex flex-col items-center w-[90vw] max-w-3xl">
-            <div className="flex w-[80%]">
+            <div className="flex w-[70%]">
                <span className="relative flex aspect-video w-full">
-                  <Image src="/EvolutionLineArt.png" alt="" fill />
+                  <Image src="/ArtAndTitle.png" alt="" fill />
                </span>
-
-               <h2 className="flex flex-col justify-end pb-2 mt-12 mb-8 w-full">
-                  <span className="flex text-4xl font-light">
-                     <p className="inline mr-1 font-bold">AGE</p>
-                     OF
-                  </span>
-                  <p className="text-2xl font-bold leading-4 text-yellow">
-                     EMOTIONS
-                  </p>
-               </h2>
             </div>
             <div className="flex flex-col gap-3 text-sm font-thin leading-4">
                <p>

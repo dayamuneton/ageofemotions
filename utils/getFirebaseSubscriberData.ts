@@ -10,6 +10,7 @@ import { db } from "./firebaseConfig";
 export interface UserInterface extends DocumentData {
    email: string;
    name: string;
+   mailerlite_group: string;
    lastCheckoutSessionId?: string;
 }
 

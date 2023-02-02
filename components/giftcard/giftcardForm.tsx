@@ -18,6 +18,7 @@ function GiftcardForm() {
       const payload = {
          email,
          getGiftCard,
+         cancel_url: "giftcard",
       };
 
       const response = await fetch("/api/saveDataInFirebase", {

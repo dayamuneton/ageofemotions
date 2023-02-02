@@ -1,17 +1,58 @@
 import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { pdfs } from "@components/coherentemente/structureOfYourGoals";
 
 function TuRegalo() {
-   const [name, setName] = useState("");
+   const [firstName, setFirstName] = useState("");
    const [lastName, setLastName] = useState("");
    const [email, setEmail] = useState("");
    const [terms, setTerms] = useState(false);
+
+   const router = useRouter();
+
+   const redirectToCheckout = async (e: FormEvent) => {
+      e.preventDefault();
+      const pdf = pdfs.find((el) => el.link === router.asPath)!;
+
+      const { product, mailerlite_group } = pdf;
+
+      const payload = {
+         email,
+         firstName,
+         lastName,
+         product,
+         mailerlite_group,
+         cancel_url: router.asPath,
+      };
+
+      const response = await fetch("/api/saveDataInFirebase", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+         },
+         body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      const url = data.url;
+
+      if (typeof url === "string") {
+         router.push(url);
+      }
+
+      setEmail("");
+      setFirstName("");
+      setLastName("");
+      setTerms(false);
+   };
+
    return (
       <div className="flex flex-col items-center w-full h-[100vh] bg-[#fafafa]">
          <Head>
@@ -35,7 +76,7 @@ function TuRegalo() {
          {/* <div className="flex w-fit"> */}
          <form
             className="bg-white p-8 w-[min(95%,40rem)]"
-            // onSubmit={}
+            onSubmit={redirectToCheckout}
          >
             <div className="flex flex-col gap-8 sm:gap-0 sm:flex-row">
                <span className="inputBox">
@@ -47,8 +88,8 @@ function TuRegalo() {
                      type="text"
                      name="name"
                      required
-                     value={name}
-                     onChange={(e) => setName(e.target.value)}
+                     value={firstName}
+                     onChange={(e) => setFirstName(e.target.value)}
                   />
                </span>
 
@@ -211,8 +252,8 @@ function TuRegalo() {
                <p className="mb-8 font-thin">
                   Si, te retornaremos el dinero sin hacerte ninguna pregunta,
                   100 % Garantizado. Debes solicitar tu devolución al correo
-                  Info@amayliberate.com durante los primeros 30 días del
-                  programa que tiene una duración de 10 Semanas.
+                  info@dayamuneton.com durante los primeros 30 días del programa
+                  que tiene una duración de 10 Semanas.
                </p>
             </span>
          </div>

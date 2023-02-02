@@ -180,7 +180,7 @@ function TermsAndConditions() {
                Los Titulares podrán ejercer sus derechos de ley y realizar los
                procedimientos establecidos en esta Política contactando a la
                compañía a través del correo electrónico{" "}
-               <b>info@amayliberate.com. </b> Daya Muneton LLC se encargará de
+               <b>info@dayamuneton.com. </b> Daya Muneton LLC se encargará de
                responder las quejas, solicitudes o reclamos con arreglo a lo
                dispuesto en las normas de protección de Datos Personales.
             </span>
@@ -248,7 +248,7 @@ function TermsAndConditions() {
                Condado de Broward. Queda expresamente excluida la aplicación de
                la Convención de las Naciones Unidas sobre los Contratos de
                Compraventa Internacional de Mercaderías. <br /> Atención al
-               cliente e información de contacto info@amayliberate.com
+               cliente e información de contacto info@dayamuneton.com
             </p>
             <h2 className="termsAndConditionsTitles">
                Área de Protección de Datos Personales.
@@ -256,7 +256,7 @@ function TermsAndConditions() {
             <p className="termsAndConditionsText">
                Daya Muneton LLC encargada de la recepción y atención de
                Peticiones, Quejas y Reclamos relacionados con Datos Personales
-               puede ser contactada en info@amayliberate.com.
+               puede ser contactada en info@dayamuneton.com.
             </p>
             <h2 className="termsAndConditionsTitles">Vigencia.</h2>
             <p className="termsAndConditionsText">
@@ -350,7 +350,7 @@ function TermsAndConditions() {
                formulario de contacto que nos proporcione (incluido su número de
                teléfono para llamadas o mensajes de texto). ** Si no desea
                recibir dichos materiales promocionales o avisos, simplemente
-               notifíquenos en cualquier momento: info@amayliberate.com
+               notifíquenos en cualquier momento: info@dayamuneton.com
             </p>
             <p className="termsAndConditionsText">
                In force from November 22, 2021 ​ ​ ​ ​ ​

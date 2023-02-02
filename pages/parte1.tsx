@@ -14,6 +14,7 @@ import SeriousProblem from "@components/part1/seriousProblem";
 import WhatWillYouGet from "@components/part1/whatWillYouGet";
 import SignUpForm from "@components/part1/signupForm";
 import PersonalizedMentoring from "@components/part1/personalizedMentoring";
+import Top from "@shared/footer/top";
 
 function GiftPart1() {
    return (
@@ -59,6 +60,7 @@ function GiftPart1() {
             <About />
          </div>
 
+         <Top />
          <Footer />
       </div>
    );

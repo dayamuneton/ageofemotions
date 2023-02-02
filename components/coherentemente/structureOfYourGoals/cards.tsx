@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface StructureCardProps {
@@ -7,6 +8,7 @@ interface StructureCardProps {
    text: string;
    subTitle?: string;
    buttonText: string;
+   link: string;
 }
 
 function StructureCard({
@@ -15,6 +17,7 @@ function StructureCard({
    text,
    subTitle,
    buttonText,
+   link,
 }: StructureCardProps) {
    return (
       <div className="flex flex-col md:flex-row items-center border-[3px] rounded-[1.5rem] border-yellow max-w-[90vw] w-[80ch] px-12 p-8 bg-white m-4">
@@ -30,9 +33,12 @@ function StructureCard({
                {subTitle}
             </p>
             <p className="my-6 font-medium">{text}</p>
-            <button className="p-4 px-8 mx-auto text-sm font-semibold rounded-lg bg-orange sm:w-[20rem]">
+            <Link
+               href={link}
+               className="p-4 px-8 mx-auto text-sm font-semibold rounded-lg bg-orange sm:w-[20rem] text-center"
+            >
                {buttonText}
-            </button>
+            </Link>
          </div>
       </div>
    );

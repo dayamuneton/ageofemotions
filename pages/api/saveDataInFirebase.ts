@@ -9,6 +9,7 @@ interface UserData {
    lastCheckoutSessionId: string;
    giftCardCodes?: FieldValue;
    getGiftCard?: boolean;
+   mailerlite_group?: string;
 }
 
 const saveDataInFirebase = async (
@@ -19,13 +20,20 @@ const saveDataInFirebase = async (
       res.status(405).send("Method Not Allowed");
    }
 
-   const { firstName, lastName, email, getGiftCard } = req.body;
-
-   const cancel_url = getGiftCard ? "giftcard" : "parte1";
+   const {
+      firstName,
+      lastName,
+      email,
+      getGiftCard,
+      product,
+      cancel_url,
+      mailerlite_group,
+   } = req.body;
 
    const createCheckoutSessionPayload = {
       success_url: "gracias",
       cancel_url,
+      product,
    };
 
    const response = await fetch(
@@ -46,6 +54,7 @@ const saveDataInFirebase = async (
    let data: UserData = {
       email,
       lastCheckoutSessionId,
+      mailerlite_group,
       getGiftCard: getGiftCard || false,
    };
 

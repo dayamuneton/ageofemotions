@@ -5,12 +5,6 @@ function WelcomeToAOE() {
    return (
       <div className="w-full max-w-3xl bg-[#ddd] flex justify-center my-12 py-8">
          <div className="flex flex-col items-center w-[95vw] max-w-[50ch] leading-5">
-            <p>
-               Las personas se están dando cuenta que no se requiere pagar
-               exagerados precios a ningún maestro, para hacer algo que pueden
-               lograr por ellos mismos con solo adquirir conocimientos básicos
-               sobre el cuerpo humano.
-            </p>
             <span className="relative flex aspect-video w-[110%]">
                <Image src="/EvolutionLineArt.png" alt="" fill />
             </span>

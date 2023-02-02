@@ -14,14 +14,14 @@ const tecnologicalServices = [
 
 const teamMembers = [
    {
-      photoURL: "/RedesDayaMunetonSq.png",
+      photoURL: "/team_alejandro.png",
       name: "Alejandro Agredo",
       linkedIn: "",
       description:
          "I'm a paragraph. Double click me or click Edit Text, it's easy.",
    },
    {
-      photoURL: "/RedesDayaMunetonSq.png",
+      photoURL: "/team_eiser.png",
       name: "Eiser Portilla",
       linkedIn: "",
       description:
@@ -64,7 +64,7 @@ function Tecnologicamente() {
                   <p>este deteniendo !</p>
                </span>
             </div>
-            <div className="pt-[9rem] text-white w-[90vw] max-w-3xl flex flex-col gap-6 font-thin leading-5 border-b-2 border-white">
+            <div className="pt-[9rem] text-white w-[90vw] max-w-2xl flex flex-col gap-6 font-thin leading-5 border-b-2 border-white">
                <h2 className="text-2xl font-medium">
                   Has pasado por estás situaciónes...
                </h2>
@@ -93,7 +93,7 @@ function Tecnologicamente() {
                   tienen idea como responder al cliente y algunos asistentes no
                   están capacitados para ayudarte técnicamente.
                </p>
-               <p className="text-black bg-white">
+               <p className="text-black bg-white p-2">
                   Tranquil@, tu capacidad de aprendizaje en tecnologías no tiene
                   nada que ver con tu capacidad de vender, no te detengas!!
                </p>
@@ -160,21 +160,24 @@ function Tecnologicamente() {
                ))}
             </div>
          </div>
-         <div>
-            <h2 className="my-8 text-4xl font-bold text-yellow">
+         <div className="mb-16">
+            <h2 className="my-12 text-4xl font-bold text-yellow text-center">
                Conoce Al Equipo
             </h2>
-            <div className="flex md:flex-row flex-col max-w-3xl w-[90vw] items-center">
+            <div className="flex md:flex-row justify-evenly flex-col max-w-4xl w-[90vw] items-center">
                {teamMembers.map(({ photoURL, name, description, linkedIn }) => (
                   <div
                      key={name}
-                     className="flex flex-col items-center max-w-[30ch]"
+                     className="flex flex-col items-center max-w-[20ch]"
                   >
-                     <span className="relative flex aspect-square w-[10rem] rounded-full overflow-hidden">
+                     <span className="relative flex aspect-square w-full rounded-full overflow-hidden">
                         <Image src={photoURL} alt={name} fill />
                      </span>
                      <p className="font-play-fair my-4"> {name} </p>
-                     <p> {description} </p>
+                     <p className="text-sm text-center font-thin leading-4">
+                        {" "}
+                        {description}{" "}
+                     </p>
                   </div>
                ))}
             </div>

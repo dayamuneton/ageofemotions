@@ -19,12 +19,12 @@ function SuccessSubscription() {
                Gracias
             </h1>
             <span className="mx-auto relative flex aspect-square w-[10rem]">
-               <Image src="/AmaYLiberateLogo.png" fill alt="" />
+               <Image src="/LogoAgeOfEmotions.png" fill alt="" />
             </span>
             <div className="mx-auto max-w-[70ch] w-[95%]">
                <p className="my-8 text-xl font-bold font-play-fair ">
                   ¡Felicitaciones! Acabas de adquirir con éxito el acceso al al
-                  regalo de este programa Ama & Libérate.
+                  regalo de este programa.
                </p>
                <div className="flex ">
                   <SouthIcon className="text-orange text-[2rem]" />
@@ -54,8 +54,7 @@ function SuccessSubscription() {
                            </li>
                            <li>
                               Encuentra el correo electrónico que deseas mover a
-                              la bandeja de entrada. Este correo electrónico es
-                              de Ama y Libérate.
+                              la bandeja de entrada.
                            </li>
                            <li>
                               Haz click y mantén presionado el correo
@@ -95,10 +94,10 @@ function SuccessSubscription() {
                            electrónico.
                         </p>
                         <a
-                           href="mailto:info@amayliberate.com"
+                           href="mailto:info@dayamuneton.com"
                            className="text-blue-400 underline"
                         >
-                           info@amayliberate.com
+                           info@dayamuneton.com
                         </a>
                         <p className="font-thin">
                            En pocas horas me contactaré contigo por WhatsApp, te

@@ -10,7 +10,7 @@ function TextAndLogo() {
             <PartOneGirlImg />
          </div>
          <div>
-            {/* <AmaYliberateLogo /> */}
+            <AmaYliberateLogo />
             <TextPartOne />
          </div>
       </div>

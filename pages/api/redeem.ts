@@ -1,5 +1,5 @@
 import { db } from "@utils/firebaseConfig";
-import { subscribeToPartOne } from "@utils/mailerliteSubscribeToPartOne";
+import { subscribeToPartOne } from "@utils/mailerliteSubscribeToGroup";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 
