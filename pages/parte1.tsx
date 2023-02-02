@@ -34,6 +34,10 @@ function GiftPart1() {
 
          <Navbar />
 
+         <h1 className="w-full bg-[#f0f0f0] font-bold text-6xl text-center py-8">
+            AGE OF EMOTIONS
+         </h1>
+
          <PartOne />
 
          <IsItFair />
@@ -48,7 +52,7 @@ function GiftPart1() {
 
          {/* <ArtIsTheNewWay /> */}
 
-         <div className="bg-[#fafbfb] flex flex-col items-center w-full">
+         <div className="flex flex-col items-center w-full bg-[#fafafa]">
             <WhatWillYouGet />
             <SignUpForm />
             <PersonalizedMentoring />
