@@ -59,7 +59,7 @@ function Tecnologicamente() {
          </div>
          <div className="relative flex flex-col items-center w-full bg-black">
             <div className="absolute w-full top-[-3rem]">
-               <span className="p-8 text-xl bg-white border-4 border-yellow w-[90vw] max-w-2xl mx-auto font-cutive flex flex-col">
+               <span className="p-8 text-xl bg-white border-4 border-yellow w-[90vw] max-w-2xl mx-auto font-cutive flex flex-col text-center">
                   <p>Que la tecnología no sea lo que te</p>
                   <p>este deteniendo !</p>
                </span>
@@ -93,7 +93,7 @@ function Tecnologicamente() {
                   tienen idea como responder al cliente y algunos asistentes no
                   están capacitados para ayudarte técnicamente.
                </p>
-               <p className="text-black bg-white p-2">
+               <p className="p-2 text-black bg-white">
                   Tranquil@, tu capacidad de aprendizaje en tecnologías no tiene
                   nada que ver con tu capacidad de vender, no te detengas!!
                </p>
@@ -161,7 +161,7 @@ function Tecnologicamente() {
             </div>
          </div>
          <div className="mb-16">
-            <h2 className="my-12 text-4xl font-bold text-yellow text-center">
+            <h2 className="my-12 text-4xl font-bold text-center text-yellow">
                Conoce Al Equipo
             </h2>
             <div className="flex md:flex-row justify-evenly flex-col max-w-4xl w-[90vw] items-center">
@@ -170,11 +170,11 @@ function Tecnologicamente() {
                      key={name}
                      className="flex flex-col items-center max-w-[20ch]"
                   >
-                     <span className="relative flex aspect-square w-full rounded-full overflow-hidden">
+                     <span className="relative flex w-full overflow-hidden rounded-full aspect-square">
                         <Image src={photoURL} alt={name} fill />
                      </span>
-                     <p className="font-play-fair my-4"> {name} </p>
-                     <p className="text-sm text-center font-thin leading-4">
+                     <p className="my-4 font-play-fair"> {name} </p>
+                     <p className="text-sm font-thin leading-4 text-center">
                         {" "}
                         {description}{" "}
                      </p>
