@@ -39,7 +39,7 @@ function Tecnologicamente() {
    return (
       <div className="flex flex-col items-center w-full h-full bg-[#fafafa]">
          <Head>
-            <title>TecnologicaMENTE</title>
+            <title>TecnológicaMENTE</title>
             <meta
                name="description"
                content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."

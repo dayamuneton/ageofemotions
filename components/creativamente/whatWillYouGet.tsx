@@ -3,7 +3,7 @@ import React from "react";
 function WhatWillYouGet() {
    return (
       <div className="bg-white w-[90vw] max-w-3xl p-8 mt-4 leading-4 flex flex-col items-center">
-         <p className="text-2xl font-bold w-full">Lo que recibirás...</p>
+         <p className="text-2xl font-bold w-full">Preguntas frecuentes</p>
          <span className="bg-[#c7c7c7] flex justify-center w-full px-8 p-4 mt-6">
             <p className="max-w-[50ch]">
                ¿Cómo vamos a crear una estrategia de extensión? Asesorías online

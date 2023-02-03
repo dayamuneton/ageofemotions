@@ -1,5 +1,6 @@
 // import BadPractices from "@shared/badPractices";
 // import GiftForYou from "@shared/giftforyou";
+import QuieroParticipar from "@components/camiseta/quieroParticipar";
 import ExtensionStrategy from "@components/creativamente/extensionStrategy";
 import OpenRoads from "@components/creativamente/openRoads";
 import WhatWillYouGet from "@components/creativamente/whatWillYouGet";
@@ -16,7 +17,9 @@ function CreativaMente() {
             <title>CreativaMENTE</title>
             <meta
                name="description"
-               content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."
+               content="Aprende a crear sistemas que te permitan expandirte.
+Implementa tecnologías que te ayuden a escalar tu empresa
+Creemos impacto social que te permita crecer junto con tu comunidad."
             />
             <meta
                name="keywords"
@@ -42,14 +45,19 @@ function CreativaMente() {
             </div>
          </div>
          <ExtensionStrategy />
-         <Link
-            href="/"
+         <a
+            href="https://wa.link/tytz2y"
+            target="_blank"
+            rel="noreferrer"
             className="p-4 px-6 my-6 font-semibold rounded-lg bg-orange w-fit"
          >
             APÚNTAME A LA LISTA DE ESPERA
-         </Link>
+         </a>
          <OpenRoads />
          <WhatWillYouGet />
+         <br />
+         <QuieroParticipar />
+         <br />
          <FooterBottom />
       </div>
    );
