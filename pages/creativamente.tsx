@@ -18,8 +18,8 @@ function CreativaMente() {
             <meta
                name="description"
                content="Aprende a crear sistemas que te permitan expandirte.
-Implementa tecnologías que te ayuden a escalar tu empresa
-Creemos impacto social que te permita crecer junto con tu comunidad."
+                        Implementa tecnologías que te ayuden a escalar tu empresa
+                        Creemos impacto social que te permita crecer junto con tu comunidad."
             />
             <meta
                name="keywords"
@@ -55,9 +55,10 @@ Creemos impacto social que te permita crecer junto con tu comunidad."
          </a>
          <OpenRoads />
          <WhatWillYouGet />
-         <br />
-         <QuieroParticipar />
-         <br />
+         <div className="w-full my-6 flex justify-center">
+            <QuieroParticipar />
+         </div>
+
          <FooterBottom />
       </div>
    );

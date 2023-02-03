@@ -32,17 +32,12 @@ function WhatWillYouGet() {
                cada país por lo tanto no hace parte de la asesoría.
             </p>
          </span>
-         <p className="text-[#777] mx-8  font-bold mt-14">
+         <p className="text-[#777] mx-8  font-bold my-14">
             En esta asesoría haremos ejemplos prácticos, con pasos fáciles de
             seguir y puedas implementar desde el principio desde lo básico hasta
             lo más técnico.
          </p>
-         <p className="mx-8 my-24">
-            El mundo en el que vives avanza sin detenerse, lo que crea la
-            necesidad de buscar nuevas líneas de negocio para evitar que tu
-            negocio muera por el surgimiento de nuevos competidores o por estar
-            desactualizada.
-         </p>
+
          <a
             href="https://wa.link/f40q5a"
             rel="noreferrer"
