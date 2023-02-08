@@ -9,6 +9,7 @@ interface StructureCardProps {
    subTitle?: string;
    buttonText: string;
    link: string;
+   price: string;
 }
 
 function StructureCard({
@@ -18,6 +19,7 @@ function StructureCard({
    subTitle,
    buttonText,
    link,
+   price,
 }: StructureCardProps) {
    return (
       <div className="flex flex-col md:flex-row items-center border-[3px] rounded-[1.5rem] border-yellow max-w-[90vw] w-[80ch] px-12 p-8 bg-white m-4">
@@ -25,7 +27,10 @@ function StructureCard({
             <span className="flex relative min-w-[8rem] aspect-[52/66] border-[8px] rounded-lg border-black">
                <Image src={photoURL} priority alt="" fill />
             </span>
-            <p className="text-2xl font-bold text-center text-orange">PDF</p>
+            <p className="mt-2 text-xl font-bold text-center text-orange">
+               {price}
+            </p>
+            <p className="text-xl font-bold text-center ">PDF</p>
          </div>
          <div className="flex flex-col py-8 sm:pl-8">
             <h2 className="text-3xl font-bold text-center">{title}</h2>

@@ -13,6 +13,7 @@ export const pdfs = [
          process.env.NEXT_PUBLIC_STRIPE_ESTRUCTURA_DE_TUS_METAS_MENTE_NO_FISICA,
       mailerlite_group:
          process.env.NEXT_PUBLIC_MAILERLITE_MENTE_NO_FISICA_GROUP_ID,
+      price: "$27.00 USD",
    },
    {
       title: "Estructura De Tus Metas Con Una Mente Física",
@@ -24,14 +25,16 @@ export const pdfs = [
          process.env.NEXT_PUBLIC_STRIPE_ESTRUCTURA_DE_TUS_METAS_MENTE_FISICA,
       mailerlite_group:
          process.env.NEXT_PUBLIC_MAILERLITE_MENTE_FISICA_GROUP_ID,
+      price: "$74.00 USD",
    },
    {
       title: "AGE OF EMOTIONS",
-      photoURL: "/MenteFisica.png",
+      photoURL: "/PortadaAOE10Practica.png",
       subTitle: "10 Prácticas Para Ganar Percepción Corporal De Tus Emociones.",
       text: "No percibir tu cuerpo como parte de tu consciencia, ha hecho que sigas gestionando emociones como si vivieras en otra época y te ha llevado a tener muchas confusiones, dolor, miedo y estancamiento en varios aspectos de tu vida.",
       buttonText: "SABER MÁS...",
       link: "/parte1",
+      price: "",
    },
 ];
 
@@ -41,7 +44,15 @@ function StructureOfYourGoals() {
          <div className="flex flex-col w-[90vw] max-w-3xl  items-center  ">
             <StructureHeader />
             {pdfs.map(
-               ({ title, text, photoURL, buttonText, subTitle, link }) => (
+               ({
+                  title,
+                  text,
+                  photoURL,
+                  buttonText,
+                  subTitle,
+                  link,
+                  price,
+               }) => (
                   <StructureCard
                      key={title}
                      title={title}
@@ -50,6 +61,7 @@ function StructureOfYourGoals() {
                      subTitle={subTitle}
                      photoURL={photoURL}
                      link={link}
+                     price={price}
                   />
                )
             )}

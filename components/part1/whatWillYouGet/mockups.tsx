@@ -11,11 +11,11 @@ function Mockups() {
       <div className="w-full ">
          <div className="relative w-[90%] ">
             <span className="flex relative aspect-[5/3] w-full">
-               <Image src="/h_amayliberate.png" alt="" fill />
+               <Image src="/h_ageofemotions.png" alt="" fill />
             </span>
             <div className="absolute right-[-10%] bottom-[-40%]">
                <span className="flex relative aspect-[1/2] w-[15vw] lg:w-[4.5vw]">
-                  <Image src="/v_amayliberate.png" alt="" fill />
+                  <Image src="/v_ageofemotions.png" alt="" fill />
                </span>
             </div>
          </div>

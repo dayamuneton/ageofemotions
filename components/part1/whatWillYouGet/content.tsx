@@ -43,29 +43,23 @@ function WhatWillYouGetContent() {
             </span>
          </div>
          <span className="w-full pr-4 mb-2 text-end font-popings">
-            ToTal:$<p className="inline line-through">248.00</p>
+            ToTal:$<p className="inline line-through">284.00</p>
          </span>
          <p className="text-3xl font-bold text-center">
-            Válido desde <br /> Dic 2022 - Ene 2023:
+            Válido desde <br /> Dic 2022 - Feb 2023:
          </p>
          <p className="my-2 text-4xl text-white bg-orange font-belsey">
             $174.00
          </p>
-         <div className="bg-[#e8e7e7] flex flex-col items-center p-4 px-8 mb-4">
-            <h3 className="flex flex-col items-center text-2xl font-bold text-orange">
-               <p className="bg-white w-fit">Oferta de</p>
-               <p className="bg-white">Lanzamiento</p>
-            </h3>
-            <span className="max-w-[30ch]">
-               Solo las personas que se inscriban hasta
-               <p className="inline mx-1 bg-white">30-Dic-2022,</p>
-               tendrán acceso a la parte II y III de este programa AMA &
-               LIBÉRATE cuando esté listo.
+         <span className="text-orange text-3xl rotate-[-3deg] mx-auto mt-8 mb-2 text-center font-bold">
+            <p>+RECIBE ESTAS 2 GUÍAS</p>
+            <p>GRATIS</p>
+         </span>
+         <div className="bg-[#e8e7e7] flex flex-col items-center mb-4 w-full">
+            <span className="relative flex aspect-[3/2] w-full">
+               <Image src="/BonosAOE.png" alt="" fill />
             </span>
-            <p className="my-2 text-4xl text-orange font-cutive">GRATIS</p>
          </div>
-
-         <SignUpButton />
       </div>
    );
 }
