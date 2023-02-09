@@ -37,9 +37,9 @@ function FooterBottom() {
             </a>
          </span>
          <span className="flex items-center">
-            <Link href="https://www.facebook.com/dayamuneton" target="_blank">
+            {/* <Link href="https://www.facebook.com/dayamuneton" target="_blank">
                <FacebookIcon />
-            </Link>
+            </Link> */}
             {/* <Link
                href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
                target="_blank"

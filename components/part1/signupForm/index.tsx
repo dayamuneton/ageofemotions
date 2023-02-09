@@ -153,12 +153,12 @@ function SignUpForm() {
             </div>
 
             <span className="flex items-center justify-between p-1 mt-2 text-white bg-black w-fit ">
-               <Link
+               {/* <Link
                   href="https://www.facebook.com/dayamuneton"
                   target="_blank"
                >
                   <FacebookIcon className="text-[1.2rem]" />
-               </Link>
+               </Link> */}
                {/* <Link
                   href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
                   target="_blank"

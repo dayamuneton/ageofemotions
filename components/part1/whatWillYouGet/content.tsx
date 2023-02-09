@@ -13,7 +13,7 @@ function WhatWillYouGetContent() {
             <span className="my-1">
                <h3 className="text-2xl text-orange font-cutive">10 SEMANAS</h3>
                <p className="text-sm font-semibold">
-                  Programa Ama & Libérate Parte I
+                  Programa Age Of Emotions Parte I
                </p>
             </span>
             <span className="my-1">
