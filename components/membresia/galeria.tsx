@@ -1,8 +1,8 @@
 import { ProductInterface } from "@components/checkoutpdf/checkoutForm";
 import { useAuth } from "@context/authContext";
 import { db } from "@utils/firebaseConfig";
-import { doc, setDoc } from "firebase/firestore";
-import React, { useEffect } from "react";
+import { collection, doc, getDocs, setDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import MemebresiaProductCard from "./card";
 
 const galeriaProducts: ProductInterface[] = [
@@ -105,22 +105,31 @@ const galeriaProducts: ProductInterface[] = [
 ];
 
 function Galeria() {
-   // const { profile } = useAuth();
-   const uploadProducts = async () => {
-      for (const product of galeriaProducts) {
-         const docRef = await doc(db, "pdf_products", product.link);
-         await setDoc(docRef, product);
-      }
-   };
+   // const [galeriaProducts, setGaleriaProducts] = useState<
+   //    ProductInterface[] | null
+   // >(null);
+
    // useEffect(() => {
-   // console.log(profile);
-   // }, [profile]);
+   //    const getProducts = async () => {
+   //       const products = (await (
+   //          await getDocs(collection(db, "pdf_products"))
+   //       ).docs.map((doc) => doc.data())) as ProductInterface[];
+   //       setGaleriaProducts(products);
+   //    };
+   //    getProducts();
+   // }, []);
+
+   // const uploadProducts = async () => {
+   //    for (const product of galeriaProducts) {
+   //       const docRef = await doc(db, "pdf_products", product.link);
+   //       await setDoc(docRef, product);
+   //    }
+   // };
 
    return (
       <div className="flex flex-col items-center w-full my-8">
-         {/* <button onClick={uploadProducts}>upload</button> */}
          <div className="grid grid-cols-2 lg:grid-cols-5 w-[90vw] max-w-6xl">
-            {galeriaProducts.map((product) => (
+            {galeriaProducts?.map((product: ProductInterface) => (
                <MemebresiaProductCard
                   key={product.photoURL}
                   product={product}
