@@ -40,7 +40,8 @@ const galeriaProducts: ProductInterface[] = [
    },
    {
       title: "3 Razones por las que eres posesivo",
-      photoURL: "/galeria/3RazonesPosesivo.png",
+      photoURL:
+         "https://firebasestorage.googleapis.com/v0/b/amayliberate.appspot.com/o/images%2FQueEsElAmor.png?alt=media&token=e471cd5d-7d1e-4722-ac9e-79629771acef",
       prices: [
          {
             priceID: "price_1MctMfJXe1xPNvbnQLtnop08",

@@ -4,7 +4,7 @@ import React from "react";
 
 function Unete() {
    const { profile } = useAuth();
-   if (profile.categories.includes("miembro")) return <></>;
+   if (profile?.categories?.includes("miembro")) return <></>;
 
    return (
       <div className="flex flex-col items-center w-full py-12 text-center">
