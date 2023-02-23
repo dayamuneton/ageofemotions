@@ -3,46 +3,53 @@ import Link from "next/link";
 import React from "react";
 
 interface StructureCardProps {
-   title: string;
-   photoURL: string;
-   text: string;
-   subTitle?: string;
-   buttonText: string;
-   link: string;
-   price: string;
+   product: {
+      title: string;
+      photoURL: string;
+      description: string;
+      subTitle?: string;
+      buttonText?: string;
+      link: string;
+      price?: string;
+      prices?: {
+         priceID?: string;
+      }[];
+      imgAspectRatio: string;
+   };
 }
 
-function StructureCard({
-   title,
-   photoURL,
-   text,
-   subTitle,
-   buttonText,
-   link,
-   price,
-}: StructureCardProps) {
+function StructureCard({ product }: StructureCardProps) {
+   const link = product.prices
+      ? `checkoutpdf/${product.link}?psrc=coherentemente`
+      : product.link;
+
    return (
-      <div className="flex flex-col md:flex-row items-center border-[3px] rounded-[1.5rem] border-yellow max-w-[90vw] w-[80ch] px-12 p-8 bg-white m-4">
-         <div>
-            <span className="flex relative min-w-[8rem] aspect-[52/66] border-[8px] rounded-lg border-black">
-               <Image src={photoURL} priority alt="" fill />
-            </span>
+      <div className="flex flex-col lg:flex-row items-center border-[3px] rounded-[1.5rem] border-yellow max-w-[90vw] w-[80ch] px-12 p-8 bg-white m-4">
+         <div className="flex flex-col items-center w-[50%]">
+            <Image
+               src={product.photoURL}
+               priority
+               alt=""
+               fill
+               className="!relative flex max-w-[8rem] border-[8px] rounded-lg border-black"
+            />
+
             <p className="mt-2 text-xl font-bold text-center text-orange">
-               {price}
+               {product.price}
             </p>
             <p className="text-xl font-bold text-center ">PDF</p>
          </div>
-         <div className="flex flex-col py-8 sm:pl-8">
-            <h2 className="text-3xl font-bold text-center">{title}</h2>
+         <div className="flex flex-col w-full py-8 lg:pl-8">
+            <h2 className="text-3xl font-bold text-center">{product.title}</h2>
             <p className="text-xl font-bold text-center font-play-fair">
-               {subTitle}
+               {product.subTitle}
             </p>
-            <p className="my-6 font-medium">{text}</p>
+            <p className="my-6 font-medium">{product.description}</p>
             <Link
-               href={link}
+               href={`/${link}`}
                className="p-4 px-8 mx-auto text-sm font-semibold rounded-lg bg-orange sm:w-[20rem] text-center"
             >
-               {buttonText}
+               {product.buttonText || "Comprar ahora"}
             </Link>
          </div>
       </div>

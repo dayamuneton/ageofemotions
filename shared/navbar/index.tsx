@@ -1,9 +1,15 @@
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import NavItem from "./navItem";
 import { HiMenu } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import useClickOutside from "@utils/useClickOutside";
+// import { useAuth } from "@context/authContext";
+// import { doc, getDoc } from "firebase/firestore";
+// import { db } from "@utils/firebaseConfig";
+import UserDropdown from "./profile";
+import { useAuth } from "@context/authContext";
+import NavbarProfile from "./profile";
 
 const navbarItems = [
    {
@@ -19,6 +25,11 @@ const navbarItems = [
    {
       href: "/camiseta",
       text: "Camiseta",
+      alias: [],
+   },
+   {
+      href: "/membresia",
+      text: "Membresía",
       alias: [],
    },
    {
@@ -61,11 +72,14 @@ function Navbar() {
 
    return (
       <nav className="w-full">
-         <div
-            className="fixed z-50 right-0 max-w-[95vw] w-fit flex justify-end text-[2rem] p-3 text-[#555]"
-            onClick={toggleSidebar}
-         >
-            {showSidebar ? <MdClose /> : <HiMenu />}
+         <div className="fixed z-[99999] right-0 max-w-[95vw] w-fit flex justify-end items-center text-[2rem] p-3 text-[#555]">
+            <NavbarProfile />
+            <span
+               onClick={toggleSidebar}
+               className="cursor-pointer hover:drop-shadow-lg"
+            >
+               {showSidebar ? <MdClose /> : <HiMenu />}
+            </span>
          </div>
 
          <div

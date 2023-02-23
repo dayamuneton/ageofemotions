@@ -13,7 +13,7 @@ const createCheckoutSession = async (
       res.status(405).send("Method Not Allowed");
    }
 
-   const { success_url, cancel_url, product } = req.body;
+   const { success_url, cancel_url, priceID } = req.body;
 
    const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -23,7 +23,7 @@ const createCheckoutSession = async (
       payment_method_types: ["card"],
       line_items: [
          {
-            price: product,
+            price: priceID,
             quantity: 1,
          },
       ],

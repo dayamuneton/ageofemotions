@@ -2,10 +2,10 @@ import Stripe from "stripe";
 import { getFirebaseSubscriberData } from "@utils/getFirebaseSubscriberData";
 import subscribeToGetGiftCard from "@utils/mailerliteSubscribeToGetGiftCard";
 import { subscribeToGroup } from "@utils/mailerliteSubscribeToGroup";
-import generateUniqueGiftCardCode from "@utils/generateUniqueGiftCardCode";
 import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@utils/firebaseConfig";
 import { reportPurchaseEvent } from "@pixelEvents/events";
+import generateUniqueCodeInCollection from "@utils/generateUniqueCodeInCollection";
 
 interface CheckoutSessionCompleted extends Stripe.Event.Data.Object {
    customer_details: {
@@ -29,19 +29,35 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
       subscriberData = {
          ...checkoutSession.customer_details,
          mailerlite_group: "",
+         id: checkoutSession.customer_details.email,
       };
    }
 
    console.log("log", "subscriberData", subscriberData);
 
+   if (subscriberData.pendingMember) {
+      const id = subscriberData.id;
+
+      const userRef = doc(db, "users", id);
+
+      await updateDoc(userRef, {
+         pendingMember: false,
+         categories: arrayUnion("miembro"),
+      });
+
+      console.log("log ", `nuevo miembro ${id}`);
+
+      return;
+   }
+
    if (subscriberData.getGiftCard) {
-      const email = subscriberData.email;
+      const id = subscriberData.id;
 
-      const code = await generateUniqueGiftCardCode();
+      const code = await generateUniqueCodeInCollection("giftcardcodes", 10);
 
-      const userRef = doc(db, "users", email);
+      const userRef = doc(db, "users", id);
 
-      await subscribeToGetGiftCard(email, code);
+      await subscribeToGetGiftCard(id, code);
 
       await updateDoc(userRef, {
          giftCardCodes: arrayUnion(code),
@@ -52,10 +68,10 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
 
       await setDoc(docRef, {
          redeemed: false,
-         buyerEmail: email,
+         buyerEmail: id,
       });
 
-      console.log(`log, buyer ${email}, code ${code}`);
+      console.log(`log, buyer ${id}, code ${code}`);
       return;
    }
 
@@ -67,13 +83,13 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
 
    await reportPurchaseEvent(
       checkoutSession.cancel_url,
-      subscriberData.email,
+      subscriberData.id,
       purchaseEventCustomerName,
       amountTotal
    );
 
    await subscribeToGroup(
-      subscriberData.email,
+      subscriberData.id,
       subscriberData.name,
       subscriberData.mailerlite_group
    );

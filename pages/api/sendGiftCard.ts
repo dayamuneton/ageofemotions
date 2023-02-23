@@ -3,7 +3,7 @@ import { readFile, readFileSync, stat } from "fs";
 import nodemailer from "nodemailer";
 import { compile } from "handlebars";
 import * as path from "path";
-import { generateRandomString } from "@utils/generateUniqueGiftCardCode";
+import { generateRandomString } from "@utils/generateUniqueCodeInCollection";
 
 const sendGiftCard = async (req: NextApiRequest, res: NextApiResponse) => {
    // const name = req.body.name;

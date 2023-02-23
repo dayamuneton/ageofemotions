@@ -1,4 +1,4 @@
-import { generateRandomString } from "@utils/generateUniqueGiftCardCode";
+import { generateRandomString } from "@utils/generateUniqueCodeInCollection";
 import { NextApiRequest } from "next";
 
 const generateBasePayload = (req: NextApiRequest) => {

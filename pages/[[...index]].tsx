@@ -27,13 +27,9 @@ export default function Home() {
             />
             <link rel="icon" href="/favicon.ico" />
          </Head>
-
          <Navbar />
-
          {/* <Logo /> */}
-
          <GiftForYou />
-
          <div className="bg-[#faf8f5] w-full flex- flex-col items-center flex pb-4">
             <ThreeReasons />
             <WelcomeToAOE />
@@ -47,20 +43,15 @@ export default function Home() {
             </div>
             <ServicesCards />
          </div>
-
          {/* <StructureOfYourGoals /> */}
-
          <BadPractices />
-
          <Form />
-
          <div className="flex flex-col items-center w-full p-8 pb-20 bg-white text-bold">
             <Content />
             <GiftButton />
             <br />
             <About />
          </div>
-
          {/* <LeopardGlassesGirl /> */}
          {/* <ArtIsTheNewWay /> */}
          <Footer />

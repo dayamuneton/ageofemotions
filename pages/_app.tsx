@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { reportPageViewEvent } from "@pixelEvents/events";
+import { AuthProvider } from "@context/authContext";
 
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();
@@ -14,7 +15,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       reportPageViewEvent(url);
    }, [router.asPath]);
 
-   return <Component {...pageProps} />;
+   return (
+      <AuthProvider>
+         <Component {...pageProps} />
+      </AuthProvider>
+   );
 };
 
 export default App;

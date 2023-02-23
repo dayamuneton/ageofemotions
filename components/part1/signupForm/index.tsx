@@ -14,13 +14,13 @@ function SignUpForm() {
    const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
 
-      const product = process.env.NEXT_PUBLIC_STRIPE_10_PRACTICES_PRODUCT;
+      const priceID = process.env.NEXT_PUBLIC_STRIPE_10_PRACTICES_PRODUCT;
 
       const payload = {
          email,
          firstName,
          lastName,
-         product,
+         priceID,
          cancel_url: "parte1",
          mailerlite_group: process.env.NEXT_PUBLIC_MAILERLITE_PART_ONE_GROUP_ID,
       };

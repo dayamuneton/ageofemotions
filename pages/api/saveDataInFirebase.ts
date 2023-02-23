@@ -28,10 +28,11 @@ const saveDataInFirebase = async (
       product,
       cancel_url,
       mailerlite_group,
+      success_url,
    } = req.body;
 
    const createCheckoutSessionPayload = {
-      success_url: "gracias",
+      success_url: success_url || "gracias",
       cancel_url,
       product,
    };

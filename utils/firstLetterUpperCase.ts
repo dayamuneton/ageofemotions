@@ -1,4 +1,5 @@
-export const firstLetterUpperCaseEachWord = (words: string) => {
+export const firstLetterUpperCaseEachWord = (words?: string) => {
+   if (!words) return [""];
    let result = words.split(" ");
 
    for (let i = 0; i < result.length; i++) {

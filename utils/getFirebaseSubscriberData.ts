@@ -12,6 +12,7 @@ export interface UserInterface extends DocumentData {
    name: string;
    mailerlite_group: string;
    lastCheckoutSessionId?: string;
+   id: string;
 }
 
 export const getFirebaseSubscriberData = async (checkoutSessionId?: string) => {
@@ -27,7 +28,8 @@ export const getFirebaseSubscriberData = async (checkoutSessionId?: string) => {
 
    if (usersSnapshot.empty) return;
 
-   let data = usersSnapshot.docs[0].data() as UserInterface;
+   const document = usersSnapshot.docs[0];
+   let data = { ...document.data(), id: document.id } as UserInterface;
 
    return data;
 };
