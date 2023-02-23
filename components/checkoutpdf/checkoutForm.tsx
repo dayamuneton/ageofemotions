@@ -80,7 +80,7 @@ function CheckoutForm() {
       const { prices, mailerlite_group } = pdf;
 
       let priceID = prices?.find((price) => price.priceID)?.priceID;
-      if (profile.categories?.includes("miembro")) {
+      if (profile?.categories?.includes("miembro")) {
          priceID =
             prices?.find((price) => price.priceIDForMembers)
                ?.priceIDForMembers || priceID;
