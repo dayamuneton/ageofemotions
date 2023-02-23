@@ -13,6 +13,7 @@ import { arrayUnion, doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "@utils/firebaseConfig";
 import ProfileName from "@components/perfil/profileName";
 import ProfilePhoto from "@components/perfil/profilePhoto";
+import Link from "next/link";
 
 function Perfil() {
    const router = useRouter();
@@ -22,69 +23,6 @@ function Perfil() {
       null
    );
    const [memberCode, setMemberCode] = useState("");
-
-   const handleSubmit = async (e: FormEvent) => {
-      e.preventDefault();
-
-      if (!memberCode || memberCode === "") return;
-
-      const codeSnapshot = await getDoc(doc(db, "member_codes", memberCode));
-
-      if (!codeSnapshot.exists()) return;
-
-      const codeHasBeenRedeemed = codeSnapshot.data().redeemed;
-
-      if (codeHasBeenRedeemed) return;
-
-      await setDoc(
-         doc(db, "member_codes", memberCode),
-         {
-            redeemed: true,
-            redeemerEmail: currentUser.email,
-         },
-         { merge: true }
-      );
-
-      await setDoc(
-         doc(db, "users", currentUser.email),
-         {
-            categories: arrayUnion("miembro"),
-         },
-         { merge: true }
-      );
-   };
-   const buyMembership = async () => {
-      const createCheckoutSessionPayload = {
-         success_url: "perfil",
-         cancel_url: "perfil",
-         priceID: process.env.NEXT_PUBLIC_STRIPE_MEMBRESIA,
-      };
-
-      const response = await fetch(
-         `${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/create-checkout-session`,
-         {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-               Accept: "application/json",
-            },
-            body: JSON.stringify(createCheckoutSessionPayload),
-         }
-      );
-      const session = await response.json();
-
-      await setDoc(
-         doc(db, "users", currentUser.email),
-         {
-            pendingMember: true,
-            lastCheckoutSessionId: session.id,
-         },
-         { merge: true }
-      );
-
-      if (!session?.url) return;
-      router.push(session.url);
-   };
 
    useEffect(() => {
       setProfileCategories(profile?.categories);
@@ -108,66 +46,56 @@ function Perfil() {
             <Navbar />
             {currentUser && (
                <>
-                  <div className="w-full h-[7rem] bg-gradient-to-br from-yellow to-amber-400 relative flex mb-[4rem] shadow-md">
-                     <div className="sm:ml-10 mx-auto flex mt-[3.5rem] drop-shadow-lg">
-                        <ProfilePhoto />
-                     </div>
-                  </div>
-                  <div className="flex flex-col w-[90vw] flex-1 ">
-                     <h2 className="pb-2 text-2xl font-bold border-b-2 border-b-gray-400/25">
-                        Perfil
-                     </h2>
-                     <div className="sm:w-[80%] max-w-xl flex flex-col gap-3 py-3">
-                        <span className="flex justify-between">
-                           <p>Email:</p>
-                           <p>{currentUser.email}</p>
-                        </span>
-                        <ProfileName />
-                     </div>
-                     <div className="mb-12">
-                        <h2 className="pb-2 text-2xl font-bold border-b-2 border-b-gray-400/25">
-                           Categorias
-                        </h2>
+                  <div className="relative flex justify-center flex-1 w-full gap-3 py-4 shadow-md bg-gradient-to-br from-yellow to-amber-400">
+                     <div className="flex flex-col lg:flex-row w-[90vw] max-w-5xl gap-3 items-center lg:items-start">
+                        <div className="w-full p-10 bg-white rounded-md lg:w-fit drop-shadow-md h-fit">
+                           <ProfilePhoto />
+                        </div>
+                        <div className="flex flex-col flex-1 w-full px-6 py-10 bg-white rounded-md sm:px-10 drop-shadow-md h-fit">
+                           <h2 className="w-full pb-2 text-2xl font-bold border-b-2 border-b-gray-400/25">
+                              Perfil
+                           </h2>
+                           <div className="sm:w-[80%]  flex flex-col gap-3 py-3">
+                              <span className="flex justify-between">
+                                 <p className="mr-12">Email:</p>
+                                 <p className="text-sm whitespace-nowrap">
+                                    {currentUser.email}
+                                 </p>
+                              </span>
+                              <ProfileName />
+                           </div>
+                           <div className="mb-12">
+                              <h2 className="pb-2 text-2xl font-bold border-b-2 border-b-gray-400/25">
+                                 Categorias
+                              </h2>
 
-                        {profileCategories?.map((category: any) => (
-                           <p key={category} className="mt-2 capitalize">
-                              {category}
-                           </p>
-                        ))}
+                              {profileCategories?.map((category: any) => (
+                                 <p key={category} className="mt-2 capitalize">
+                                    {category}
+                                 </p>
+                              ))}
+                           </div>
+
+                           {!profileCategories?.includes("miembro") && (
+                              <div className="flex flex-col items-center w-full py-12 text-center">
+                                 <Link
+                                    href="/membresia"
+                                    className="px-12 py-4 mb-4 text-xl font-medium text-white bg-black"
+                                 >
+                                    QUIERO SER MIEMBRO
+                                 </Link>
+                                 <div className="max-w-[90vw] w-fit bg-yellow">
+                                    Obtén acceso al contenido exclusivo para
+                                    miembros desde
+                                    <p className="inline ml-1 text-white bg-black w-fit h-fit">
+                                       $3.00
+                                    </p>
+                                 </div>
+                              </div>
+                           )}
+                        </div>
                      </div>
                   </div>
-                  {!profileCategories && !profile?.pendingMember && (
-                     <div className="flex flex-col w-[90vw] mt-2">
-                        <p className="text-lg font-medium">
-                           Tienes un código de miembro?
-                        </p>
-                        <form
-                           onSubmit={handleSubmit}
-                           className="flex my-2 w-fit"
-                        >
-                           <input
-                              type="text"
-                              name="memberCode"
-                              placeholder="Código de miembro"
-                              value={memberCode}
-                              onChange={(e) => setMemberCode(e.target.value)}
-                              className="border-b-2 border-yellow"
-                           />
-                           <button className="px-8 py-2 rounded-sm bg-yellow drop-shadow">
-                              Submit
-                           </button>
-                        </form>
-                        <span className="mb-10">
-                           O compra tu membresia
-                           <button
-                              onClick={buyMembership}
-                              className="ml-1 text-blue-400 underline"
-                           >
-                              aquí
-                           </button>
-                        </span>
-                     </div>
-                  )}
                   <FooterBottom />
                </>
             )}

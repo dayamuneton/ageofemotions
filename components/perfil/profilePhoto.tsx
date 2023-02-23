@@ -42,13 +42,13 @@ function ProfilePhoto() {
       <div className="flex items-center justify-center">
          <div className="relative  flex justify-center items-center !aspect-square">
             {currentUser?.photoURL == "" ? (
-               <PersonIcon className="!w-[7rem] !h-[7rem] text-gray-500 bg-gray-200 rounded-full overflow-hidden p-2" />
+               <PersonIcon className="!w-[13rem] !h-[13rem] text-gray-500 bg-gray-200 rounded-full overflow-hidden p-2" />
             ) : (
                <Image
                   src={currentUser.photoURL}
                   alt=""
                   fill
-                  className="!relative !w-[7rem] !h-[7rem] rounded-full  overflow-hidden"
+                  className="!relative !w-[13rem] !min-w-[13rem] !h-[13rem] rounded-full  overflow-hidden"
                />
             )}
             <label>

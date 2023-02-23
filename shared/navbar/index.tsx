@@ -28,8 +28,8 @@ const navbarItems = [
       alias: [],
    },
    {
-      href: "/membresia",
-      text: "Membresía",
+      href: "/guiaspdf",
+      text: "Guías PDF",
       alias: [],
    },
    {

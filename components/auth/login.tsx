@@ -1,4 +1,6 @@
 import { useAuth } from "@context/authContext";
+import { auth } from "@utils/firebaseConfig";
+import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,10 +11,29 @@ function Login() {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [error, setError] = useState("");
-   const { signInWithEmail, currentUser } = useAuth();
+   const { signInWithEmail, currentUser, registerUserWithEmailLink } =
+      useAuth();
    const [routerQuerySrc, setRouterQuerySrc] = useState("");
 
    const router = useRouter();
+
+   useEffect(() => {
+      const signTheUserIn = async () => {
+         const saved_email = window.localStorage.getItem("emailForSignIn");
+         if (
+            isSignInWithEmailLink(auth, window.location.href) &&
+            !!saved_email
+         ) {
+            let url = window.location.href;
+
+            try {
+               await signInWithEmailLink(auth, saved_email, url);
+               window.localStorage.removeItem("emailForSignIn");
+            } catch (error) {}
+         }
+      };
+      signTheUserIn();
+   }, []);
 
    useEffect(() => {
       const { src } = router.query;
@@ -27,17 +48,18 @@ function Login() {
    const registerUser = async (e: FormEvent) => {
       e.preventDefault();
 
-      let signInError = await signInWithEmail(email, password);
+      let url = window.location.href;
+      await router.replace(url);
+
+      let signInError = await registerUserWithEmailLink(email, url);
 
       if (signInError) {
-         signInError = signInError.split(":")[1].split("(")[0];
-         setError(signInError);
          console.log(signInError);
+         signInError = signInError.split(":")[1];
+         setError(signInError);
          return;
       }
-
       setEmail("");
-      setPassword("");
    };
    return (
       <div className="w-full pt-2 mt-4 rounded-lg">

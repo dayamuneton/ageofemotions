@@ -25,7 +25,7 @@ const saveDataInFirebase = async (
       lastName,
       email,
       getGiftCard,
-      product,
+      priceID,
       cancel_url,
       mailerlite_group,
       success_url,
@@ -34,7 +34,7 @@ const saveDataInFirebase = async (
    const createCheckoutSessionPayload = {
       success_url: success_url || "gracias",
       cancel_url,
-      product,
+      priceID,
    };
 
    const response = await fetch(

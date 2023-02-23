@@ -22,6 +22,9 @@ function ProfileField() {
       await updateProfile(currentUser, {
          displayName: name,
       });
+
+      setEdit(false);
+
       await setDoc(
          doc(db, "users", currentUser.uid),
          {
@@ -29,8 +32,6 @@ function ProfileField() {
          },
          { merge: true }
       );
-
-      setEdit(false);
    };
 
    useClickOutside(editRef, () => setEdit(false));
@@ -40,7 +41,10 @@ function ProfileField() {
          <h4>Name:</h4>
          <div className="max-w-[80%] flex">
             <div className={`${edit ? "hidden" : "flex items-center"}`}>
-               <p> {currentUser?.displayName} </p>
+               <p className="text-sm whitespace-nowrap">
+                  {" "}
+                  {currentUser?.displayName}{" "}
+               </p>
                <EditIcon
                   onClick={() => setEdit(true)}
                   className="!h-8 !w-8 ml-4 text-gray-500 rounded-full cursor-pointer hover:drop-shadow bg-white p-[.3rem] hover:scale-105"
