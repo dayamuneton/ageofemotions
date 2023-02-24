@@ -5,7 +5,7 @@ import React from "react";
 function Text() {
    return (
       <div className="flex flex-col items-center py-4 sm:p-4 max-w-[95vw] md:max-w-[45ch] md:w-[100%] ">
-         <span className="p-2 text-4xl sm:text-6xl font-bold text-center text-white bg-black whitespace-nowrap">
+         <span className="p-2 text-4xl font-bold text-center text-white bg-black sm:text-6xl whitespace-nowrap">
             <p>3 FILTROS </p>
          </span>
          {/* <span className="bg-blueGray h-[.5rem] flex w-[70%]"> </span> */}
@@ -19,7 +19,7 @@ function Text() {
             <span>
                Para <p className="inline font-medium">saber</p> si tus prácticas
             </span>
-            <p className="font-medium ">de cambios de mentalidad</p>
+            <p className="font-medium ">de gestión de emociones</p>
             <p>son efectivas.</p>
             <p className="font-medium">PDF</p>
          </span>
