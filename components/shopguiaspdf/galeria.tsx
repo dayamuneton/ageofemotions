@@ -32,8 +32,8 @@ function Galeria() {
    }, []);
 
    return (
-      <div className="flex flex-col items-center w-full my-8">
-         <div className="grid grid-cols-2 lg:grid-cols-5 w-[90vw] max-w-6xl">
+      <div className="flex flex-col items-center w-full mt-8">
+         <div className="grid grid-cols-1 lg:grid-cols-5 w-[90vw] max-w-6xl">
             {galeriaProducts?.map((product: ProductInterface) => (
                <MemebresiaProductCard
                   key={product.photoURL}

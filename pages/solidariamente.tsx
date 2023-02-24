@@ -1,9 +1,10 @@
 // import BadPractices from "@shared/badPractices";
 // import GiftForYou from "@shared/giftforyou";
 import QuieroParticipar from "@components/camiseta/quieroParticipar";
-import ExtensionStrategy from "@components/creativamente/extensionStrategy";
-import OpenRoads from "@components/creativamente/openRoads";
-import WhatWillYouGet from "@components/creativamente/whatWillYouGet";
+import ThreeReasons from "@components/solidariamente/3reasons";
+import ExtensionStrategy from "@components/solidariamente/extensionStrategy";
+import OpenRoads from "@components/solidariamente/openRoads";
+import WhatWillYouGet from "@components/solidariamente/whatWillYouGet";
 import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
 import Head from "next/head";
@@ -14,7 +15,7 @@ function CreativaMente() {
    return (
       <div className="flex flex-col items-center w-full h-full bg-[#fafafa]">
          <Head>
-            <title>CreativaMENTE</title>
+            <title>SolidariaMENTE</title>
             <meta
                name="description"
                content="Aprende a crear sistemas que te permitan expandirte.
@@ -30,20 +31,11 @@ function CreativaMente() {
          <Navbar />
          <div className="bg-[#e8e6e6] w-full p-4  flex justify-center">
             <div className="max-w-[60ch] w-[90vw] flex flex-col items-center">
-               <h2 className="text-2xl font-bold">CreativaMENTE</h2>
+               <h2 className="text-2xl font-bold">SolidariaMENTE</h2>
                <p>Asesoría 1:1</p>
-               <span className="mt-4">
-                  <p className="inline mr-1 font-semibold">CreativaMENTE</p>
-                  vamos a crear juntos,
-                  <p className="inline mx-1 font-medium underline">emprender</p>
-                  y ofrecer servicios/productos que, quizás, cuando empezaste el
-                  negocio,
-                  <p className="inline mx-1 font-medium">
-                     no te habrías ni imaginado.
-                  </p>
-               </span>
             </div>
          </div>
+         <ThreeReasons />
          <ExtensionStrategy />
          <a
             href="https://wa.link/tytz2y"
@@ -55,10 +47,9 @@ function CreativaMente() {
          </a>
          <OpenRoads />
          <WhatWillYouGet />
-         <div className="w-full my-6 flex justify-center">
+         <div className="flex justify-center w-full my-6">
             <QuieroParticipar />
          </div>
-
          <FooterBottom />
       </div>
    );

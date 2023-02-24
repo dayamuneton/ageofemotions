@@ -12,6 +12,7 @@ import { firstLetterUpperCaseEachWord } from "@utils/firstLetterUpperCase";
 
 export interface ProductInterface extends DocumentData {
    title: string;
+   titleAbbreviation: string;
    photoURL: string;
    description: string;
    subTitle?: string;

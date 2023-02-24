@@ -15,7 +15,7 @@ function Content() {
                   QUE NO PUEDEN FALTAR
                </p>
                <p className="text-2xl font-semibold text-center">
-                  Para saber si tus prácticas de cambios de mentalidad son
+                  Para saber si tus prácticas de gestión de emociones son
                   efectivas.
                </p>
             </span>

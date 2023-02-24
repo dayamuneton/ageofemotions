@@ -11,7 +11,7 @@ interface ComingSoonCardProps {
 
 function ComingSoonCard({ product }: ComingSoonCardProps) {
    return (
-      <div className="w-[95%] mx-auto flex flex-col items-center  ">
+      <div className="w-[95%] mx-auto flex flex-col items-center drop-shadow  mt-3">
          <Image
             src={product.photoURL}
             alt=""
@@ -19,11 +19,6 @@ function ComingSoonCard({ product }: ComingSoonCardProps) {
             priority
             className="!relative object-contain !h-fit"
          />
-
-         {/* <div className="bg-[#fafafa] flex flex-col flex-1 w-full p-4">
-           <p className="my-auto text-center">{product.title}</p>
-
-        </div> */}
       </div>
    );
 }

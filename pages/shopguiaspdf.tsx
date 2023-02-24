@@ -1,6 +1,6 @@
-import Banner from "@components/guiaspdf/banner";
-import ComingSoon from "@components/guiaspdf/comingSoon";
-import Galeria from "@components/guiaspdf/galeria";
+import Banner from "@components/shopguiaspdf/banner";
+import ComingSoon from "@components/shopguiaspdf/comingSoon";
+import Galeria from "@components/shopguiaspdf/galeria";
 import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
 import Head from "next/head";
@@ -10,7 +10,7 @@ function GuiasPDF() {
    return (
       <div className="flex flex-col items-center overflow-hidden">
          <Head>
-            <title>Guías PDF</title>
+            <title>Shop Guías PDF</title>
             <meta
                name="description"
                content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."

@@ -6,11 +6,11 @@ import GiftForYou from "@shared/giftforyou";
 import Navbar from "@shared/navbar";
 import GiftButton from "@shared/giftButton";
 import Head from "next/head";
-import ThreeReasons from "@components/home/3reasons";
 import DivergentThinking from "@components/home/divergentThinking";
 import ServicesCards from "@components/home/servicesCards";
 import BadPractices from "@shared/badPractices";
 import WelcomeToAOE from "@components/home/welcome";
+import WorldHasEvolved from "@components/home/worldHasEvolved";
 
 export default function Home() {
    return (
@@ -31,14 +31,14 @@ export default function Home() {
          {/* <Logo /> */}
          <GiftForYou />
          <div className="bg-[#faf8f5] w-full flex- flex-col items-center flex pb-4">
-            <ThreeReasons />
-            <WelcomeToAOE />
+            <WorldHasEvolved />
+            {/* <WelcomeToAOE /> */}
             <DivergentThinking />
 
             <div className="my-14">
-               <h2 className="mb-2 text-5xl font-semibold">Trabaja conmigo</h2>
+               <h2 className="mb-2 text-5xl font-semibold">Crezcamos juntos</h2>
                <p className="ml-16 text-xl text-orange font-cutive">
-                  Y escala tu negocio integralmente
+                  De la mano con nuestra comunidad.
                </p>
             </div>
             <ServicesCards />
