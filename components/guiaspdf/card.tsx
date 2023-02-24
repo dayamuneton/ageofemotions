@@ -21,10 +21,10 @@ function MemebresiaProductCard({ product }: CardProps) {
          {/* </span> */}
 
          <div className="bg-[#fafafa] flex flex-col flex-1 w-full p-4">
-            <p className="my-auto text-center">{product.title}</p>
+            {/* <p className="my-auto text-center">{product.title}</p> */}
             <Link
                href={`/checkoutpdf/${product.link}?psrc=membresia`}
-               className="p-2 text-center border-2 border-black bg-yellow"
+               className="p-2 mt-auto text-center border-2 border-black bg-yellow"
             >
                Comprar ahora
             </Link>

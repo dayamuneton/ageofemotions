@@ -1,4 +1,5 @@
 import Banner from "@components/guiaspdf/banner";
+import ComingSoon from "@components/guiaspdf/comingSoon";
 import Galeria from "@components/guiaspdf/galeria";
 import FooterBottom from "@shared/footer/footerBottom";
 import Navbar from "@shared/navbar";
@@ -23,6 +24,7 @@ function GuiasPDF() {
          <Navbar />
          <Banner />
          <Galeria />
+         <ComingSoon />
          <div className="flex flex-col items-center w-full p-2 my-4 bg-yellow">
             <p className="text-2xl font-bold">
                ENRIQUECE TU EXPERIENCIA DE VIDA
