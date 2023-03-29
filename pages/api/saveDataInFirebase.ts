@@ -6,10 +6,8 @@ import { reportInitializeCheckoutEvent } from "@/apiUtils/convertions/events";
 interface UserData {
    name?: string;
    email: string;
-   // lastCheckoutSessionId: string;
-   giftCardCodes?: FieldValue;
-   // getGiftCard?: boolean;
-   mailerlite_group?: string;
+   lastCheckoutSessionId: string;
+   mailerlite_group: string;
 }
 
 const saveDataInFirebase = async (
@@ -24,7 +22,6 @@ const saveDataInFirebase = async (
          firstName,
          lastName,
          email,
-         getGiftCard,
          priceID,
          cancel_url,
          mailerlite_group,
@@ -52,6 +49,8 @@ const saveDataInFirebase = async (
       const session = await response.json();
 
       let data: UserData = {
+         lastCheckoutSessionId: session.id,
+         mailerlite_group,
          email,
       };
 
