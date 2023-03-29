@@ -36,7 +36,6 @@ const saveDataInFirebase = async (
          cancel_url,
          priceID,
          email,
-         shopping_cart_id: "TODO",
       };
 
       const response = await fetch(
