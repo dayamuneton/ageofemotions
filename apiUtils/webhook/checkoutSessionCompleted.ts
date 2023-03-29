@@ -54,7 +54,7 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
 
       await updateDoc(userRef, {
          pendingMember: false,
-         categories: arrayUnion("miembro"),
+         isMember: true,
       });
 
       console.log("log ", `nuevo miembro ${id}`);
@@ -105,6 +105,11 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
       subscriberData.name,
       subscriberData.mailerlite_group
    );
+
+   await updateDoc(doc(db, "users", subscriberData.id), {
+      purchaseMade: true,
+      mailerlite_group: "",
+   });
    return;
 };
 export default checkoutSessionCompletedEvent;
