@@ -1,20 +1,19 @@
 import Head from "next/head";
 import React from "react";
-import About from "@shared/about";
-import ArtIsTheNewWay from "@components/part1/artIsTheNewWay";
-import CreateConcept from "@components/part1/createConcepts";
-import ExpensiveTransformation from "@components/part1/expensiveTransformation";
-import Footer from "@shared/footer";
-import IsItFair from "@components/part1/IsItFair";
-import ItsForYouIf from "@components/part1/itsforyouif";
-import Navbar from "@shared/navbar";
-import NoLongerPracticedAsBefore from "@components/part1/NoLongerPracticedAsBefore";
-import PartOne from "@components/part1/partone";
-import SeriousProblem from "@components/part1/seriousProblem";
-import WhatWillYouGet from "@components/part1/whatWillYouGet";
-import SignUpForm from "@components/part1/signupForm";
-import PersonalizedMentoring from "@components/part1/personalizedMentoring";
-import Top from "@shared/footer/top";
+import About from "@/shared/about";
+import CreateConcept from "@/components/part1/createConcepts";
+import ExpensiveTransformation from "@/components/part1/expensiveTransformation";
+import Footer from "@/shared/footer";
+import IsItFair from "@/components/part1/IsItFair";
+import ItsForYouIf from "@/components/part1/itsforyouif";
+import Navbar from "@/shared/navbar";
+import NoLongerPracticedAsBefore from "@/components/part1/NoLongerPracticedAsBefore";
+import PartOne from "@/components/part1/partone";
+import SeriousProblem from "@/components/part1/seriousProblem";
+import WhatWillYouGet from "@/components/part1/whatWillYouGet";
+import SignUpForm from "@/components/part1/signupForm";
+import PersonalizedMentoring from "@/components/part1/personalizedMentoring";
+import Top from "@/shared/footer/top";
 
 function GiftPart1() {
    return (

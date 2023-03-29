@@ -2,8 +2,9 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { reportPageViewEvent } from "@pixelEvents/events";
-import { AuthProvider } from "@context/authContext";
+import { AuthProvider } from "@/context/authContext";
+import { ShopProvider } from "@/context/shopContext";
+import { reportPageViewEvent } from "@/api/convertions/events";
 
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();
@@ -17,7 +18,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
    return (
       <AuthProvider>
-         <Component {...pageProps} />
+         <ShopProvider>
+            <Component {...pageProps} />
+         </ShopProvider>
       </AuthProvider>
    );
 };

@@ -2,8 +2,8 @@ import Image from "next/image";
 import React from "react";
 import SouthIcon from "@mui/icons-material/South";
 import Head from "next/head";
-import Navbar from "@shared/navbar";
-import FooterBottom from "@shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
+import FooterBottom from "@/shared/footer/footerBottom";
 
 function SuccessSubscription() {
    return (

@@ -1,10 +1,10 @@
-import FooterBottom from "@shared/footer/footerBottom";
-import Navbar from "@shared/navbar";
+import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
 import Head from "next/head";
 import React from "react";
-import Faq from "@components/checkoutpdf/faq";
-import CheckoutForm from "@components/checkoutpdf/checkoutForm";
-import Unete from "@components/checkoutpdf/unete";
+import Faq from "@/components/checkoutpdf/faq";
+import CheckoutForm from "@/components/checkoutpdf/checkoutForm";
+import Unete from "@/components/checkoutpdf/unete";
 
 function CheckoutPDF() {
    return (

@@ -1,30 +1,13 @@
 import React, { useState, FormEvent, useEffect } from "react";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { doc, DocumentData, getDoc } from "firebase/firestore";
-import { db } from "@utils/firebaseConfig";
-import { useAuth } from "@context/authContext";
-import { firstLetterUpperCaseEachWord } from "@utils/firstLetterUpperCase";
-
-export interface ProductInterface extends DocumentData {
-   title: string;
-   titleAbbreviation: string;
-   photoURL: string;
-   description: string;
-   subTitle?: string;
-   buttonText?: string;
-   link: string;
-   price?: string;
-   mailerlite_group?: string;
-   prices?: {
-      priceID?: string;
-      priceIDForMembers?: string;
-   }[];
-}
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/utils/firebaseConfig";
+import { useAuth } from "@/context/authContext";
+import { firstLetterUpperCaseEachWord } from "@/utils/firstLetterUpperCase";
+import { Product, productConverter } from "@/models/product";
 
 function CheckoutForm() {
    const [firstName, setFirstName] = useState("");
@@ -32,7 +15,7 @@ function CheckoutForm() {
    const [email, setEmail] = useState("");
    const [terms, setTerms] = useState(false);
    const router = useRouter();
-   const [pdf, setPDF] = useState<ProductInterface | null>();
+   const [pdf, setPDF] = useState<Product | null>();
    const { currentUser, profile } = useAuth();
    const [cancelURL, setCancelURL] = useState("");
 
@@ -44,18 +27,21 @@ function CheckoutForm() {
       setCancelURL((psrc as string) || "coherentemente");
 
       const loadPDF = async () => {
-         const productSnapshot = await getDoc(doc(db, "pdf_products", product));
+         const productSnapshot = await getDoc(
+            doc(db, "pdf_products", product).withConverter(productConverter)
+         );
 
          if (!productSnapshot.exists()) {
             setPDF(null);
             return;
          }
 
-         const productData = productSnapshot.data() as ProductInterface;
+         const productData = productSnapshot.data();
+         await productData.setPrice(profile?.isMember);
          setPDF(productData);
       };
       loadPDF();
-   }, [router]);
+   }, [router, profile]);
 
    useEffect(() => {
       if (pdf === null) {
@@ -78,16 +64,11 @@ function CheckoutForm() {
 
       if (!pdf) return;
 
-      const { prices, mailerlite_group } = pdf;
+      const { mailerlite_group } = pdf;
 
-      let priceID = prices?.find((price) => price.priceID)?.priceID;
-      if (profile?.categories?.includes("miembro")) {
-         priceID =
-            prices?.find((price) => price.priceIDForMembers)
-               ?.priceIDForMembers || priceID;
-      }
+      let priceID = pdf.price?.id || pdf.priceId;
 
-      if (!prices || !prices[0] || !priceID) {
+      if (!priceID) {
          console.error("No price found for this product");
          return;
       }
@@ -129,7 +110,7 @@ function CheckoutForm() {
    return (
       <div className="flex flex-col items-center w-full">
          <Image
-            src={pdf.photoURL || ""}
+            src={pdf.images[0] || ""}
             priority
             alt=""
             fill
@@ -137,6 +118,12 @@ function CheckoutForm() {
          />
          <p className="text-center text-xl font-bold max-w-[90vw] my-4">
             {pdf.title}
+         </p>
+         <p>
+            {pdf.price_in_dollars?.toLocaleString("en-US", {
+               style: "currency",
+               currency: "USD",
+            })}
          </p>
          <form
             className="bg-white p-8 w-[min(95%,40rem)]"

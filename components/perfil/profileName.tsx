@@ -1,10 +1,10 @@
 import React, { useState, useRef, Dispatch, SetStateAction } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import { doc, setDoc } from "firebase/firestore";
-import { useAuth } from "@context/authContext";
-import { db } from "@utils/firebaseConfig";
+import { useAuth } from "@/context/authContext";
+import { db } from "@/utils/firebaseConfig";
 import { updateProfile } from "firebase/auth";
-import useClickOutside from "@utils/useClickOutside";
+import useClickOutside from "@/utils/useClickOutside";
 
 function ProfileField() {
    const [edit, setEdit] = useState(false);

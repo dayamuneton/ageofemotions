@@ -1,16 +1,15 @@
-import About from "@shared/about";
-import Footer from "@shared/footer";
-import Content from "@components/home/content";
-import Form from "@components/home/form";
-import GiftForYou from "@shared/giftforyou";
-import Navbar from "@shared/navbar";
-import GiftButton from "@shared/giftButton";
+import About from "@/shared/about";
+import Footer from "@/shared/footer";
+import Content from "@/components/home/content";
+import Form from "@/components/home/form";
+import GiftForYou from "@/shared/giftforyou";
+import Navbar from "@/shared/navbar";
+import GiftButton from "@/shared/giftButton";
 import Head from "next/head";
-import DivergentThinking from "@components/home/divergentThinking";
-import ServicesCards from "@components/home/servicesCards";
-import BadPractices from "@shared/badPractices";
-import WelcomeToAOE from "@components/home/welcome";
-import WorldHasEvolved from "@components/home/worldHasEvolved";
+import DivergentThinking from "@/components/home/divergentThinking";
+import ServicesCards from "@/components/home/servicesCards";
+import BadPractices from "@/shared/badPractices";
+import WorldHasEvolved from "@/components/home/worldHasEvolved";
 
 export default function Home() {
    return (
@@ -28,11 +27,9 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
          </Head>
          <Navbar />
-         {/* <Logo /> */}
          <GiftForYou />
          <div className="bg-[#faf8f5] w-full flex- flex-col items-center flex pb-4">
             <WorldHasEvolved />
-            {/* <WelcomeToAOE /> */}
             <DivergentThinking />
 
             <div className="my-14">
@@ -43,7 +40,6 @@ export default function Home() {
             </div>
             <ServicesCards />
          </div>
-         {/* <StructureOfYourGoals /> */}
          <BadPractices />
          <Form />
          <div className="flex flex-col items-center w-full p-8 pb-20 bg-white text-bold">
@@ -52,8 +48,6 @@ export default function Home() {
             <br />
             <About />
          </div>
-         {/* <LeopardGlassesGirl /> */}
-         {/* <ArtIsTheNewWay /> */}
          <Footer />
       </div>
    );

@@ -1,11 +1,12 @@
 import Stripe from "stripe";
-import { getFirebaseSubscriberData } from "@utils/getFirebaseSubscriberData";
-import subscribeToGetGiftCard from "@utils/mailerliteSubscribeToGetGiftCard";
-import { subscribeToGroup } from "@utils/mailerliteSubscribeToGroup";
+import { getFirebaseSubscriberData } from "@/utils/getFirebaseSubscriberData";
+import subscribeToGetGiftCard from "@/utils/mailerliteSubscribeToGetGiftCard";
+import { subscribeToGroup } from "@/utils/mailerliteSubscribeToGroup";
 import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
-import { db } from "@utils/firebaseConfig";
-import { reportPurchaseEvent } from "@pixelEvents/events";
-import generateUniqueCodeInCollection from "@utils/generateUniqueCodeInCollection";
+import { db } from "@/utils/firebaseConfig";
+import { reportPurchaseEvent } from "@/api/convertions/events";
+import generateUniqueCodeInCollection from "@/utils/generateUniqueCodeInCollection";
+import { processCartOrder } from "./processCartOrder";
 
 interface CheckoutSessionCompleted extends Stripe.Event.Data.Object {
    customer_details: {
@@ -15,6 +16,7 @@ interface CheckoutSessionCompleted extends Stripe.Event.Data.Object {
    id: string;
    cancel_url: string;
    amount_total: number;
+   client_reference_id: string | null;
 }
 const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
    const checkoutSession = checkoutSessionObject as CheckoutSessionCompleted;
@@ -22,6 +24,16 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
    console.log(checkoutSession);
 
    const checkoutSessionId = checkoutSession.id;
+
+   if (checkoutSession.client_reference_id) {
+      await processCartOrder({
+         cartId: checkoutSession.client_reference_id,
+         name: checkoutSession.customer_details.name,
+         amountTotal: checkoutSession.amount_total,
+         cancel_url: checkoutSession.cancel_url,
+      });
+      return;
+   }
 
    let subscriberData = await getFirebaseSubscriberData(checkoutSessionId);
 

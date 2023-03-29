@@ -1,11 +1,12 @@
-import { useAuth } from "@context/authContext";
+import { useAuth } from "@/context/authContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function Unete() {
    const { profile } = useAuth();
-   if (profile?.categories?.includes("miembro")) return <></>;
+
+   if (profile?.isMember) return <></>;
 
    return (
       <div className="flex flex-col items-center w-full py-12 text-center">

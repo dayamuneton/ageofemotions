@@ -1,4 +1,4 @@
-import { useAuth } from "@context/authContext";
+import { useAuth } from "@/context/authContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -31,7 +31,7 @@ function Banner() {
             </div>
             <div>SOLO PARA NUESTROS MIEMBROS</div>
          </div>
-         {!profile?.categories?.includes("miembro") && (
+         {!profile?.isMember && (
             <Link
                href="/membresia"
                className="px-12 py-4 mt-2 text-xl font-medium text-white bg-black"

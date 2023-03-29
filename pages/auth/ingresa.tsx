@@ -1,7 +1,7 @@
-import ContinueWith from "@components/auth/continueWith";
-import Login from "@components/auth/login";
-import Register from "@components/auth/register";
-import { useAuth } from "@context/authContext";
+import ContinueWith from "@/components/auth/continueWith";
+import Login from "@/components/auth/login";
+import Register from "@/components/auth/register";
+import { useAuth } from "@/context/authContext";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";

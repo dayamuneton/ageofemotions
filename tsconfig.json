@@ -14,14 +14,9 @@
       "isolatedModules": true,
       "jsx": "preserve",
       "incremental": true,
+      "baseUrl": ".",
       "paths": {
-         "@components/*": ["./components/*"],
-         "@utils/*": ["./utils/*"],
-         "@shared/*": ["./shared/*"],
-         "@context/*": ["./context/*"],
-         "@webhook/*": ["./webhookEvents/*"],
-         "@templates/*": ["./templatesEvents/*"],
-         "@pixelEvents/*": ["./pixelEvents/*"]
+         "@/*": ["./*"]
       }
    },
    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

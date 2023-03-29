@@ -1,6 +1,6 @@
-import GiftcardContent from "@components/giftcard";
-import FooterBottom from "@shared/footer/footerBottom";
-import Navbar from "@shared/navbar";
+import GiftcardContent from "@/components/giftcard";
+import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
 import Head from "next/head";
 import React from "react";
 

@@ -1,4 +1,4 @@
-import HistoriaButton from "@shared/historiaButton";
+import HistoriaButton from "@/shared/historiaButton";
 import Image from "next/image";
 import React from "react";
 

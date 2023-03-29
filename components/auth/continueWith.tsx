@@ -1,4 +1,4 @@
-import { useAuth } from "@context/authContext";
+import { useAuth } from "@/context/authContext";
 import Image from "next/image";
 import React from "react";
 

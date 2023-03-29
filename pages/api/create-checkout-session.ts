@@ -1,9 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Stripe from "stripe";
+import { stripe } from "@/api/stripe/stripeConfig";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-   apiVersion: "2022-11-15",
-});
+const formatLineItem = (priceID: string) => {
+   return {
+      price: priceID,
+      quantity: 1,
+   };
+};
 
 const createCheckoutSession = async (
    req: NextApiRequest,
@@ -13,22 +16,33 @@ const createCheckoutSession = async (
       res.status(405).send("Method Not Allowed");
    }
 
-   const { success_url, cancel_url, priceID } = req.body;
+   const { success_url, cancel_url, priceID, lineItems, shopping_cart_id } =
+      req.body;
 
-   const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/${success_url}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/${cancel_url}`,
-      allow_promotion_codes: true,
-      payment_method_types: ["card"],
-      line_items: [
-         {
-            price: priceID,
-            quantity: 1,
-         },
-      ],
-   });
+   const line_items: any[] = [];
+   if (lineItems) {
+      lineItems.forEach((product: any) => {
+         line_items.push(formatLineItem(product?.price?.id));
+      });
+   } else {
+      line_items.push(formatLineItem(priceID));
+   }
 
-   res.status(200).json(session);
+   try {
+      const session = await stripe.checkout.sessions.create({
+         mode: "payment",
+         success_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/${success_url}`,
+         cancel_url: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/${cancel_url}`,
+         allow_promotion_codes: true,
+         payment_method_types: ["card"],
+         line_items,
+         client_reference_id: shopping_cart_id || "",
+      });
+
+      res.status(200).json(session);
+   } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+   }
 };
 export default createCheckoutSession;

@@ -1,5 +1,5 @@
-import { useAuth } from "@context/authContext";
-import { auth } from "@utils/firebaseConfig";
+import { useAuth } from "@/context/authContext";
+import { auth } from "@/utils/firebaseConfig";
 import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import Head from "next/head";
 import Image from "next/image";
@@ -51,7 +51,7 @@ function Login() {
       let url = window.location.href;
       await router.replace(url);
 
-      let signInError = await registerUserWithEmailLink(email, url);
+      let signInError = (await registerUserWithEmailLink(email, url)) as string;
 
       if (signInError) {
          console.log(signInError);

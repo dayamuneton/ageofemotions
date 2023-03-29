@@ -1,6 +1,6 @@
+import generateBasePayload from "@/api/convertions/basePayload";
+import makePostRequestToConvertionsAPI from "@/api/convertions/postRequestToConvertionAPI";
 import { NextApiRequest, NextApiResponse } from "next";
-import makePostRequestToConvertionsAPI from "@pixelEvents/postRequestToConvertionAPI";
-import generateBasePayload from "@pixelEvents/basePayload";
 
 const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
    if (req.method !== "POST") {

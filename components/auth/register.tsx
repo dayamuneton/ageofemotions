@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import { useAuth } from "@context/authContext";
+import { useAuth } from "@/context/authContext";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import {
    signInWithEmailLink,
    updateProfile,
 } from "firebase/auth";
-import { auth, db } from "@utils/firebaseConfig";
+import { auth, db } from "@/utils/firebaseConfig";
 import { arrayUnion, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 
 const isCodeValid = async (code: string) => {
@@ -107,7 +107,7 @@ function Register() {
 
       await router.replace(url);
 
-      let signInError = await registerUserWithEmailLink(email, url);
+      let signInError = (await registerUserWithEmailLink(email, url)) as string;
 
       if (signInError) {
          console.log(signInError);

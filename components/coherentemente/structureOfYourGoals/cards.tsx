@@ -1,33 +1,22 @@
+import { Product } from "@/models/product";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 interface StructureCardProps {
-   product: {
-      title: string;
-      photoURL: string;
-      description: string;
-      subTitle?: string;
-      buttonText?: string;
-      link: string;
-      price?: string;
-      prices?: {
-         priceID?: string;
-      }[];
-      imgAspectRatio: string;
-   };
+   product: Product;
 }
 
 function StructureCard({ product }: StructureCardProps) {
-   const link = product.prices
-      ? `checkoutpdf/${product.link}?psrc=coherentemente`
-      : product.link;
+   const link = product.priceId
+      ? `checkoutpdf/${product.handle}?psrc=coherentemente`
+      : product.handle;
 
    return (
       <div className="flex flex-col lg:flex-row items-center border-[3px] rounded-[1.5rem] border-yellow max-w-[90vw] w-[80ch] px-12 p-8 bg-white m-4">
          <div className="flex flex-col items-center w-[50%]">
             <Image
-               src={product.photoURL}
+               src={product.images[0]}
                priority
                alt=""
                fill
@@ -35,15 +24,16 @@ function StructureCard({ product }: StructureCardProps) {
             />
 
             <p className="mt-2 text-xl font-bold text-center text-orange">
-               {product.price}
+               {product.price_in_dollars.toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+               })}
             </p>
             <p className="text-xl font-bold text-center ">PDF</p>
          </div>
          <div className="flex flex-col w-full py-8 lg:pl-8">
             <h2 className="text-3xl font-bold text-center">{product.title}</h2>
-            <p className="text-xl font-bold text-center font-play-fair">
-               {product.subTitle}
-            </p>
+
             <p className="my-6 font-medium">{product.description}</p>
             <Link
                href={`/${link}`}

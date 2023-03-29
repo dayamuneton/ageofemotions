@@ -1,8 +1,8 @@
-import Banner from "@components/shopguiaspdf/banner";
-import ComingSoon from "@components/shopguiaspdf/comingSoon";
-import Galeria from "@components/shopguiaspdf/galeria";
-import FooterBottom from "@shared/footer/footerBottom";
-import Navbar from "@shared/navbar";
+import Banner from "@/components/shopguiaspdf/banner";
+import ComingSoon from "@/components/shopguiaspdf/comingSoon";
+import Galeria from "@/components/shopguiaspdf/galeria";
+import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
 import Head from "next/head";
 import React from "react";
 

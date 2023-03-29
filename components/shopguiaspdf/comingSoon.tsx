@@ -1,30 +1,9 @@
-import { db } from "@utils/firebaseConfig";
-import { collection, onSnapshot } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import { useShop } from "@/context/shopContext";
+import React from "react";
 import ComingSoonCard from "./comingSoonCard";
 
-interface ComingSoonProductInterface {
-   link: string;
-   photoURL: string;
-   title: string;
-}
-
 function ComingSoon() {
-   const [comingSoonPDFS, setComingSoonPDFS] = useState<any>([]);
-
-   useEffect(() => {
-      const comingSoonRef = collection(db, "pdf_coming_soon");
-      const unSubscribe = onSnapshot(comingSoonRef, (snapshot) => {
-         const docs: any = [];
-         snapshot.forEach((doc) => {
-            docs.push({ ...doc.data(), id: doc.id });
-         });
-
-         setComingSoonPDFS(docs);
-      });
-
-      return unSubscribe;
-   }, []);
+   const { commingSoonProducts } = useShop();
 
    return (
       <div className="flex flex-col items-center w-full my-8">
@@ -34,8 +13,8 @@ function ComingSoon() {
             </p>
          </div>
          <div className="grid grid-cols-2 lg:grid-cols-5 w-[90vw] max-w-6xl">
-            {comingSoonPDFS?.map((product: ComingSoonProductInterface) => (
-               <ComingSoonCard key={product.photoURL} product={product} />
+            {commingSoonProducts?.map((product) => (
+               <ComingSoonCard key={product.id} product={product} />
             ))}
          </div>
       </div>

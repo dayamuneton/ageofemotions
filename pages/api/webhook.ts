@@ -1,11 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Stripe from "stripe";
+import { stripe } from "@/api/stripe/stripeConfig";
 import { buffer } from "micro";
-import checkoutSessionCompletedEvent from "../../webhookEvents/checkoutSessionCompleted";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-   apiVersion: "2022-11-15",
-});
+import checkoutSessionCompletedEvent from "@/api/webhook/checkoutSessionCompleted";
 
 const signingSecret = process.env.STRIPE_WEBHOOK_SIGNING_SECRET;
 

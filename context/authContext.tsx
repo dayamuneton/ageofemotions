@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import {
    createUserWithEmailAndPassword,
-   deleteUser,
    signInWithEmailAndPassword,
    signInWithPopup,
    signOut,
@@ -10,25 +9,41 @@ import {
    isSignInWithEmailLink,
    signInWithEmailLink,
 } from "firebase/auth";
-import { auth, db, googleProvider } from "@utils/firebaseConfig";
-import {
-   doc,
-   getDoc,
-   onSnapshot,
-   serverTimestamp,
-   setDoc,
-} from "firebase/firestore";
+import { auth, db, googleProvider } from "@/utils/firebaseConfig";
+import { doc, onSnapshot } from "firebase/firestore";
+import { Profile, profileConverter } from "@/models/profile";
 
-const AuthContext = createContext<any>(null);
-
-export function useAuth() {
-   return useContext(AuthContext);
+interface AuthContextProps {
+   setCurrentUser: React.Dispatch<React.SetStateAction<any>>;
+   currentUser: any;
+   loginWithGoogle: () => Promise<unknown>;
+   registerUserWithEmailAndPassword: (
+      email: string,
+      password: string,
+      name: string
+   ) => Promise<any>;
+   signInWithEmail: (email: string, password: string) => Promise<any>;
+   logout: () => Promise<void>;
+   user: any;
+   setUser: React.Dispatch<React.SetStateAction<any>>;
+   profile: Profile | null;
+   setProfile: React.Dispatch<React.SetStateAction<Profile | null>>;
+   registerUserWithEmailLink: (
+      email: string,
+      url: string
+   ) => Promise<void | unknown>;
 }
 
-export function AuthProvider({ children }: any) {
+const AuthContext = createContext<AuthContextProps | null>(null);
+
+export function useAuth() {
+   return useContext(AuthContext as React.Context<AuthContextProps>);
+}
+
+export function AuthProvider({ children }: { children: React.ReactNode }) {
    const [currentUser, setCurrentUser] = useState<any>();
    const [user, setUser] = useState();
-   const [profile, setProfile] = useState<any>();
+   const [profile, setProfile] = useState<Profile | null>(null);
    const [loaded, setLoaded] = useState(false);
 
    async function loginWithGoogle() {
@@ -82,7 +97,8 @@ export function AuthProvider({ children }: any) {
          try {
             await signInWithEmailLink(auth, email, url);
          } catch (error) {
-            return console.error(error);
+            console.error(error);
+            return error;
          }
          return;
       }
@@ -94,7 +110,8 @@ export function AuthProvider({ children }: any) {
          });
          window.localStorage.setItem("emailForSignIn", email);
       } catch (error) {
-         return console.error(error);
+         console.error(error);
+         return error;
       }
    }
 
@@ -112,17 +129,15 @@ export function AuthProvider({ children }: any) {
          return;
       }
 
-      const userRef = doc(db, "users", currentUser.email);
-
+      const userRef = doc(db, "users", currentUser.email).withConverter(
+         profileConverter
+      );
       const unSubscribe = onSnapshot(
          userRef,
-         (snapshot) => {
-            if (!snapshot.exists()) return;
-
-            setProfile(snapshot.data());
-         },
-         (error) => console.error(error)
+         (snapshot) => setProfile(snapshot.data() || null),
+         (e) => console.error(e)
       );
+
       return unSubscribe;
    }, [currentUser]);
 

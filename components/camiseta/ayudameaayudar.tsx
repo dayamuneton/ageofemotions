@@ -1,5 +1,5 @@
-import CamisetaButton from "@shared/camisetaButton";
-import HistoriaButton from "@shared/historiaButton";
+import CamisetaButton from "@/shared/camisetaButton";
+import HistoriaButton from "@/shared/historiaButton";
 import Image from "next/image";
 import React from "react";
 

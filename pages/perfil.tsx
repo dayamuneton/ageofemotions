@@ -1,32 +1,15 @@
-import { useAuth } from "@context/authContext";
-import FooterBottom from "@shared/footer/footerBottom";
-import Navbar from "@shared/navbar";
+import { useAuth } from "@/context/authContext";
+import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
 import Head from "next/head";
-import Image from "next/image";
-import React, { useState, useEffect, FormEvent } from "react";
-import PersonIcon from "@mui/icons-material/Person";
-// import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import WithAuth from "@utils/withAuth";
-import { useRouter } from "next/router";
-import { arrayUnion, doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "@utils/firebaseConfig";
-import ProfileName from "@components/perfil/profileName";
-import ProfilePhoto from "@components/perfil/profilePhoto";
+import React from "react";
+import WithAuth from "@/utils/withAuth";
+import ProfileName from "@/components/perfil/profileName";
+import ProfilePhoto from "@/components/perfil/profilePhoto";
 import Link from "next/link";
 
 function Perfil() {
-   const router = useRouter();
-
    const { profile, currentUser } = useAuth();
-   const [profileCategories, setProfileCategories] = useState<string[] | null>(
-      null
-   );
-   const [memberCode, setMemberCode] = useState("");
-
-   useEffect(() => {
-      setProfileCategories(profile?.categories);
-   }, [profile]);
 
    return (
       <WithAuth>
@@ -69,14 +52,12 @@ function Perfil() {
                                  Categorias
                               </h2>
 
-                              {profileCategories?.map((category: any) => (
-                                 <p key={category} className="mt-2 capitalize">
-                                    {category}
-                                 </p>
-                              ))}
+                              {profile?.isMember && (
+                                 <p className="mt-2 capitalize">miembro</p>
+                              )}
                            </div>
 
-                           {!profileCategories?.includes("miembro") && (
+                           {!profile?.isMember && (
                               <div className="flex flex-col items-center w-full py-12 text-center">
                                  <Link
                                     href="/membresia"

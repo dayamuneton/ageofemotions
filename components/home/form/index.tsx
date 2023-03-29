@@ -4,7 +4,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { reportLeadEvent } from "@pixelEvents/events";
+import { reportLeadEvent } from "@/api/convertions/events";
 
 function Form() {
    const [email, setEmail] = useState("");

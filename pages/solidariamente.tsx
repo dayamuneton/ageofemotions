@@ -1,14 +1,11 @@
-// import BadPractices from "@shared/badPractices";
-// import GiftForYou from "@shared/giftforyou";
-import QuieroParticipar from "@components/camiseta/quieroParticipar";
-import ThreeReasons from "@components/solidariamente/3reasons";
-import ExtensionStrategy from "@components/solidariamente/extensionStrategy";
-import OpenRoads from "@components/solidariamente/openRoads";
-import WhatWillYouGet from "@components/solidariamente/whatWillYouGet";
-import FooterBottom from "@shared/footer/footerBottom";
-import Navbar from "@shared/navbar";
+import QuieroParticipar from "@/components/camiseta/quieroParticipar";
+import ThreeReasons from "@/components/solidariamente/3reasons";
+import ExtensionStrategy from "@/components/solidariamente/extensionStrategy";
+import OpenRoads from "@/components/solidariamente/openRoads";
+import WhatWillYouGet from "@/components/solidariamente/whatWillYouGet";
+import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
 import Head from "next/head";
-import Link from "next/link";
 import React from "react";
 
 function CreativaMente() {

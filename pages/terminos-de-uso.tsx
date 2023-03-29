@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
 import React from "react";
-import FooterBottom from "@shared/footer/footerBottom";
-import Navbar from "@shared/navbar";
+import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/shared/navbar";
 
 function TermsAndConditions() {
    return (

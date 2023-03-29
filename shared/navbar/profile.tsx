@@ -1,6 +1,6 @@
-import { useAuth } from "@context/authContext";
-import { auth, db } from "@utils/firebaseConfig";
-import useClickOutside from "@utils/useClickOutside";
+import { useAuth } from "@/context/authContext";
+import { auth, db } from "@/utils/firebaseConfig";
+import useClickOutside from "@/utils/useClickOutside";
 import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -33,7 +33,7 @@ function NavbarProfile() {
       <div
          ref={profileRef}
          onClick={redirectToAuth}
-         className="relative flex items-center "
+         className="relative flex items-center mx-1"
       >
          <PersonIcon
             onClick={toggleUserDropdown}
@@ -44,9 +44,7 @@ function NavbarProfile() {
                <div>
                   <p className="text-base font-medium">{currentUser?.email}</p>
                   <div className="flex flex-col font-thin">
-                     {profile?.categories?.map((category: any) => (
-                        <p key={category}>{category}</p>
-                     ))}
+                     {profile?.isMember && <p>miembro</p>}
                   </div>
                </div>
                <div className="flex flex-col pt-2 mt-2 text-blue-700 border-t-2">

@@ -1,4 +1,4 @@
-import { lowerCaseSha256HexHash } from "@utils/sha256HexHash";
+import { lowerCaseSha256HexHash } from "@/utils/sha256HexHash";
 import apiConvertions from "./apiConvertions";
 
 export const reportPageViewEvent = async (url: string) => {
