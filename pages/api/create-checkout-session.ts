@@ -36,7 +36,7 @@ const createCheckoutSession = async (
          allow_promotion_codes: true,
          payment_method_types: ["card"],
          line_items,
-         client_reference_id: shopping_cart_id || null,
+         client_reference_id: shopping_cart_id || "no_cart_id",
       });
 
       res.status(200).json(session);

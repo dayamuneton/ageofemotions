@@ -16,7 +16,7 @@ interface CheckoutSessionCompleted extends Stripe.Event.Data.Object {
    id: string;
    cancel_url: string;
    amount_total: number;
-   client_reference_id: string | null;
+   client_reference_id: string;
 }
 const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
    const checkoutSession = checkoutSessionObject as CheckoutSessionCompleted;
@@ -25,7 +25,7 @@ const checkoutSessionCompletedEvent = async (checkoutSessionObject: any) => {
 
    const checkoutSessionId = checkoutSession.id;
 
-   if (checkoutSession.client_reference_id) {
+   if (checkoutSession.client_reference_id !== "no_cart_id") {
       await processCartOrder({
          cartId: checkoutSession.client_reference_id,
          name: checkoutSession.customer_details.name,

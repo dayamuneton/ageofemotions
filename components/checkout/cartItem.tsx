@@ -14,9 +14,9 @@ function CartItem({
    shoppingCart: ShoppingCart;
 }) {
    return (
-      <div className="relative flex items-center justify-center w-full max-w-xl p-2 mx-auto mb-2 bg-white rounded-2xl drop-shadow-sm lg:flex-row">
-         <div className="flex items-center justify-center w-full">
-            <span className="!aspect-square !w-[7rem] flex justify-center ">
+      <div className="relative flex flex-col items-center justify-center w-full max-w-xl p-3 mx-auto mb-2 bg-white md:flex-row rounded-2xl drop-shadow-sm lg:flex-row">
+         <div className="flex flex-col items-center justify-center w-full md:flex-row">
+            <span className="!aspect-square !w-[8rem] flex justify-center ">
                <Image
                   src={product.images[0]}
                   alt=""
@@ -29,7 +29,7 @@ function CartItem({
                <p className="max-w-xs text-sm "> {product.description} </p>
             </span>
          </div>
-         <div className="flex mt-auto">
+         <div className="flex mt-auto ml-auto">
             <div className="flex items-end font-medium">
                <p className="">
                   {product.price_in_dollars.toLocaleString("en-US", {

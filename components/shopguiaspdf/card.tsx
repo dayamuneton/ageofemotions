@@ -12,7 +12,7 @@ interface CardProps {
 function MemebresiaProductCard({ product }: CardProps) {
    return (
       <div className="w-[95%] mx-auto flex flex-col items-center drop-shadow mt-3">
-         <Link href={`/shopguiaspdf/${product.handle}`}>
+         <Link href={`/checkoutpdf/${product.handle}`}>
             <Image
                src={product.images[0]}
                alt=""

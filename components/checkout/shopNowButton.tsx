@@ -1,6 +1,7 @@
 import { useAuth } from "@/context/authContext";
 import { useShop } from "@/context/shopContext";
 import { deactivateCart } from "@/models/shoppingCart/deactivateCart";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import ContinueShopping from "./continueShopping";
@@ -47,12 +48,20 @@ function ShopNowButton() {
    };
    if (!shoppingCart?.cartItems?.[0]) return <ContinueShopping />;
    return (
-      <button
-         className="w-full max-w-xl py-3 mt-2 mb-8 text-2xl font-bold text-white bg-black"
-         onClick={redirectToCheckout}
-      >
-         Compar ahora
-      </button>
+      <>
+         <button
+            className="w-full max-w-xl py-3 mt-2 text-2xl font-bold text-white bg-black"
+            onClick={redirectToCheckout}
+         >
+            Compar ahora
+         </button>
+         <Link
+            href="/shopguiaspdf"
+            className="flex justify-center w-full max-w-xl py-3 mt-2 mb-8 text-2xl font-bold text-center text-white bg-black"
+         >
+            Seguir comprando
+         </Link>
+      </>
    );
 }
 
