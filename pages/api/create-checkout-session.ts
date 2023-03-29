@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { stripe } from "@/api/stripe/stripeConfig";
+import { stripe } from "@/apiUtils/stripe/stripeConfig";
 
 const formatLineItem = (priceID: string) => {
    return {

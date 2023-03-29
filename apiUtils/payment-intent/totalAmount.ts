@@ -1,5 +1,5 @@
 import Stripe from "stripe";
-import { stripe } from "@/api/stripe/stripeConfig";
+import { stripe } from "@/apiUtils/stripe/stripeConfig";
 import { applyDiscount, splitPricesByEligibility } from "./promoCode";
 
 const minimumChargeAmountInCents = 50; // $0.50 USD in cents

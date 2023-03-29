@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { retrievePrice } from "@/api/stripe/retrievePrice";
+import { retrievePrice } from "@/apiUtils/stripe/retrievePrice";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
    try {

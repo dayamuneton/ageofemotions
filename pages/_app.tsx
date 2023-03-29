@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { AuthProvider } from "@/context/authContext";
 import { ShopProvider } from "@/context/shopContext";
-import { reportPageViewEvent } from "@/api/convertions/events";
+import { reportPageViewEvent } from "@/apiUtils/convertions/events";
 
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();

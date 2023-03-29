@@ -4,7 +4,7 @@ import subscribeToGetGiftCard from "@/utils/mailerliteSubscribeToGetGiftCard";
 import { subscribeToGroup } from "@/utils/mailerliteSubscribeToGroup";
 import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/utils/firebaseConfig";
-import { reportPurchaseEvent } from "@/api/convertions/events";
+import { reportPurchaseEvent } from "@/apiUtils/convertions/events";
 import generateUniqueCodeInCollection from "@/utils/generateUniqueCodeInCollection";
 import { processCartOrder } from "./processCartOrder";
 

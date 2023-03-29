@@ -1,7 +1,7 @@
 import { doc, FieldValue, setDoc } from "firebase/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/utils/firebaseConfig";
-import { reportInitializeCheckoutEvent } from "@/api/convertions/events";
+import { reportInitializeCheckoutEvent } from "@/apiUtils/convertions/events";
 
 interface UserData {
    name?: string;
