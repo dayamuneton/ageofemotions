@@ -21,6 +21,7 @@ export const createShoppingCart = async (email: string) => {
          id: cartDoc.id,
          subTotal: 0,
          isActive: true,
+         isProcessed: false,
       });
    } catch (error) {
       console.error("Error creating shopping cart: ", error);
