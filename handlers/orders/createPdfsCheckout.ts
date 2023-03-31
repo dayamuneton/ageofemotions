@@ -60,6 +60,7 @@ export const createPdfsCheckout = async ({
          const cartRef = doc(db, "shoppingCarts", cartId);
          await updateDoc(cartRef, {
             cartItems: [],
+            subTotal: 0,
          });
       }
 
