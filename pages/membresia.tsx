@@ -1,12 +1,13 @@
 import { useAuth } from "@/context/authContext";
 import FooterBottom from "@/shared/footer/footerBottom";
 import Navbar from "@/shared/navbar";
-import { db } from "@/utils/firebaseConfig";
+import { db } from "@/services/firebase/firebaseConfig";
 import { arrayUnion, doc, getDoc, setDoc } from "firebase/firestore";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState, useEffect, FormEvent } from "react";
+import { createMembershipOrder } from "@/handlers/orders/createMembershipOrder";
 
 function Membresia() {
    const { profile, currentUser } = useAuth();
@@ -54,7 +55,7 @@ function Membresia() {
       await setDoc(
          doc(db, "users", currentUser.email),
          {
-            categories: arrayUnion("miembro"),
+            isMember: true,
          },
          { merge: true }
       );
@@ -65,37 +66,13 @@ function Membresia() {
          redirectToAuth();
          return;
       }
-      const createCheckoutSessionPayload = {
-         success_url: "membersia",
-         cancel_url: "membersia",
-         priceID: process.env.NEXT_PUBLIC_STRIPE_MEMBRESIA,
+
+      const checkout = await createMembershipOrder({
          email: currentUser.email,
-      };
+      });
 
-      const response = await fetch(
-         `${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/create-checkout-session`,
-         {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-               Accept: "application/json",
-            },
-            body: JSON.stringify(createCheckoutSessionPayload),
-         }
-      );
-      const session = await response.json();
-
-      await setDoc(
-         doc(db, "users", currentUser.email),
-         {
-            pendingMember: true,
-            lastCheckoutSessionId: session.id,
-         },
-         { merge: true }
-      );
-
-      if (!session?.url) return;
-      router.push(session.url);
+      if (!checkout?.url) return;
+      router.push(checkout.url);
    };
 
    return (

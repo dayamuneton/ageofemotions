@@ -1,5 +1,5 @@
 import { useAuth } from "@/context/authContext";
-import { Product } from "@/models/product";
+import { Product } from "@/models/productModel";
 import GetPDFButton from "@/shared/getPDFButton";
 import Image from "next/image";
 import Link from "next/link";

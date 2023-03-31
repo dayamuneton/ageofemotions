@@ -1,12 +1,8 @@
 import Head from "next/head";
-import React, { useState, useCallback, useEffect } from "react";
+import React from "react";
 import CartItems from "@/components/checkout/cartItems";
-import { useAuth } from "@/context/authContext";
 import Navbar from "@/shared/navbar";
 import FooterBottom from "@/shared/footer/footerBottom";
-import { useShop } from "@/context/shopContext";
-import { useRouter } from "next/router";
-import { deactivateCart } from "@/models/shoppingCart/deactivateCart";
 import ShopNowButton from "@/components/checkout/shopNowButton";
 
 function Checkout() {

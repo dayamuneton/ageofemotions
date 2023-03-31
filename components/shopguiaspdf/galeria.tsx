@@ -1,9 +1,9 @@
-import { useShop } from "@/context/shopContext";
+import { useGaleria } from "@/context/galeriaContext";
 import React from "react";
 import MemebresiaProductCard from "./card";
 
 function Galeria() {
-   const { galeriaProducts } = useShop();
+   const { galeriaProducts } = useGaleria();
 
    return (
       <div className="flex flex-col items-center w-full mt-8">

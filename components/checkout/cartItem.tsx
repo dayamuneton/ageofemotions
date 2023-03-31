@@ -1,9 +1,9 @@
-import { Product } from "@/models/product";
-import { ShoppingCart } from "@/models/shoppingCart";
-import { removeCartItem } from "@/models/shoppingCart/removeCartItem";
+import { Product } from "@/models/productModel";
+import { ShoppingCart } from "@/models/shoppingCartModel";
 import Image from "next/image";
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { removeCartItem } from "@/services/firebase/shoppingCart/removeItemFromShoppingCart";
 
 function CartItem({
    shoppingCart,

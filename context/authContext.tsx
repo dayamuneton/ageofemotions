@@ -9,9 +9,9 @@ import {
    isSignInWithEmailLink,
    signInWithEmailLink,
 } from "firebase/auth";
-import { auth, db, googleProvider } from "@/utils/firebaseConfig";
+import { auth, db, googleProvider } from "@/services/firebase/firebaseConfig";
 import { doc, onSnapshot } from "firebase/firestore";
-import { Profile, profileConverter } from "@/models/profile";
+import { Profile, profileConverter } from "@/models/profileModel";
 
 interface AuthContextProps {
    setCurrentUser: React.Dispatch<React.SetStateAction<any>>;

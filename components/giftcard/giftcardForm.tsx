@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { createGiftCardCheckout } from "@/handlers/orders/createGiftCardCheckout";
 
 function GiftcardForm() {
    const [email, setEmail] = useState("");
@@ -13,24 +14,12 @@ function GiftcardForm() {
    const redirectToCheckout = async (e: FormEvent) => {
       e.preventDefault();
 
-      const getGiftCard = true;
-
-      const payload = {
+      const checkout = await createGiftCardCheckout({
          email,
-         getGiftCard,
          cancel_url: "giftcard",
-      };
-
-      const response = await fetch("/api/saveDataInFirebase", {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-         },
-         body: JSON.stringify(payload),
       });
-      const data = await response.json();
-      const url = data.url;
+
+      const url = checkout.url;
 
       if (typeof url === "string") {
          router.push(url);

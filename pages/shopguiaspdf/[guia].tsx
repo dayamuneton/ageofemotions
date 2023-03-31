@@ -1,6 +1,6 @@
 import FooterBottom from "@/shared/footer/footerBottom";
 import Navbar from "@/shared/navbar";
-import { db } from "@/utils/firebaseConfig";
+import { db } from "@/services/firebase/firebaseConfig";
 import { doc, DocumentData, getDoc } from "firebase/firestore";
 import Head from "next/head";
 import Image from "next/image";

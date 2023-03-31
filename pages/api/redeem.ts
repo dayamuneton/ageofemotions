@@ -1,5 +1,5 @@
-import { db } from "@/utils/firebaseConfig";
-import { subscribeToGroup } from "@/utils/mailerliteSubscribeToGroup";
+import { db } from "@/services/firebase/firebaseConfig";
+import { subscribeCustomerToGroups } from "@/services/mailerlite";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -37,7 +37,7 @@ const RedeemGiftCard = async (req: NextApiRequest, res: NextApiResponse) => {
 
    if (!codeIsValid) return;
 
-   await subscribeToGroup(email, fullName, "");
+   await subscribeCustomerToGroups(email, fullName, "");
 
    await markGiftCardCodeAsRedeemed(code, email);
 

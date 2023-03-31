@@ -2,18 +2,18 @@ import Head from "next/head";
 import React from "react";
 import About from "@/shared/about";
 import CreateConcept from "@/components/part1/createConcepts";
-import ExpensiveTransformation from "@/components/part1/expensiveTransformation";
 import Footer from "@/shared/footer";
-import IsItFair from "@/components/part1/IsItFair";
-import ItsForYouIf from "@/components/part1/itsforyouif";
+import ItsForYouIf from "@/components/part1/itsforyouif/itsForYouIf";
 import Navbar from "@/shared/navbar";
-import NoLongerPracticedAsBefore from "@/components/part1/NoLongerPracticedAsBefore";
-import PartOne from "@/components/part1/partone";
-import SeriousProblem from "@/components/part1/seriousProblem";
+import PartOne from "@/components/part1/banner";
 import WhatWillYouGet from "@/components/part1/whatWillYouGet";
-import SignUpForm from "@/components/part1/signupForm";
-import PersonalizedMentoring from "@/components/part1/personalizedMentoring";
 import Top from "@/shared/footer/top";
+import IsItFair from "@/components/part1/isItFair";
+import NoLongerPracticedAsBefore from "@/components/part1/noLongerPracticed";
+import ExpensiveTransformation from "@/components/part1/expensiveTransformation";
+import SeriousProblem from "@/components/part1/seriousProblem";
+import SignUpForm from "@/components/part1/partoneForm";
+import PersonalizedMentoring from "@/components/part1/personalizedMentoring";
 
 function GiftPart1() {
    return (

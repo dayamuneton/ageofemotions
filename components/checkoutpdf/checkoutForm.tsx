@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/utils/firebaseConfig";
+import { db } from "@/services/firebase/firebaseConfig";
 import { useAuth } from "@/context/authContext";
 import { firstLetterUpperCaseEachWord } from "@/utils/firstLetterUpperCase";
-import { Product, productConverter } from "@/models/product";
+import { Product, productConverter } from "@/models/productModel";
+import { createPdfsCheckout } from "@/handlers/orders/createPdfsCheckout";
 
 function CheckoutForm() {
    const [firstName, setFirstName] = useState("");
@@ -64,8 +65,6 @@ function CheckoutForm() {
 
       if (!pdf) return;
 
-      const { mailerlite_group } = pdf;
-
       let priceID = pdf.price?.id || pdf.priceId;
 
       if (!priceID) {
@@ -73,25 +72,15 @@ function CheckoutForm() {
          return;
       }
 
-      const payload = {
+      const checkout = await createPdfsCheckout({
+         cartItems: [pdf],
          email,
-         firstName,
-         lastName,
-         priceID,
-         mailerlite_group,
+         name: `${firstName} ${lastName}`,
          cancel_url: router.asPath,
-      };
-
-      const response = await fetch("/api/saveDataInFirebase", {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-         },
-         body: JSON.stringify(payload),
+         success_url: "gracias",
       });
-      const data = await response.json();
-      const url = data.url;
+
+      const url = checkout.url;
 
       if (typeof url === "string") {
          router.push(url);

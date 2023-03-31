@@ -1,15 +1,15 @@
 import About from "@/shared/about";
 import Footer from "@/shared/footer";
-import Content from "@/components/home/content";
-import Form from "@/components/home/form";
 import GiftForYou from "@/shared/giftforyou";
 import Navbar from "@/shared/navbar";
 import GiftButton from "@/shared/giftButton";
 import Head from "next/head";
-import DivergentThinking from "@/components/home/divergentThinking";
-import ServicesCards from "@/components/home/servicesCards";
 import BadPractices from "@/shared/badPractices";
 import WorldHasEvolved from "@/components/home/worldHasEvolved";
+import DivergentThinking from "@/components/home/divergentThinking";
+import ServicesCards from "@/components/home/servicesCards";
+import Form from "@/components/home/giftForm";
+import Content from "@/components/home/content";
 
 export default function Home() {
    return (

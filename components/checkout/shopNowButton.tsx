@@ -1,6 +1,6 @@
 import { useAuth } from "@/context/authContext";
 import { useShop } from "@/context/shopContext";
-import { deactivateCart } from "@/models/shoppingCart/deactivateCart";
+import { createPdfsCheckout } from "@/handlers/orders/createPdfsCheckout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
@@ -12,34 +12,19 @@ function ShopNowButton() {
    const router = useRouter();
 
    const redirectToCheckout = async () => {
+      if (!shoppingCart?.cartItems?.[0] || !currentUser) return;
       try {
-         if (!shoppingCart?.cartItems?.[0]) return;
-
-         const createCheckoutSessionPayload = {
-            success_url: "gracias",
+         const checkoutSession = await createPdfsCheckout({
+            cartItems: shoppingCart.cartItems,
+            email: currentUser.email,
+            name: currentUser.displayName,
             cancel_url: "checkout",
-            lineItems: shoppingCart?.cartItems,
-            shopping_cart_id: shoppingCart?.id,
-            email: currentUser?.email,
-         };
+            success_url: "gracias",
+         });
 
-         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/create-checkout-session`,
-            {
-               method: "POST",
-               headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-               },
-               body: JSON.stringify(createCheckoutSessionPayload),
-            }
-         );
-         const data = await response.json();
-         const url = data.url;
+         const url = checkoutSession.url;
 
          if (typeof url !== "string") return;
-
-         await deactivateCart(shoppingCart?.id);
 
          router.push(url, "_blank");
       } catch (error) {

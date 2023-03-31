@@ -1,9 +1,10 @@
+import { useGaleria } from "@/context/galeriaContext";
 import { useShop } from "@/context/shopContext";
 import React from "react";
 import ComingSoonCard from "./comingSoonCard";
 
 function ComingSoon() {
-   const { commingSoonProducts } = useShop();
+   const { commingSoonProducts } = useGaleria();
 
    return (
       <div className="flex flex-col items-center w-full my-8">
