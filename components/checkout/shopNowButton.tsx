@@ -20,6 +20,7 @@ function ShopNowButton() {
             name: currentUser.displayName,
             cancel_url: "checkout",
             success_url: "gracias",
+            cartId: shoppingCart.id,
          });
 
          const url = checkoutSession.url;

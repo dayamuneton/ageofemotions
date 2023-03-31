@@ -23,15 +23,6 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
    const sig = req.headers["stripe-signature"];
 
    try {
-      await fetch(`${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/send-email`, {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json",
-         },
-         body: JSON.stringify({
-            message: `secret: ${signingSecret}, signature ${sig}}, buffer: ${buf}`,
-         }),
-      });
       if (!signingSecret || !sig) {
          res.status(400).send(
             "Webhook Error: signing secret or stripe-signature is missing"

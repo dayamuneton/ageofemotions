@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "@/services/firebase/firebaseConfig";
 import { Product } from "@/models/productModel";
 import { OrderType } from "../checkoutSessionCompleted/event";
@@ -11,12 +11,14 @@ export const createPdfsCheckout = async ({
    name,
    cancel_url,
    success_url,
+   cartId,
 }: {
    cartItems: Product[];
    email: string;
    name: string;
    cancel_url: string;
    success_url: string;
+   cartId?: string;
 }) => {
    try {
       const ordersRef = collection(db, "orders");
@@ -53,6 +55,14 @@ export const createPdfsCheckout = async ({
             body: JSON.stringify(createCheckoutSessionPayload),
          }
       );
+
+      if (cartId) {
+         const cartRef = doc(db, "shoppingCarts", cartId);
+         await updateDoc(cartRef, {
+            cartItems: [],
+         });
+      }
+
       await reportInitializeCheckoutEvent(`/${cancel_url}`, email);
       const data = await response.json();
       return data;
