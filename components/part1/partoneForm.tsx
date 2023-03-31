@@ -38,26 +38,24 @@ function SignUpForm() {
             "No percibir tu cuerpo como parte de tu consciencia, te ha llevado a tener muchas confusiones, dolor y estancamiento en varios aspectos de tu vida.",
       }).setPrice(false);
 
-      console.log(practicasProduct);
+      const checkout = await createPdfsCheckout({
+         cartItems: [practicasProduct],
+         email,
+         name: `${firstName} ${lastName}`,
+         cancel_url: "parte1",
+         success_url: "gracias",
+      });
 
-      // const checkout = await createPdfsCheckout({
-      //    cartItems: [practicasProduct],
-      //    email,
-      //    name: `${firstName} ${lastName}`,
-      //    cancel_url: "parte1",
-      //    success_url: "gracias",
-      // });
+      const url = checkout.url;
 
-      // const url = checkout.url;
+      if (typeof url === "string") {
+         router.push(url);
+      }
 
-      // if (typeof url === "string") {
-      //    router.push(url);
-      // }
-
-      // setEmail("");
-      // setFirstName("");
-      // setLastName("");
-      // setTerms(false);
+      setEmail("");
+      setFirstName("");
+      setLastName("");
+      setTerms(false);
    };
 
    const router = useRouter();
