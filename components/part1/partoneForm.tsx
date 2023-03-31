@@ -24,7 +24,7 @@ function SignUpForm() {
 
       const priceId = process.env.NEXT_PUBLIC_STRIPE_10_PRACTICES_PRODUCT;
 
-      const practicasProduct = new Product({
+      const practicasProduct = await new Product({
          id: "",
          title: "10 Prácticas Para Ganar Percepción Corporal De Tus Emociones.",
          handle: "10-practicas",
@@ -36,26 +36,28 @@ function SignUpForm() {
          buttonText: "Comprar",
          description:
             "No percibir tu cuerpo como parte de tu consciencia, te ha llevado a tener muchas confusiones, dolor y estancamiento en varios aspectos de tu vida.",
-      });
+      }).setPrice(false);
 
-      const checkout = await createPdfsCheckout({
-         cartItems: [practicasProduct],
-         email,
-         name: `${firstName} ${lastName}`,
-         cancel_url: "parte1",
-         success_url: "gracias",
-      });
+      console.log(practicasProduct);
 
-      const url = checkout.url;
+      // const checkout = await createPdfsCheckout({
+      //    cartItems: [practicasProduct],
+      //    email,
+      //    name: `${firstName} ${lastName}`,
+      //    cancel_url: "parte1",
+      //    success_url: "gracias",
+      // });
 
-      if (typeof url === "string") {
-         router.push(url);
-      }
+      // const url = checkout.url;
 
-      setEmail("");
-      setFirstName("");
-      setLastName("");
-      setTerms(false);
+      // if (typeof url === "string") {
+      //    router.push(url);
+      // }
+
+      // setEmail("");
+      // setFirstName("");
+      // setLastName("");
+      // setTerms(false);
    };
 
    const router = useRouter();
