@@ -27,7 +27,6 @@ const convertions = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const payload = {
       data: [{ ...basePayload.data[0], ...reqPayload, user_data }],
-      // test_event_code: "",
    };
 
    if (reqPayload?.event_name !== "PageView") {

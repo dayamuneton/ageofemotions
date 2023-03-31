@@ -5,6 +5,8 @@ import checkoutSessionCompletedEvent from "@/handlers/checkoutSessionCompleted/e
 
 const signingSecret = process.env.STRIPE_WEBHOOK_SIGNING_SECRET;
 
+console.log("log", "signingSecret: ", signingSecret);
+
 export const config = {
    api: {
       bodyParser: false,
@@ -12,7 +14,10 @@ export const config = {
 };
 
 const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
-   if (req.method !== "POST") return;
+   if (req.method !== "POST") {
+      res.status(405).send("Method not allowed");
+      return;
+   }
 
    let event;
 
@@ -20,7 +25,12 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
    const sig = req.headers["stripe-signature"];
 
    try {
-      if (!sig || !signingSecret) return;
+      if (!signingSecret || !sig) {
+         res.status(400).send(
+            "Webhook Error: signings secret or stripe-signature is missing"
+         );
+         return;
+      }
       event = stripe.webhooks.constructEvent(buf, sig, signingSecret);
    } catch (err: any) {
       console.log("error? ", err);
@@ -35,6 +45,7 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
          break;
 
       default:
+         break;
    }
    res.status(200).send("OK");
 };
