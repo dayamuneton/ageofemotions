@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { AuthProvider } from "@/context/authContext";
 import { ShopProvider } from "@/context/shopContext";
 import { reportPageViewEvent } from "@/services/convertions/events";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();
@@ -17,11 +18,14 @@ const App = ({ Component, pageProps }: AppProps) => {
    }, [router.asPath]);
 
    return (
-      <AuthProvider>
-         <ShopProvider>
-            <Component {...pageProps} />
-         </ShopProvider>
-      </AuthProvider>
+      <>
+         <AuthProvider>
+            <ShopProvider>
+               <Component {...pageProps} />
+            </ShopProvider>
+         </AuthProvider>
+         <Analytics />
+      </>
    );
 };
 
