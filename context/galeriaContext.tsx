@@ -44,10 +44,15 @@ export function GaleriaProvider({
          (product: any) => new Product(product)
       );
       setCommingSoonProducts(parsedCommingSoon);
+      setGaleriaProducts(parsedGaleria);
+   }, [commingSoon, galeria]);
+
+   useEffect(() => {
+      if (galeriaProducts === null || !profile?.isMember) return;
 
       const setPrices = async () => {
          try {
-            const galeriaDataPromises = parsedGaleria?.map(
+            const galeriaDataPromises = galeriaProducts?.map(
                async (product) => await product.setPrice(profile?.isMember)
             );
             const galeriaData = await Promise.all(galeriaDataPromises);
@@ -58,7 +63,7 @@ export function GaleriaProvider({
          }
       };
       setPrices();
-   }, [commingSoon, galeria, profile]);
+   }, [galeriaProducts, profile]);
 
    const value = {
       galeriaProducts,

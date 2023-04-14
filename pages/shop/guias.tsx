@@ -25,7 +25,7 @@ function GuiasPDF(props: { galeria: string; commingSoon: string }) {
       <GaleriaProvider galeria={props.galeria} commingSoon={props.commingSoon}>
          <div className="flex flex-col items-center overflow-hidden">
             <Head>
-               <title>Shop Guías PDF</title>
+               <title>Shop </title>
                <meta
                   name="description"
                   content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."

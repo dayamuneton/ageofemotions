@@ -50,7 +50,7 @@ export class Product {
       this.priceIdForMembers = priceIdForMembers;
       this.priceId = priceId;
       this.price = null;
-      this.price_in_dollars = 0;
+      this.price_in_dollars = 7;
    }
 
    async setPrice(isMember?: boolean) {
