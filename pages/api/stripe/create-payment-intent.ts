@@ -1,6 +1,6 @@
-import { calculateTotalAmount } from "@/services/stripe/totalAmount";
+import { calculateTotalAmount } from "@/integrations/stripe/totalAmount";
 import { NextApiRequest, NextApiResponse } from "next";
-import { stripe } from "@/services/stripe/stripeConfig";
+import { stripe } from "@/integrations/stripe/stripeConfig";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
    if (req.method !== "POST") {

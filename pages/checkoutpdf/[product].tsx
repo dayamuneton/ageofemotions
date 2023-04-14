@@ -5,6 +5,33 @@ import React from "react";
 import Faq from "@/components/checkoutpdf/faq";
 import CheckoutForm from "@/components/checkoutpdf/checkoutForm";
 import Unete from "@/components/checkoutpdf/unete";
+import { getGaleria } from "@/integrations/firebase/galeria";
+import { Product } from "@/models/productModel";
+import ProductInfo from "@/components/checkoutpdf/productInfo";
+
+// export const getStaticPaths = async () => {
+//    const { galeria } = await getGaleria();
+//    const paths = galeria.map((product: Product) => ({
+//       params: { product: product.id },
+//    }));
+//    return {
+//       paths,
+//       fallback: false,
+//    };
+// };
+// export const getStaticProps = async ({
+//    params,
+// }: {
+//    params: { product: string };
+// }) => {
+//    const { galeria } = await getGaleria();
+//    const product = galeria.find(
+//       (product: Product) => product.id === params.product
+//    );
+//    return {
+//       props: { product: JSON.stringify(product) },
+//    };
+// };
 
 function CheckoutPDF() {
    return (
@@ -27,7 +54,7 @@ function CheckoutPDF() {
             <p>recibir el PDF </p>
          </h2>
          <p className="mb-4">Available only in spanish</p>
-
+         {/* <ProductInfo product={product} /> */}
          <CheckoutForm />
          <Unete />
          <Faq />

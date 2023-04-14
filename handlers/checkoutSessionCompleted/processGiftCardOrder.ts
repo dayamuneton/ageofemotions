@@ -1,6 +1,6 @@
-import { db } from "@/services/firebase/firebaseConfig";
-import { generateUniqueCodeInCollection } from "@/services/firebase/generateUniqueCodeInCollection";
-import { subscribeCustomerToGiftCardGroup } from "@/services/mailerlite";
+import { db } from "@/integrations/firebase/firebaseConfig";
+import { generateUniqueCodeInCollection } from "@/integrations/firebase/generateUniqueCodeInCollection";
+import { subscribeCustomerToGiftCardGroup } from "@/integrations/mailerlite";
 import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 
 export const processGiftCardOrder = async ({ email }: { email: string }) => {

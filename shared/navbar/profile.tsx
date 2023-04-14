@@ -1,5 +1,5 @@
 import { useAuth } from "@/context/authContext";
-import { auth, db } from "@/services/firebase/firebaseConfig";
+import { auth, db } from "@/integrations/firebase/firebaseConfig";
 import useClickOutside from "@/utils/useClickOutside";
 import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";

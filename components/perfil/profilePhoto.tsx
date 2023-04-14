@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import { useAuth } from "@/context/authContext";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { storage } from "@/services/firebase/firebaseConfig";
+import { storage } from "@/integrations/firebase/firebaseConfig";
 import { setDoc } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import EditIcon from "@mui/icons-material/Edit";

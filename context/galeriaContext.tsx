@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useAuth } from "./authContext";
 import { Product, productConverter } from "@/models/productModel";
@@ -19,7 +19,15 @@ export function useGaleria() {
    return useContext(GaleriaContext as React.Context<GaleriaContextProps>);
 }
 
-export function GaleriaProvider({ children }: { children: React.ReactNode }) {
+export function GaleriaProvider({
+   children,
+   galeria,
+   commingSoon,
+}: {
+   children: React.ReactNode;
+   galeria: string;
+   commingSoon: string;
+}) {
    const { profile } = useAuth();
    const [galeriaProducts, setGaleriaProducts] = useState<Product[] | null>(
       null
@@ -29,40 +37,28 @@ export function GaleriaProvider({ children }: { children: React.ReactNode }) {
    >(null);
 
    useEffect(() => {
-      const galeriaRef = collection(db, "pdf_products").withConverter(
-         productConverter
+      const parsedGaleria: Product[] = JSON.parse(galeria).map(
+         (product: any) => new Product(product)
       );
-      const commingSoonRef = collection(db, "pdf_coming_soon").withConverter(
-         productConverter
+      const parsedCommingSoon: Product[] = JSON.parse(commingSoon).map(
+         (product: any) => new Product(product)
       );
+      setCommingSoonProducts(parsedCommingSoon);
 
-      const galeriaQuery = query(
-         galeriaRef,
-         where("category", "!=", "coherentemente")
-      );
-
-      const unSubscribeCommingSoon = onSnapshot(commingSoonRef, (snapshot) => {
-         const commingSoonData = snapshot.docs.map((doc) => doc.data()) || null;
-         setCommingSoonProducts(commingSoonData);
-      });
-
-      const unSubscribeGaleria = onSnapshot(galeriaQuery, async (snapshot) => {
+      const setPrices = async () => {
          try {
-            const galeriaDataPromises = snapshot.docs.map(
-               async (doc) => await doc.data().setPrice(profile?.isMember)
+            const galeriaDataPromises = parsedGaleria?.map(
+               async (product) => await product.setPrice(profile?.isMember)
             );
             const galeriaData = await Promise.all(galeriaDataPromises);
+
             setGaleriaProducts(galeriaData);
          } catch (error) {
             console.error(error);
          }
-      });
-
-      return () => {
-         unSubscribeGaleria();
-         unSubscribeCommingSoon();
       };
-   }, [profile]);
+      setPrices();
+   }, [commingSoon, galeria, profile]);
 
    const value = {
       galeriaProducts,

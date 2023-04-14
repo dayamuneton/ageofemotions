@@ -1,4 +1,4 @@
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import {
    arrayUnion,
    doc,

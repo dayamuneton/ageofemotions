@@ -1,11 +1,9 @@
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import { createPdfsCheckout } from "@/handlers/orders/createPdfsCheckout";
 import { Product } from "@/models/productModel";
+import ContactLinks from "../contactLinks/contactLinks";
 
 function SignUpForm() {
    const [email, setEmail] = useState("");
@@ -160,27 +158,7 @@ function SignUpForm() {
                   </Link>
                </span>
             </div>
-
-            <span className="flex items-center justify-between p-1 mt-2 text-white bg-black w-fit ">
-               {/* <Link
-                  href="https://www.facebook.com/dayamuneton"
-                  target="_blank"
-               >
-                  <FacebookIcon className="text-[1.2rem]" />
-               </Link> */}
-               {/* <Link
-                  href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
-                  target="_blank"
-               >
-                  <YouTubeIcon className="text-[1.45rem]" />
-               </Link> */}
-               <Link
-                  href="https://www.instagram.com/dayamuneton/"
-                  target="_blank"
-               >
-                  <InstagramIcon className="text-[1.2rem]" />
-               </Link>
-            </span>
+            <ContactLinks color="#fff" bgColor="#000" />
          </span>
       </div>
    );

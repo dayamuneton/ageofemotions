@@ -2,14 +2,27 @@ import Banner from "@/components/shopguiaspdf/banner";
 import ComingSoon from "@/components/shopguiaspdf/comingSoon";
 import Galeria from "@/components/shopguiaspdf/galeria";
 import { GaleriaProvider } from "@/context/galeriaContext";
+import { getGaleria } from "@/integrations/firebase/galeria";
+import { Product } from "@/models/productModel";
 import FooterBottom from "@/shared/footer/footerBottom";
 import Navbar from "@/shared/navbar";
 import Head from "next/head";
 import React from "react";
 
-function GuiasPDF() {
+export async function getStaticProps() {
+   const { galeria, commingSoon } = await getGaleria();
+
+   return {
+      props: {
+         galeria: JSON.stringify(galeria),
+         commingSoon: JSON.stringify(commingSoon),
+      },
+   };
+}
+
+function GuiasPDF(props: { galeria: string; commingSoon: string }) {
    return (
-      <GaleriaProvider>
+      <GaleriaProvider galeria={props.galeria} commingSoon={props.commingSoon}>
          <div className="flex flex-col items-center overflow-hidden">
             <Head>
                <title>Shop Guías PDF</title>

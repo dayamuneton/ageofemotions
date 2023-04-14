@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { stripe } from "@/services/stripe/stripeConfig";
+import { stripe } from "@/integrations/stripe/stripeConfig";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
    try {

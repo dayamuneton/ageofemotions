@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { stripe } from "@/services/stripe/stripeConfig";
+import { stripe } from "@/integrations/stripe/stripeConfig";
 import { buffer } from "micro";
 import checkoutSessionCompletedEvent from "@/handlers/checkoutSessionCompleted/event";
 

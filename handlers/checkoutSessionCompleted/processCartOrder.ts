@@ -1,6 +1,6 @@
 import { pdfsOrderConverter } from "@/models/pdfsOrderModel";
-import { db } from "@/services/firebase/firebaseConfig";
-import { subscribeCustomerToGroups } from "@/services/mailerlite/subscribeCustomerToGroups";
+import { db } from "@/integrations/firebase/firebaseConfig";
+import { subscribeCustomerToGroups } from "@/integrations/mailerlite/subscribeCustomerToGroups";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 export const processCartOrder = async ({ orderId }: { orderId: string }) => {

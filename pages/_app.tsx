@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { AuthProvider } from "@/context/authContext";
 import { ShopProvider } from "@/context/shopContext";
-import { reportPageViewEvent } from "@/services/convertions/events";
+import { reportPageViewEvent } from "@/integrations/convertions/events";
 import { Analytics } from "@vercel/analytics/react";
 
 const App = ({ Component, pageProps }: AppProps) => {

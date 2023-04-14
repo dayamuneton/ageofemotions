@@ -1,4 +1,4 @@
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { ShoppingCart } from "../../../models/shoppingCartModel";
 

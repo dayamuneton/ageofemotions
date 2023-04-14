@@ -1,7 +1,7 @@
 import { useAuth } from "@/context/authContext";
 import { useShop } from "@/context/shopContext";
 import { Product } from "@/models/productModel";
-import { addItemToCart } from "@/services/firebase/shoppingCart/addItemToShoppingCart";
+import { addItemToCart } from "@/integrations/firebase/shoppingCart/addItemToShoppingCart";
 import { useRouter } from "next/router";
 import React from "react";
 

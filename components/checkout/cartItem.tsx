@@ -3,7 +3,7 @@ import { ShoppingCart } from "@/models/shoppingCartModel";
 import Image from "next/image";
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { removeCartItem } from "@/services/firebase/shoppingCart/removeItemFromShoppingCart";
+import { removeCartItem } from "@/integrations/firebase/shoppingCart/removeItemFromShoppingCart";
 
 function CartItem({
    shoppingCart,

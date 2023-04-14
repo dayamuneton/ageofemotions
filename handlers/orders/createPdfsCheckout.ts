@@ -1,8 +1,8 @@
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import { Product } from "@/models/productModel";
 import { OrderType } from "../checkoutSessionCompleted/event";
-import { reportInitializeCheckoutEvent } from "@/services/convertions/events";
+import { reportInitializeCheckoutEvent } from "@/integrations/convertions/events";
 import { removeUndefinedEntriesFromObject } from "@/utils/removeUndefinedEntriesFromObject";
 
 export const createPdfsCheckout = async ({

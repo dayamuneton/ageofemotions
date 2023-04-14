@@ -1,5 +1,5 @@
-import { reportInitializeCheckoutEvent } from "@/services/convertions/events";
-import { db } from "@/services/firebase";
+import { reportInitializeCheckoutEvent } from "@/integrations/convertions/events";
+import { db } from "@/integrations/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { OrderType } from "../checkoutSessionCompleted/event";
 

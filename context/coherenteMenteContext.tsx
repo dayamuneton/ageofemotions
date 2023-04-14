@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useAuth } from "./authContext";
 import { Product, productConverter } from "@/models/productModel";

@@ -1,6 +1,6 @@
 import { Product } from "@/models/productModel";
 import { ShoppingCart } from "@/models/shoppingCartModel";
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import {
    arrayRemove,
    doc,

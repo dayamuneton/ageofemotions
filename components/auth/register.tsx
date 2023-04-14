@@ -9,7 +9,7 @@ import {
    signInWithEmailLink,
    updateProfile,
 } from "firebase/auth";
-import { auth, db } from "@/services/firebase/firebaseConfig";
+import { auth, db } from "@/integrations/firebase/firebaseConfig";
 import { arrayUnion, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 
 const isCodeValid = async (code: string) => {

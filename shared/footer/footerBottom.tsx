@@ -1,8 +1,6 @@
 import React from "react";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import Link from "next/link";
+import ContactLinks from "@/components/contactLinks/contactLinks";
 
 function FooterBottom() {
    return (
@@ -36,20 +34,7 @@ function FooterBottom() {
                info@dayamuneton.com
             </a>
          </span>
-         <span className="flex items-center">
-            {/* <Link href="https://www.facebook.com/dayamuneton" target="_blank">
-               <FacebookIcon />
-            </Link> */}
-            {/* <Link
-               href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
-               target="_blank"
-            >
-               <YouTubeIcon className="text-[1.7rem]" />
-            </Link> */}
-            <Link href="https://www.instagram.com/dayamuneton/" target="_blank">
-               <InstagramIcon />
-            </Link>
-         </span>
+         <ContactLinks />
       </div>
    );
 }

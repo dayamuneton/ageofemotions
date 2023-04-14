@@ -1,5 +1,5 @@
-import { generateBasePayload } from "@/services/convertions/basePayload";
-import { makePostRequestToConvertionsAPI } from "@/services/convertions/postRequestToConvertionAPI";
+import { generateBasePayload } from "@/integrations/convertions/basePayload";
+import { makePostRequestToConvertionsAPI } from "@/integrations/convertions/postRequestToConvertionAPI";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const convertions = async (req: NextApiRequest, res: NextApiResponse) => {

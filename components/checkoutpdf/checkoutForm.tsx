@@ -1,14 +1,14 @@
 import React, { useState, FormEvent, useEffect } from "react";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import { useAuth } from "@/context/authContext";
 import { firstLetterUpperCaseEachWord } from "@/utils/firstLetterUpperCase";
 import { Product, productConverter } from "@/models/productModel";
 import { createPdfsCheckout } from "@/handlers/orders/createPdfsCheckout";
+import ContactLinks from "../contactLinks/contactLinks";
 
 function CheckoutForm() {
    const [firstName, setFirstName] = useState("");
@@ -198,26 +198,7 @@ function CheckoutForm() {
                </span>
             </div>
 
-            <span className="flex items-center justify-between p-1 mt-2 text-white bg-black w-fit ">
-               {/* <Link
-                  href="https://www.facebook.com/dayamuneton"
-                  target="_blank"
-               >
-                  <FacebookIcon className="text-[1.2rem]" />
-               </Link> */}
-               {/* <Link
-                  href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
-                  target="_blank"
-               >
-                  <YouTubeIcon className="text-[1.4rem]" />
-               </Link> */}
-               <Link
-                  href="https://www.instagram.com/dayamuneton/"
-                  target="_blank"
-               >
-                  <InstagramIcon className="text-[1.2rem]" />
-               </Link>
-            </span>
+            <ContactLinks color="#fff" bgColor="#000" />
          </span>
       </div>
    );

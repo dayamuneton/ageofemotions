@@ -2,7 +2,7 @@ import React, { useState, useRef, Dispatch, SetStateAction } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import { doc, setDoc } from "firebase/firestore";
 import { useAuth } from "@/context/authContext";
-import { db } from "@/services/firebase/firebaseConfig";
+import { db } from "@/integrations/firebase/firebaseConfig";
 import { updateProfile } from "firebase/auth";
 import useClickOutside from "@/utils/useClickOutside";
 

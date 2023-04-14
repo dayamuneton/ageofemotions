@@ -1,11 +1,9 @@
 import { FormEvent, useState, useEffect, useRef } from "react";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { reportLeadEvent } from "@/services/convertions/events";
-import { subscribeCustomerToGroups } from "@/services/mailerlite";
+import { reportLeadEvent } from "@/integrations/convertions/events";
+import { subscribeCustomerToGroups } from "@/integrations/mailerlite";
+import ContactLinks from "../contactLinks/contactLinks";
 
 function Form() {
    const [email, setEmail] = useState("");
@@ -132,26 +130,7 @@ function Form() {
                </span>
             </div>
 
-            <span className="flex items-center justify-between p-1 mt-2 text-white bg-black w-fit ">
-               {/* <Link
-                  href="https://www.facebook.com/dayamuneton"
-                  target="_blank"
-               >
-                  <FacebookIcon className="text-[1.2rem]" />
-               </Link> */}
-               {/* <Link
-                  href="https://www.youtube.com/channel/UCcwzib11TVK-eQVbwgDfN5g/featuredj"
-                  target="_blank"
-               >
-                  <YouTubeIcon className="text-[1.4rem]" />
-               </Link> */}
-               <Link
-                  href="https://www.instagram.com/dayamuneton/"
-                  target="_blank"
-               >
-                  <InstagramIcon className="text-[1.2rem]" />
-               </Link>
-            </span>
+            <ContactLinks color="#fff" bgColor="#000" />
          </span>
       </div>
    );

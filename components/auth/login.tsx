@@ -1,5 +1,5 @@
 import { useAuth } from "@/context/authContext";
-import { auth } from "@/services/firebase/firebaseConfig";
+import { auth } from "@/integrations/firebase/firebaseConfig";
 import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import Head from "next/head";
 import Image from "next/image";

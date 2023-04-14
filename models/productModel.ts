@@ -1,4 +1,4 @@
-import { retrievePrice } from "@/services/stripe/retrievePrice";
+import { retrievePrice } from "@/integrations/stripe/retrievePrice";
 import { QueryDocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 import Stripe from "stripe";
 

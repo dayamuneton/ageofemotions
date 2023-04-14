@@ -1,5 +1,5 @@
 import Stripe from "stripe";
-import { reportPurchaseEvent } from "@/services/convertions/events";
+import { reportPurchaseEvent } from "@/integrations/convertions/events";
 import { processCartOrder } from "./processCartOrder";
 import { processMembership } from "./processMembership";
 import { processGiftCardOrder } from "./processGiftCardOrder";
