@@ -1,10 +1,10 @@
 import Header from "@/components/coherentemente/header";
 import StructureOfYourGoals from "@/components/coherentemente/structureOfYourGoals";
 import { CoherenteMenteProvider } from "@/context/coherenteMenteContext";
-import BadPractices from "@/shared/badPractices";
-import FooterBottom from "@/shared/footer/footerBottom";
-import GiftForYou from "@/shared/giftforyou";
-import Navbar from "@/shared/navbar";
+import BadPractices from "@/components/badPractices";
+import FooterBottom from "@/components/footer/footerBottom";
+import GiftForYou from "@/components/giftforyou";
+import Navbar from "@/components/navbar";
 import Head from "next/head";
 import React from "react";
 

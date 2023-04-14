@@ -1,4 +1,4 @@
-import SignUpButton from "@/shared/signUpButton";
+import SignUpButton from "@/components/signUpButton";
 import Image from "next/image";
 import React from "react";
 

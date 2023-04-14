@@ -1,6 +1,6 @@
 import React from "react";
 import SouthIcon from "@mui/icons-material/South";
-import GiftButton from "@/shared/giftButton";
+import GiftButton from "@/components/giftButton";
 import Image from "next/image";
 function WorldHasEvolved() {
    return (

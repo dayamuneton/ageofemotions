@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import CartItems from "@/components/checkout/cartItems";
-import Navbar from "@/shared/navbar";
-import FooterBottom from "@/shared/footer/footerBottom";
+import Navbar from "@/components/navbar";
+import FooterBottom from "@/components/footer/footerBottom";
 import ShopNowButton from "@/components/checkout/shopNowButton";
 
 function Checkout() {

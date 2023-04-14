@@ -1,6 +1,6 @@
 import { useAuth } from "@/context/authContext";
-import FooterBottom from "@/shared/footer/footerBottom";
-import Navbar from "@/shared/navbar";
+import FooterBottom from "@/components/footer/footerBottom";
+import Navbar from "@/components/navbar";
 import Head from "next/head";
 import React from "react";
 import WithAuth from "@/utils/withAuth";

@@ -1,8 +1,8 @@
 import Asesorias from "@/components/tecnologicamente/asesorias";
 import Situaciones from "@/components/tecnologicamente/situaciones";
 import Team from "@/components/tecnologicamente/team";
-import FooterBottom from "@/shared/footer/footerBottom";
-import Navbar from "@/shared/navbar";
+import FooterBottom from "@/components/footer/footerBottom";
+import Navbar from "@/components/navbar";
 import Head from "next/head";
 import React from "react";
 

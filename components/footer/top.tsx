@@ -1,4 +1,4 @@
-import GiftButton from "@/shared/giftButton";
+import GiftButton from "@/components/giftButton";
 import Image from "next/image";
 import React from "react";
 

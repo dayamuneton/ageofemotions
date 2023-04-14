@@ -4,8 +4,8 @@ import Galeria from "@/components/shopguiaspdf/galeria";
 import { GaleriaProvider } from "@/context/galeriaContext";
 import { getGaleria } from "@/integrations/firebase/galeria";
 import { Product } from "@/models/productModel";
-import FooterBottom from "@/shared/footer/footerBottom";
-import Navbar from "@/shared/navbar";
+import FooterBottom from "@/components/footer/footerBottom";
+import Navbar from "@/components/navbar";
 import Head from "next/head";
 import React from "react";
 

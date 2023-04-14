@@ -1,6 +1,6 @@
 import { useAuth } from "@/context/authContext";
 import { Product } from "@/models/productModel";
-import GetPDFButton from "@/shared/getPDFButton";
+import GetPDFButton from "@/components/getPDFButton";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
