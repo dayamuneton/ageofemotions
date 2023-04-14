@@ -42,7 +42,7 @@ function ShopNowButton() {
             Compar ahora
          </button>
          <Link
-            href="/shopguiaspdf"
+            href="/shop/guias"
             className="flex justify-center w-full max-w-xl py-3 mt-2 mb-8 text-2xl font-bold text-center text-white bg-black"
          >
             Seguir comprando

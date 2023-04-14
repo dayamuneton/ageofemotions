@@ -29,8 +29,8 @@ const navbarItems = [
       alias: [],
    },
    {
-      href: "/shopguiaspdf",
-      text: "Shop Guías PDF",
+      href: "/shop/guias",
+      text: "Shop",
       alias: [],
    },
    {

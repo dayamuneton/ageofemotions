@@ -20,7 +20,7 @@ function Guia() {
 
       if (!pdfDocSnap.exists()) {
          console.log("No such document!");
-         router.push("/shopguiaspdf");
+         router.push("/shop/guias");
          return;
       }
 

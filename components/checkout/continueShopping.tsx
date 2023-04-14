@@ -10,7 +10,7 @@ function ContinueShopping() {
          />
 
          <Link
-            href="/shopguiaspdf"
+            href="/shop/guias"
             className="w-full max-w-xl px-8 py-3 mt-2 mb-8 text-2xl font-bold text-white bg-black"
          >
             Seguir comprando
