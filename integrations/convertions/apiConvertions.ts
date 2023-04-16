@@ -1,4 +1,6 @@
 export const apiConvertions = async (reqPayload: any) => {
+   if (process.env.NODE_ENV === "development") return {};
+
    const response = await fetch(
       `${process.env.NEXT_PUBLIC_MY_DOMAIN}/api/convertions`,
       {

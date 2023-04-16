@@ -24,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                <Component {...pageProps} />
             </ShopProvider>
          </AuthProvider>
-         <Analytics />
+         {process.env.NODE_ENV === "production" && <Analytics />}
       </>
    );
 };
