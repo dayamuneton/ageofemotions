@@ -8,7 +8,11 @@ function Banner() {
    return (
       <div className="flex flex-col items-center w-full">
          <span className="relative flex aspect-square w-[15rem] my-8">
-            <Image src="/LogoAgeOfEmotions.png" alt="" fill />
+            <Image
+               src="/LogoAgeOfEmotions.png"
+               alt="age of emotions logo"
+               fill
+            />
          </span>
          <div className="w-[90vw] max-w-lg leading-4">
             <p className="font-haviland text-7xl">Ahora vives</p>

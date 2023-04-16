@@ -8,14 +8,10 @@ interface ComingSoonCardProps {
 
 function ComingSoonCard({ product }: ComingSoonCardProps) {
    return (
-      <div className="w-[95%] mx-auto flex flex-col items-center drop-shadow  mt-3">
-         <Image
-            src={product.images[0]}
-            alt=""
-            fill
-            priority
-            className="!relative object-contain !h-fit"
-         />
+      <div className="mt-3 drop-shadow">
+         <span className="relative aspect-[384/497] flex w-[calc(90vw/2-1rem)] lg:w-[calc(90vw/5-1rem)] lg:max-w-[13.5rem] ">
+            <Image src={product.images[0]} alt="" fill priority />
+         </span>
       </div>
    );
 }
