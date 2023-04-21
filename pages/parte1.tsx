@@ -22,7 +22,7 @@ function GiftPart1() {
             <title>Parte 1</title>
             <meta
                name="description"
-               content="En medio de una crisis mundial de salud mental este programa Ama y Libérate, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."
+               content="En medio de una crisis mundial de salud mental este programa Age of emotions, te ayuda a liberarte de la confusión, dolor y el miedo ganando percepción corporal de tus emociones por medio del arte."
             />
             <meta
                name="keywords"
