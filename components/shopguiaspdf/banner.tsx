@@ -26,15 +26,7 @@ function Banner() {
                autoconocimiento y lograr tus resultados con coherencia.
             </p>
          </div>
-         <div className="flex flex-col items-center justify-center w-full p-2 text-lg font-bold lg:flex-row lg:text-2xl bg-yellow whitespace-nowrap">
-            <div className="flex">
-               TODAS LAS DESCARGAS A
-               <span className="flex mx-1 text-white bg-black">
-                  <p className="px-1 text-blue-300">$3.00 USD</p>
-               </span>
-            </div>
-            <div>SOLO PARA NUESTROS MIEMBROS</div>
-         </div>
+
          {!profile?.isMember && (
             <Link
                href="/membresia"

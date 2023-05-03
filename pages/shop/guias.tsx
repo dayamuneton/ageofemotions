@@ -8,6 +8,8 @@ import FooterBottom from "@/components/footer/footerBottom";
 import Navbar from "@/components/navbar";
 import Head from "next/head";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export async function getStaticProps() {
    const { galeria, commingSoon } = await getGaleria();
@@ -38,6 +40,60 @@ function GuiasPDF(props: { galeria: string; commingSoon: string }) {
             </Head>
             <Navbar />
             <Banner />
+            <div className="bg-[#E8E6E6] w-full flex justify-center gap-12 p-10 flex-col sm:flex-row items-center">
+               <span className="relative flex !aspect-[3/4]  h-[25rem]">
+                  <Image
+                     src="/PortadaOlvidasteTuCuerpo.png"
+                     fill
+                     alt="Portada Shop"
+                  ></Image>
+               </span>
+               <div className="flex flex-col justify-center text-lg max-w-[40ch] gap-6">
+                  <div className="font-bold">
+                     <p className="text-[#C7C7C7]">By Daya Muneton</p>
+                     <p className="text-2xl">OLVIDASTE TU CUERPO</p>
+                     <p className="text-xl">Y NO PUEDES ENCONTRAR PAZ</p>
+                  </div>
+                  <div>
+                     <p className="font-bold">
+                        Los beneficios de leer y ver esta guia
+                     </p>
+                     <p>
+                        Ganar consciencia que en tu cuerpo olvidado está la paz
+                        que buscas.
+                     </p>
+                     <p>
+                        No le dejes la responsabilidad a la esperanza para
+                        encontrar tu paz, la paz es una práctica.
+                     </p>
+                     <p>
+                        Ganar consciencia que tú eres el responsable de saturar
+                        tus emociones.
+                     </p>
+                  </div>
+                  <div className="w-full ">
+                     <span className="flex justify-between text-2xl font-medium">
+                        <p className="text-[#9F2747]">47.00 usd</p>
+                        <p className="text-[#FFCBAA] line-through">67.00 usd</p>
+                     </span>
+                     <Link
+                        href="/checkoutpdf/olvidaste-tu-cuerpo"
+                        className="flex justify-center w-full py-4 border-2 border-black"
+                     >
+                        SHOP NOW
+                     </Link>
+                  </div>
+               </div>
+            </div>
+            <div className="flex flex-col items-center justify-center w-full p-2 text-lg font-bold lg:flex-row lg:text-2xl bg-yellow whitespace-nowrap">
+               <div className="flex">
+                  TODAS LAS DESCARGAS A
+                  <span className="flex mx-1 text-white bg-black">
+                     <p className="px-1 text-blue-300">$3.00 USD</p>
+                  </span>
+               </div>
+               <div>SOLO PARA NUESTROS MIEMBROS</div>
+            </div>
             <Galeria />
             <ComingSoon />
             <div className="flex flex-col items-center w-full p-2 my-4 bg-yellow">
