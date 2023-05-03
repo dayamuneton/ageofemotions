@@ -40,7 +40,7 @@ function GuiasPDF(props: { galeria: string; commingSoon: string }) {
             </Head>
             <Navbar />
             <Banner />
-            <div className="bg-[#E8E6E6] w-full flex justify-center gap-12 p-10 flex-col sm:flex-row items-center">
+            <div className="bg-[#E8E6E6] my-8 w-full flex justify-center gap-12 p-10 flex-col sm:flex-row items-center">
                <span className="relative flex !aspect-[3/4]  h-[25rem]">
                   <Image
                      src="/PortadaOlvidasteTuCuerpo.png"
@@ -54,7 +54,7 @@ function GuiasPDF(props: { galeria: string; commingSoon: string }) {
                      <p className="text-2xl">OLVIDASTE TU CUERPO</p>
                      <p className="text-xl">Y NO PUEDES ENCONTRAR PAZ</p>
                   </div>
-                  <div>
+                  <div className="flex flex-col gap-4 text-base">
                      <p className="font-bold">
                         Los beneficios de leer y ver esta guia
                      </p>
@@ -85,9 +85,9 @@ function GuiasPDF(props: { galeria: string; commingSoon: string }) {
                   </div>
                </div>
             </div>
-            <div className="flex flex-col items-center justify-center w-full p-2 text-lg font-bold lg:flex-row lg:text-2xl bg-yellow whitespace-nowrap">
+            <div className="flex flex-col items-center justify-center w-full p-2 text-lg font-bold uppercase lg:flex-row lg:text-2xl bg-yellow whitespace-nowrap">
                <div className="flex">
-                  TODAS LAS DESCARGAS A
+                  todos los siguientes productos digitales a
                   <span className="flex mx-1 text-white bg-black">
                      <p className="px-1 text-blue-300">$3.00 USD</p>
                   </span>
