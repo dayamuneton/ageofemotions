@@ -13,41 +13,46 @@ import NavbarProfile from "./profile";
 import ShoppingCart from "./shoppingCart";
 
 const navbarItems = [
-   {
-      href: "/",
-      text: "Regalo",
-      alias: ["/gift"],
-   },
-   {
-      href: "/parte1",
-      text: "Programa",
-      alias: ["/signup"],
-   },
-   {
-      href: "/camiseta",
-      text: "Camiseta",
-      alias: [],
-   },
+   // {
+   //    href: "/",
+   //    text: "Regalo",
+   //    alias: ["/gift"],
+   // },
+   // {
+   //    href: "/parte1",
+   //    text: "Programa",
+   //    alias: ["/signup"],
+   // },
+   // {
+   //    href: "/camiseta",
+   //    text: "Camiseta",
+   //    alias: [],
+   // },
    {
       href: "/shop/guias",
       text: "Shop",
       alias: [],
    },
    {
-      href: "/coherentemente",
-      text: "CoherenteMENTE",
+      href: "/membresia",
+      text: "Membresía",
       alias: [],
    },
-   {
-      href: "/solidariamente",
-      text: "SolidariaMENTE",
-      alias: [],
-   },
-   {
-      href: "/tecnologicamente",
-      text: "TecnológicaMENTE",
-      alias: [],
-   },
+   // {
+   //    href: "/coherentemente",
+   //    text: "CoherenteMENTE",
+   //    alias: [],
+   // },
+   // {
+   //    href: "/solidariamente",
+   //    text: "SolidariaMENTE",
+   //    alias: [],
+   // },
+   // {
+   //    href: "/tecnologicamente",
+   //    text: "TecnológicaMENTE",
+   //    alias: [],
+   // },
    // {
    //    href: "/giftcard",
    //    text: "Gift-Card",

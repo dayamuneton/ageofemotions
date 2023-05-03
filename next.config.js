@@ -24,6 +24,10 @@ const nextConfig = {
             source: "/historia",
             destination: "/camiseta",
          },
+         {
+            source: "/",
+            destination: "/shop/guias",
+         },
       ];
    },
    i18n: {
