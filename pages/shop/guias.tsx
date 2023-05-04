@@ -85,8 +85,8 @@ function GuiasPDF(props: { galeria: string; commingSoon: string }) {
                   </div>
                </div>
             </div>
-            <div className="flex flex-col items-center justify-center w-full p-2 text-lg font-bold uppercase lg:flex-row lg:text-2xl bg-yellow whitespace-nowrap">
-               <div className="flex">
+            <div className="flex flex-col items-center justify-center w-full p-2 text-base font-bold text-center uppercase lg:flex-row lg:text-xl bg-yellow lg:whitespace-nowrap">
+               <div className="flex flex-col items-center sm:flex-row">
                   todos los siguientes productos digitales a
                   <span className="flex mx-1 text-white bg-black">
                      <p className="px-1 text-blue-300">$3.00 USD</p>
